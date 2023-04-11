@@ -1,7 +1,7 @@
 # archivo: _config.yml 
 title: "Interactive IR and Raman"
 author: Dr. Mounir Mensi, Dr. Kevin Jablonka and  Antonio Doñez
-logo:  images/logo_LMSO.png
+logo:  images/logo-LSMO.png
 #
 launch_buttons:
   colab_url      : https://colab.research.google.com # The URL of Google Colab (e.g., https://colab.research.google.com)
@@ -60,5 +60,5 @@ parse:
     - smartquotes
 html:
   use_issues_button: true
-  use_multitoc_numbering: false
+  use_multitoc_numbering: true
   use_repository_button: true
