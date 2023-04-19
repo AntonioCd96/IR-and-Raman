@@ -448,7 +448,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raman-effect">Raman Effect</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectrum-of-light">Spectrum of light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infrared-spectroscopy">Infrared Spectroscopy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasical-approach">Clasical approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasical-approach-to-model-harmonic-motion">Clasical approach to model harmonic  motion</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-program-for-isotopic-and-multiple-bond-molecules">Interactive program for isotopic and multiple bond molecules</a></li>
@@ -470,15 +470,55 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="vibrational-spectroscopy">
 <h1>Vibrational spectroscopy<a class="headerlink" href="#vibrational-spectroscopy" title="Permalink to this heading">#</a></h1>
-<p>Vibrational spectroscopy techniques are widely used in chemistry for the identification of compounds or functional groups in the three states of matter: solid, liquid and gaseous state. In this chapter, we are going to revisit and ilustrate some basic concepts to uderstand the physical phenomena behind the main techniques, which are infrared spectroscopy and Raman spectroscopy.</p>
+<p>Vibrational spectroscopy is an energy sensitive method. It is based on periodic <span style="color: red;"> <strong>changes of dipole moments</strong>  </span>  (infrared spectroscopy <span style="color: red;"><strong>IR</strong></span> ) or  <span style="color: blue;"> <strong>changes of polizabilities</strong>  </span>  (Raman spectroscopy <span style="color: blue;"><strong>Raman</strong></span> ) caused by molecular vibratios of molecules or groups of atoms and the combined discrete energy transitions and changes of frequency during absorption ( <span style="color: red;"><strong>IR</strong></span>) or scattering (<span style="color: blue;"><strong>Raman</strong></span>) of electromagnetic radition of wavelengths from 1 to 300 <span class="math notranslate nohighlight">\(\mu m\)</span>.</p>
+<p>These techniques are widely used in chemistry for the three states of matter: solid, liquid and gaseous state. The main uses are the following ones:</p>
+<ul class="simple">
+<li><p><strong>Qualitative analysis:</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>The presence/identification of known compunds (Chemist usually say that IR spectra is the finger print of a molecule)</p></li>
+<li><p>The functional groups of an unknown compound,</p></li>
+<li><p>and thus a likely structure of a new compound</p></li>
+<li><p>Properties of the bonds (bond strength, force constants)</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Quantitative analysis:</strong></p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Changes in the concetration of a species during reaction</p></li>
+</ol>
+<p>In this chapter, we are going to revisit and ilustrate some basic concepts to understand the physical phenomena behind the main techniques as well as  brief history facts.</p>
 <section id="rayleigh-scattering">
 <h2>Rayleigh scattering<a class="headerlink" href="#rayleigh-scattering" title="Permalink to this heading">#</a></h2>
 <div class="tip admonition">
 <p class="admonition-title">History</p>
-<p>In 1871 Lord Rayleigh explains the colour and polarisation of the skylight.
-Rayleigh scattering is an elastic scattering of electromagnetic radiation by particles. The oscillating electric field of light excites the charges of a molecule, causing them to vibrate at the same frequency. The molecule becomes a small radiating dipole scattering the incoming light.</p>
+<p>In 1871 Lord Rayleigh explains the colour and polarisation of the skylight. Rayleigh scattering is an elastic scattering of electromagnetic radiation by particles. As we can see in the gif, the oscillating electric field of light excites the charges of a molecule, causing them to vibrate at the same frequency. The molecule becomes a small radiating dipole scattering the incoming light.</p>
 </div>
 <p><img alt="SegmentLocal" src="_images/Gif_molecules.gif" /></p>
+<p>It is important to differentiate among the different optic phenomena that take place with the interation of light and matter. For instance, we are specially interested in adsorption and scattering:</p>
+<ul class="simple">
+<li><p>Adsorption:
+Similar to a tuning fork or even a musical instrument, the electrons of atoms have a natural frequency at which they tend to vibrate. When a light wave with that same natural frequency impinges upon an atom, then the electrons of that atom will be set into vibrational motion, this is merely another example of the resonance principle. If a light wave of a given frequency strikes a material with electrons having the same vibrational frequencies, then those electrons will <strong>absorb</strong> the energy of the light wave and transform it into vibrational motion, without any light emission.</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Can you guess why the selective absorption of light by a particular material occurs? </p>
+<p>The selected frequency of the light wave matches the frequency at which electrons in the atoms of that material vibrate. Since different atoms and molecules have different natural frequencies of vibration, they will selectively absorb different frequencies of visible light.</p>
+</div>
+<ul class="simple">
+<li><p>Scattering:</p></li>
+</ul>
+<p>Scattering of light is the phenomenon in which light rays deviate from their original path upon striking an obstacle such as dust, gas molecules, or water vapors. This phenomena is usually mistaken for dispersion.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Can you guess which phenomena occurs in a rainbow and which one gives raise to the blue colour of the sky? </p>
+<p>Dispersion occurs in the rainbow, since in this porces the white light is splitted into its constituents. This is because the phase velocity of the light wave due to the change of its frequency when the light interacts with the water droplets.</p>
+</div>
+<figure class="margin align-default" id="light">
+<a class="reference internal image-reference" href="_images/Light_phenomena.png"><img alt="_images/Light_phenomena.png" src="_images/Light_phenomena.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Different phenomena of light-matter interaction:transmision, reflection, refraction, difraction, absortion and scattering.</span><a class="headerlink" href="#light" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now that we know the main difference between the optical phenomena, we can go deeper into the electronic transitions inside a molecule or an atom. For this we need to bring to life to Sir George Gabriel <strong>Stokes (1848)</strong> (although he did not know about electronic levels at that time, he made important contributions to optic theory) and Sir Chandrasekhara Venkata <strong>Raman (1928)</strong></p>
 </section>
 <section id="raman-effect">
 <h2>Raman Effect<a class="headerlink" href="#raman-effect" title="Permalink to this heading">#</a></h2>
@@ -489,17 +529,21 @@ Rayleigh scattering is an elastic scattering of electromagnetic radiation by par
 <figure class="margin align-default" id="cv-raman">
 <a class="reference internal image-reference" href="_images/CV_Raman.png"><img alt="_images/CV_Raman.png" src="_images/CV_Raman.png" style="width: 60%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">C.V. Raman with his spectrometer</span><a class="headerlink" href="#cv-raman" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">C.V. Raman with his own developed spectrometer</span><a class="headerlink" href="#cv-raman" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Raman scattering or the Raman effect is the inelastic scattering of photons by matter, meaning that there is both an exchange of energy and a change in the light’s direction. Typically this effect involves vibrational energy being gained by a molecule as incident photons from a visible laser are shifted to lower energy. This is called normal <strong>Stokes Raman scattering</strong>. If the incident photons are shifted to higher energy the process is called <strong>Anti-Stokes Raman scattering</strong></p>
 <p><img alt="SegmentLocal" src="_images/Energy-diagrams-of-Stokes-Rayleigh-and-anti-Stokes-Raman-scattering-Photons-from-the.png" /></p>
-<p>Here we can see how the incident beam produces diferent frequencies depending on the type of scattering:</p>
-<p><img alt="SegmentLocal" src="_images/Raman-rayleigjt.gif" /></p>
+<figure class="margin align-default" id="raman-raleyght">
+<a class="reference internal image-reference" href="_images/Raman-rayleigh.gif"><img alt="_images/Raman-rayleigh.gif" src="_images/Raman-rayleigh.gif" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Here we can see how the incident beam produces diferent frequencies depending on the type of scattering:</span><a class="headerlink" href="#raman-raleyght" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="spectrum-of-light">
 <h2>Spectrum of light<a class="headerlink" href="#spectrum-of-light" title="Permalink to this heading">#</a></h2>
-<p>Spectroscopy techniques are available over a very wide energy range:</p>
+<p>After improving different machines and discovering different phenomena, scientist and engineer have been able to use almost all the spectrum of light to study the matter. This gives raise to many spectroscopy techniques that are available over a very wide energy range:</p>
 <ul class="simple">
 <li><p>Gamma rays: Mössbauer spectroscopy</p></li>
 <li><p>X-rays: X-ray photoelectron spectroscopy</p></li>
@@ -508,16 +552,21 @@ Rayleigh scattering is an elastic scattering of electromagnetic radiation by par
 <li><p>Microwave: Electron paramagnetic resonance spectroscopy</p></li>
 <li><p>Radiowave: Nuclear magnetic resonance</p></li>
 </ul>
+<p>This fact should not be taken as a competence of which technique is better, but in a complementary mindset approach (<em>although we all know that NMR is the best!</em>). Since each technique can obtain different information, we can use 2 or 3 methods to characterize and elucidate a new molecule structure, and this will depend merely on the chemical nature of the molecule. Additionally, we can use several techniques to study how a molecule gets absorbed on a substrate or to follow the reaction mechanism in chemical reaction.</p>
 <p><img alt="SegmentLocal" src="_images/spectrum_light.png" /></p>
 </section>
 <section id="infrared-spectroscopy">
 <h2>Infrared Spectroscopy<a class="headerlink" href="#infrared-spectroscopy" title="Permalink to this heading">#</a></h2>
-<p>Infrared spectroscopy (IR spectroscopy) is the measurement of the interaction of infrared radiation with matter by absorption, emission, or reflection. It is used to study and identify chemical substances or functional groups. The identifications proceeds via obtaining the infrared spectrum. An IR spectrum can be visualized in a graph of infrared light absorbance (or transmittance) on the vertical axis vs the wavenumber. The wave number is a unit directric proportional to the energy.</p>
-<p>Here we show the IR spectrum of the water, in a plot of trasmitance vs wavenumber:</p>
-<p><img alt="SegmentLocal" src="_images/Water_spectrum.png" /></p>
+<p>Infrared spectroscopy (IR spectroscopy) is the measurement of the interaction of infrared radiation with matter by absorption, emission, or reflection. It is used to study and identify chemical substances or functional groups. The identifications proceeds via obtaining the <strong>infrared spectrum</strong>. An IR spectrum can be visualized in a graph of infrared light absorbance (or transmittance) on the vertical axis vs the wavenumber. The wave number is a unit directric proportional to the energy.</p>
+<figure class="margin align-default" id="id1">
+<a class="reference internal image-reference" href="_images/Water_spectrum.png"><img alt="_images/Water_spectrum.png" src="_images/Water_spectrum.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Here we show the IR spectrum of the water, in a plot of trasmitance vs wavenumber</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-<section id="clasical-approach">
-<h2>Clasical approach<a class="headerlink" href="#clasical-approach" title="Permalink to this heading">#</a></h2>
+<section id="clasical-approach-to-model-harmonic-motion">
+<h2>Clasical approach to model harmonic  motion<a class="headerlink" href="#clasical-approach-to-model-harmonic-motion" title="Permalink to this heading">#</a></h2>
 <p>We can start a first approach from a clasical point of view. Imagine that we have two atoms joined by a spring, we can actually used Hook Law to derive the force that each atom experiences:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1804,17 +1853,17 @@ if (IPython.notebook.kernel !== null) {
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="solid-monoatomic-chain">
 <h1>Solid - Monoatomic chain<a class="headerlink" href="#solid-monoatomic-chain" title="Permalink to this heading">#</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-8713ef1b-6c35-437e-ac99-ee8fb9b4cd5b">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8713ef1b-6c35-437e-ac99-ee8fb9b4cd5b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ff22953d-3eff-42d6-ad52-1631febdccd6">
+<span class="eqno">(1)<a class="headerlink" href="#equation-ff22953d-3eff-42d6-ad52-1631febdccd6" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_n^{\rm eq}=na\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cd9394ed-1c08-4e68-964f-ca9eb42dfc05">
-<span class="eqno">(2)<a class="headerlink" href="#equation-cd9394ed-1c08-4e68-964f-ca9eb42dfc05" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b0d85324-2333-49ce-989d-034b57f7a31c">
+<span class="eqno">(2)<a class="headerlink" href="#equation-b0d85324-2333-49ce-989d-034b57f7a31c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \delta x_n = A e^{i\omega t-ikna}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8b235934-b1f5-4770-a844-85ed8f20e22e">
-<span class="eqno">(3)<a class="headerlink" href="#equation-8b235934-b1f5-4770-a844-85ed8f20e22e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cd8062c0-f003-452d-a8e4-e4ac465bf9e9">
+<span class="eqno">(3)<a class="headerlink" href="#equation-cd8062c0-f003-452d-a8e4-e4ac465bf9e9" title="Permalink to this equation">#</a></span>\[\begin{align}
 \omega(k) = \sqrt{\frac{4\kappa}{m}} \bigg| \sin\bigg( \frac{ka}{2} \bigg) \bigg|
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -1914,8 +1963,6 @@ small Q means “will oscillate for only a few cycles before stopping “</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Frequency [ω]&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_f</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
     
-<span class="c1">#add a reference molecule  - see pptx -&gt; Energy disipation </span>
-<span class="c1"># -&gt; curve that doesn&#39;t change, or fixed ax</span>
 </pre></div>
 </div>
 </div>
@@ -1927,7 +1974,9 @@ small Q means “will oscillate for only a few cycles before stopping “</p>
 <h1>Hydrogen catalysis<a class="headerlink" href="#hydrogen-catalysis" title="Permalink to this heading">#</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Real life problem</p>
-<p>Adsorption is a surface–based exothermic process that leads to the transfer of a molecule from a fluid bulk to the solid surface of the adsorbent. The substance that is adsorbed to the adsorbent is called adsorbate. The process may also be classified as physical adsorption (physisorption) or chemical sorption (chemisorption), depending on the interactions between the molecules and surface. Physical adsorption is dominated by weak Van der Waals forces and electrostatic interactions, while in chemisorption, strong chemical bonds such as covalent bonds are formed between the surface and the adsorbed species. Chemical adsorption is slow-paced compared to physical adsorption and most frequently a monomolecular layer is formed on the material surface. In contrast, physisorption usually entails the formation of a thick multilayer on the surface</p>
+<p>Adsorption is a surface–based exothermic process that leads to the transfer of a molecule from a fluid bulk to the solid surface of the adsorbent. The substance that is adsorbed to the adsorbent is called adsorbate. The process may also be classified as physical adsorption (physisorption) or chemical sorption (chemisorption), depending on the interactions between the molecules and surface. Physical adsorption is dominated by weak Van der Waals forces and electrostatic interactions, while in chemisorption, strong chemical bonds such as covalent bonds are formed between the surface and the adsorbed species. Chemical adsorption is slow-paced compared to physical adsorption and most frequently a monomolecular layer is formed on the material surface. In contrast, physisorption usually entails the formation of a thick multilayer on the surface [1]</p>
+<hr class="docutils" />
+<p><sup> Source: Georgiadis, A.G.; Charisiou, N.D.; Goula, M.A. Removal of Hydrogen Sulfide From Various Industrial Gases: A Review of The Most Promising Adsorbing Materials. Catalysts 2020, 10, 521. <a class="reference external" href="https://doi.org/10.3390/catal10050521">https://doi.org/10.3390/catal10050521</a> </sup></p>
 </div>
 <p><img alt="SegmentLocal" src="_images/Catalysis_H2.jpg" /></p>
 <div class="admonition">
@@ -1994,7 +2043,7 @@ Can you guess what would happen with the vibrations is H_2 molecule?</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raman-effect">Raman Effect</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectrum-of-light">Spectrum of light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infrared-spectroscopy">Infrared Spectroscopy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasical-approach">Clasical approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasical-approach-to-model-harmonic-motion">Clasical approach to model harmonic  motion</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-program-for-isotopic-and-multiple-bond-molecules">Interactive program for isotopic and multiple bond molecules</a></li>
