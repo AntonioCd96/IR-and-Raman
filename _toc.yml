@@ -3,3 +3,4 @@ format: jb-book
 root:   inicio
 chapters:
 - file: page1
+- file: page2
