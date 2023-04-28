@@ -16,6 +16,7 @@ html:
 
 repository:
   url            : https://github.com/AntonioCd96/IR-and-Raman.git  # The URL to your book's repository
+  branch: gh-pages
 
 latex:
   latex_engine : "xelatex"      
