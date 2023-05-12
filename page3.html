@@ -1,0 +1,881 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Harmonic Oscillator - Quantum Mechanics Approach &#8212; Interactive IR and Raman</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'page3';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Calculate your own IR and Raman Spectra" href="page2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="inicio.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo-LSMO.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo-LSMO.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="inicio.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="page1.html">Vibrational spectroscopy</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="page2.html">Calculate your own IR and Raman Spectra</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Harmonic Oscillator - Quantum Mechanics Approach</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/AntonioCd96/IR-and-Raman.git/master?urlpath=tree/page3.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/AntonioCd96/IR-and-Raman.git&urlpath=tree/IR-and-Raman.git/page3.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/AntonioCd96/IR-and-Raman.git/blob/master/page3.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AntonioCd96/IR-and-Raman.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AntonioCd96/IR-and-Raman.git/issues/new?title=Issue%20on%20page%20%2Fpage3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/page3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Harmonic Oscillator - Quantum Mechanics Approach</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Harmonic Oscillator - Quantum Mechanics Approach</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-modes">Normal modes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ir-spectroscopy-equipment">IR Spectroscopy - Equipment</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="harmonic-oscillator-quantum-mechanics-approach">
+<h1>Harmonic Oscillator - Quantum Mechanics Approach<a class="headerlink" href="#harmonic-oscillator-quantum-mechanics-approach" title="Permalink to this heading">#</a></h1>
+<p>While giving a good overview of the molecular vibrations, the classical model
+doesn’t describes the quantised observed
+vibrations. As a first approximation, a
+quadratic harmonic potential can
+approximate the potential of a diatomic
+oscillator. The main results are:</p>
+<ul class="simple">
+<li><p>The vibration levels are quantised (<span class="math notranslate nohighlight">\(n\)</span>)</p></li>
+<li><p>Can only give a probability for finding the  nuclei in a certain arrangement</p></li>
+<li><p>Nuclear tunnelling</p></li>
+<li><p>There is a so-called zero-point energy</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%pylab is deprecated, use %matplotlib inline and import the required libraries.
+Populating the interactive namespace from numpy and matplotlib
+</pre></div>
+</div>
+</div>
+</div>
+<p>The mathematica approach is using the Hamiltonian operator of quantum mechanics:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = \frac{\hbar}{2m}\nabla^2 + \frac{1}{2}k \hat{x}^2 
+\]</div>
+<p>Using the Schrödinger equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi \hat{H} = E \Psi 
+\]</div>
+<p>Then, we obtain a quatizied set or energy levels:</p>
+<div class="math notranslate nohighlight">
+\[
+E = h \omega_i (n_i +\frac{1}{2})
+\]</div>
+<p>But, what does it represen <span class="math notranslate nohighlight">\(n\)</span> furthermore of the quantization number?</p>
+<p><span class="math notranslate nohighlight">\(n\)</span> represents the each one of the normal modes. Since the normal modes are related with a determined frequency (<span class="math notranslate nohighlight">\(\omega_i\)</span>) and this directly related to the energy, we can see that each excitation of each normal mode will requiere a diffent energy</p>
+<div class="tip admonition">
+<p class="admonition-title">Normal Modes</p>
+<p>A normal mode of an oscillating system is a pattern of motion in which all parts of the system move sinusoidally with the same frequency. The frequencies of the normal modes of a system are known as its natural frequencies or resonant frequencies. A physical object, such as a building or bridge, has a set of normal modes (and frequencies) that depend on its structure and composition.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span>          <span class="o">=</span> <span class="mf">1.602e-19</span>              <span class="c1"># 1 eV = 1.602e-19 J</span>
+<span class="n">ħ</span>          <span class="o">=</span> <span class="mf">0.658</span>                  <span class="c1"># [eV fs]</span>
+<span class="n">c</span>          <span class="o">=</span> <span class="mf">3e8</span>                    <span class="c1"># [m/s]</span>
+<span class="n">massfactor</span> <span class="o">=</span> <span class="n">e</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">c</span>                  <span class="c1"># 1 eV/c^2 = 1.79e-36 kg</span>
+<span class="n">me</span>         <span class="o">=</span> <span class="mf">9.109e-31</span><span class="o">/</span><span class="n">massfactor</span>   <span class="c1"># [eV/c^2] = 0.5x10^6 eV/c^2   </span>
+<span class="n">c_nmfs</span>     <span class="o">=</span> <span class="mf">299.792458</span>             <span class="c1"># [nm/fs]</span>
+<span class="n">Eλ</span>         <span class="o">=</span> <span class="n">ħ</span><span class="o">*</span><span class="n">ħ</span><span class="o">*</span><span class="n">c_nmfs</span><span class="o">*</span><span class="n">c_nmfs</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">me</span> <span class="c1"># eV nm^2</span>
+
+<span class="c1"># Number of points in the mesh</span>
+<span class="n">N</span>    <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">12</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">xinf</span> <span class="o">=</span> <span class="mf">100.0</span>             <span class="c1"># nm</span>
+<span class="n">ℓ</span>    <span class="o">=</span> <span class="mf">1.0</span>               <span class="c1"># nm</span>
+<span class="n">α</span>    <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="n">x</span>    <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">xinf</span><span class="p">,</span><span class="n">xinf</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">Δx</span>   <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">V0</span>   <span class="o">=</span> <span class="mf">2.0</span>              <span class="c1"># eV</span>
+
+<span class="n">V</span>        <span class="o">=</span> <span class="n">α</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> 
+
+
+<span class="n">Mdd</span>      <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">Δx</span><span class="o">*</span><span class="n">Δx</span><span class="p">)</span><span class="o">*</span><span class="p">(</span> <span class="n">diag</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">diag</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">diag</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">H</span>        <span class="o">=</span> <span class="o">-</span><span class="n">Eλ</span><span class="o">*</span><span class="n">Mdd</span> <span class="o">+</span> <span class="n">diag</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<span class="n">E</span><span class="p">,</span><span class="n">ψT</span>     <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+<span class="n">ψ</span>        <span class="o">=</span> <span class="n">transpose</span><span class="p">(</span><span class="n">ψT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+                       <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="n">a</span><span class="o">=</span> <span class="mf">3.5</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">ℓ</span><span class="p">,</span><span class="n">a</span><span class="o">*</span><span class="n">ℓ</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">ℓ</span><span class="p">,</span><span class="n">a</span><span class="o">*</span><span class="n">ℓ</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s2">&quot;Gray&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V(x)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s2">&quot;Gray&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V(x)&quot;</span><span class="p">)</span>
+
+<span class="n">index</span> <span class="o">=</span> <span class="n">E</span><span class="o">&lt;</span><span class="n">V0</span>
+<span class="n">itera</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">]</span>
+
+<span class="n">num_shades</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">itera</span><span class="p">)</span>
+<span class="n">color_list</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">cubehelix_palette</span><span class="p">(</span><span class="n">num_shades</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itera</span><span class="p">:</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">ψ</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$E_</span><span class="si">{0}</span><span class="s2">$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="n">color_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">ψ</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">ψ</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$E_</span><span class="si">{0}</span><span class="s2">$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="n">color_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itera</span><span class="p">:</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">1.3</span><span class="o">*</span><span class="n">ℓ</span><span class="p">,</span><span class="mf">1.3</span><span class="o">*</span><span class="n">ℓ</span><span class="p">],[</span><span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">color_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">1.3</span><span class="o">*</span><span class="n">ℓ</span><span class="p">,</span><span class="mf">1.3</span><span class="o">*</span><span class="n">ℓ</span><span class="p">],[</span><span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">color_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$x$ [nm]&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$E$ [eV]&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">V0</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$x$ [nm]&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">V0</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Energy levels and wavefunctions for harmonic oscillator&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Energy levels and probability distributions for harmonic oscillator&quot;</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;armonic_oscilator.jpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/87ffc71e0dcce94d378dc5ba54c787a22111f4a6356b0fde0ffb0194ef5ee6e6.png" src="_images/87ffc71e0dcce94d378dc5ba54c787a22111f4a6356b0fde0ffb0194ef5ee6e6.png" />
+</div>
+</div>
+<p>In the reality, the potential is anharmonic, the solutions differ from the harmonic  potential approximation described earlier</p>
+<p>Departure from the harmonic oscillator induce:</p>
+<ul class="simple">
+<li><p>No equal spacing in the vibrational  modes</p></li>
+<li><p>Real frequency are lower than the  harmonic frequency</p></li>
+<li><p>Overtones are allowed</p></li>
+<li><p>We find an energy for the dissociation of the molecule (<span class="math notranslate nohighlight">\(E_D\)</span>)</p></li>
+</ul>
+<p>In this case the energy levels can be descrbied as:</p>
+<div class="math notranslate nohighlight">
+\[
+E = h \omega (n+\frac{1}{2})  -\frac{h^2 \omega^2}{4E_D} (n+\frac{1}{2})^2 
+\]</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+                       <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="n">k</span><span class="p">,</span> <span class="n">γ</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1001</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1001</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="n">x1</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">γ</span><span class="o">*</span><span class="n">x1</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="n">x2</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">x</span><span class="o">=</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">E_an</span><span class="o">=</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Anharmonic&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span> <span class="n">color_list</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Harmonic&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;Gray&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itera</span><span class="p">:</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">1.3</span><span class="o">*</span><span class="n">ℓ</span><span class="p">,</span><span class="mf">1.3</span><span class="o">*</span><span class="n">ℓ</span><span class="p">],[</span><span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">color_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">1.3</span><span class="o">*</span><span class="n">ℓ</span><span class="p">,</span><span class="mf">1.8</span><span class="o">*</span><span class="n">ℓ</span><span class="p">],[</span><span class="n">E_an</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">E_an</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">color_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+ 
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd735827b50&gt;
+</pre></div>
+</div>
+<img alt="_images/ae1880b514244740e2b85600fa68f107003166ba401228ba436f4461605067c8.png" src="_images/ae1880b514244740e2b85600fa68f107003166ba401228ba436f4461605067c8.png" />
+</div>
+</div>
+<figure class="margin align-default" id="molecules">
+<a class="reference internal image-reference" href="_images/Symmetric_stretching_mode-2.gif"><img alt="_images/Symmetric_stretching_mode-2.gif" src="_images/Symmetric_stretching_mode-2.gif" style="width: 200%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Symmetric stretching mode</span><a class="headerlink" href="#molecules" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin align-default" id="id1">
+<a class="reference internal image-reference" href="_images/Antisymmetric_stretching_mode-1.gif"><img alt="_images/Antisymmetric_stretching_mode-1.gif" src="_images/Antisymmetric_stretching_mode-1.gif" style="width: 200%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Antisymmetric stretching mode</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin align-default" id="id2">
+<a class="reference internal image-reference" href="_images/Bending_mode-3.gif"><img alt="_images/Bending_mode-3.gif" src="_images/Bending_mode-3.gif" style="width: 200%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">In plane bending mode</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="normal-modes">
+<h1>Normal modes<a class="headerlink" href="#normal-modes" title="Permalink to this heading">#</a></h1>
+<p>Each atom of  a molecule has three degrees of freedom (dof) with respect to the displacements. So, if we have N atoms, we would have 3N dof. If we substract the traslations (3 in <span class="math notranslate nohighlight">\(x,y,z\)</span>) and rotations (3 for non linear and 2 for linear molecules) , we obtain two equations to obtain total degrees of freedom which are also called as normal modes:</p>
+<ul class="simple">
+<li><p>For non-linear molecules: <span class="math notranslate nohighlight">\(3N-6\)</span></p></li>
+<li><p>For linear molecules: <span class="math notranslate nohighlight">\(3N-5\)</span></p></li>
+</ul>
+<p>For water, we can une the non-linear formula, since water has an angle between the H. In this way, if the number of atoms is N=3, the number of normal modes is: 3. We can see this in the following image:</p>
+<p><img alt="SegmentLocal" src="_images/Normal_modes_water.png" /></p>
+<p>For <span class="math notranslate nohighlight">\(CO_2\)</span>, we can une the linear formula. In this way, if the number of atoms is N=3, the number of normal modes is: 4. We can see this in the following image:</p>
+<p><img alt="SegmentLocal" src="_images/Normal_modes_CO2.png" /></p>
+<figure class="margin align-default" id="id3">
+<a class="reference internal image-reference" href="_images/Antisymmetric.gif"><img alt="_images/Antisymmetric.gif" src="_images/Antisymmetric.gif" style="width: 200%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Antisymmetric stretching mode</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin align-default" id="id4">
+<a class="reference internal image-reference" href="_images/Symmetric_stretching_mode-1.gif"><img alt="_images/Symmetric_stretching_mode-1.gif" src="_images/Symmetric_stretching_mode-1.gif" style="width: 200%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Symmetric stretching mode</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin align-default" id="id5">
+<a class="reference internal image-reference" href="_images/In-plane-bending.gif"><img alt="_images/In-plane-bending.gif" src="_images/In-plane-bending.gif" style="width: 200%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">In plane bending mode</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin align-default" id="id6">
+<a class="reference internal image-reference" href="_images/Out-plane-bending.gif"><img alt="_images/Out-plane-bending.gif" src="_images/Out-plane-bending.gif" style="width: 200%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Out of the plane bending mode</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ir-spectroscopy-equipment">
+<h1>IR Spectroscopy - Equipment<a class="headerlink" href="#ir-spectroscopy-equipment" title="Permalink to this heading">#</a></h1>
+<p>It is natural to wonder how scientist manage to optain the IR spectra and if it is as difficult as the maths that are behind. The answer is yes, the system is complex if we start analysing the physical nature of the sensors or the calculations behind to fit the spectra. However, we are only going to review the basic components and the basic physics behind it.</p>
+<p>The equipment that we use to obtain the finger print of the molecule is called IR spectrometer. The equipment is composed of the following components:</p>
+<ul class="simple">
+<li><p>Light source: it should be clear that we can not use a common lamps since the wavelength is not the optimal to excite the vibrations in molecules. In this way we can  distinghuis 2 different sources:</p>
+<ul>
+<li><p>For far and mid IR: Nernst rod</p></li>
+<li><p>Near IR: light-bulb</p></li>
+</ul>
+</li>
+<li><p>Monocromador: this part does the selection of the wavelenght, deoending on the light source it can be:</p>
+<ul>
+<li><p>CsI prism for far IR</p></li>
+<li><p>LiF prism for mid IR</p></li>
+<li><p>quartz prism for near IR</p></li>
+</ul>
+</li>
+<li><p>IR-Detector:the bolometer is used as detector, it is a cooled metal foil (Pt,Au) which absrbs IR radiation. the resulting rise of the the T is detected by a resistor-type thermometer.</p></li>
+<li><p>IR-Spectrometer: the first succesfull machine was the double beam by optical grading. This model was caracterized for making a sweep in wavelenght using a monocromator. Lately, it evolves to the Michaelson Interferometer which is a set of movable mirrors that use polychromatic light instead. In this way, we can distinguish 2 types of IR spectroscopy:</p>
+<ul>
+<li><p>Classical (grading- prism) IR: this one uses the monocromator for the selection of the wavelenght</p></li>
+<li><p>Fourier-Transform IR: replaces the monochromator, so that, the sample is irradiated by polychromatic light and a movable produces a time dependent signal that is transformaed by Fourier transformation into a frequency spectrum</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="SegmentLocal" src="_images/Michaelson_interfermeter_Trim.gif" /></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "AntonioCd96/IR-and-Raman.git",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="page2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Calculate your own IR and Raman Spectra</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Harmonic Oscillator - Quantum Mechanics Approach</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-modes">Normal modes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ir-spectroscopy-equipment">IR Spectroscopy - Equipment</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. Mounir Mensi, Dr. Kevin Jablonka and  Antonio Doñez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
