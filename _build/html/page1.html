@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -166,6 +168,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="page2.html">Calculate your own IR and Raman Spectra</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="page3.html">Harmonic Oscillator - Quantum Mechanics Approach</a></li>
+
 
 </ul>
 
@@ -640,6 +645,19 @@ A=\frac{F_0/\mu}{\sqrt{(\omega_0^2-\omega_f^2)^2+4\omega_f^2γ^2}}
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">imageio</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;imageio&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -700,7 +718,7 @@ A=\frac{F_0/\mu}{\sqrt{(\omega_0^2-\omega_f^2)^2+4\omega_f^2γ^2}}
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "dfb145ca9b6a45f79825ec6c4ec4c575"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "1e026990d6684b8191254f89bf3e3cc3", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">What happens with the frequency of oscillation when you increase k? How can you relate this with the bond order in a molecule?</p>
@@ -1003,9 +1021,7 @@ mpl.figure = function (figure_id, websocket, ondownload, parent_element) {
         fig.send_message('supports_binary', { value: fig.supports_binary });
         fig.send_message('send_image_mode', {});
         if (fig.ratio !== 1) {
-            fig.send_message('set_device_pixel_ratio', {
-                device_pixel_ratio: fig.ratio,
-            });
+            fig.send_message('set_dpi_ratio', { dpi_ratio: fig.ratio });
         }
         fig.send_message('refresh', {});
     };
@@ -1052,7 +1068,6 @@ mpl.figure.prototype._init_canvas = function () {
     var fig = this;
 
     var canvas_div = (this.canvas_div = document.createElement('div'));
-    canvas_div.setAttribute('tabindex', '0');
     canvas_div.setAttribute(
         'style',
         'border: 1px solid #ddd;' +
@@ -1063,8 +1078,7 @@ mpl.figure.prototype._init_canvas = function () {
             'outline: 0;' +
             'overflow: hidden;' +
             'position: relative;' +
-            'resize: both;' +
-            'z-index: 2;'
+            'resize: both;'
     );
 
     function on_keyboard_event_closure(name) {
@@ -1087,13 +1101,7 @@ mpl.figure.prototype._init_canvas = function () {
 
     var canvas = (this.canvas = document.createElement('canvas'));
     canvas.classList.add('mpl-canvas');
-    canvas.setAttribute(
-        'style',
-        'box-sizing: content-box;' +
-            'pointer-events: none;' +
-            'position: relative;' +
-            'z-index: 0;'
-    );
+    canvas.setAttribute('style', 'box-sizing: content-box;');
 
     this.context = canvas.getContext('2d');
 
@@ -1113,12 +1121,7 @@ mpl.figure.prototype._init_canvas = function () {
     ));
     rubberband_canvas.setAttribute(
         'style',
-        'box-sizing: content-box;' +
-            'left: 0;' +
-            'pointer-events: none;' +
-            'position: absolute;' +
-            'top: 0;' +
-            'z-index: 1;'
+        'box-sizing: content-box; position: absolute; left: 0; top: 0; z-index: 1;'
     );
 
     // Apply a ponyfill if ResizeObserver is not implemented by browser.
@@ -1168,10 +1171,10 @@ mpl.figure.prototype._init_canvas = function () {
                 canvas.setAttribute('width', width * fig.ratio);
                 canvas.setAttribute('height', height * fig.ratio);
             }
-            /* This rescales the canvas back to display pixels, so that it
-             * appears correct on HiDPI screens. */
-            canvas.style.width = width + 'px';
-            canvas.style.height = height + 'px';
+            canvas.setAttribute(
+                'style',
+                'width: ' + width + 'px; height: ' + height + 'px;'
+            );
 
             rubberband_canvas.setAttribute('width', width);
             rubberband_canvas.setAttribute('height', height);
@@ -1187,53 +1190,30 @@ mpl.figure.prototype._init_canvas = function () {
     this.resizeObserverInstance.observe(canvas_div);
 
     function on_mouse_event_closure(name) {
-        /* User Agent sniffing is bad, but WebKit is busted:
-         * https://bugs.webkit.org/show_bug.cgi?id=144526
-         * https://bugs.webkit.org/show_bug.cgi?id=181818
-         * The worst that happens here is that they get an extra browser
-         * selection when dragging, if this check fails to catch them.
-         */
-        var UA = navigator.userAgent;
-        var isWebKit = /AppleWebKit/.test(UA) && !/Chrome/.test(UA);
-        if(isWebKit) {
-            return function (event) {
-                /* This prevents the web browser from automatically changing to
-                 * the text insertion cursor when the button is pressed. We
-                 * want to control all of the cursor setting manually through
-                 * the 'cursor' event from matplotlib */
-                event.preventDefault()
-                return fig.mouse_event(event, name);
-            };
-        } else {
-            return function (event) {
-                return fig.mouse_event(event, name);
-            };
-        }
+        return function (event) {
+            return fig.mouse_event(event, name);
+        };
     }
 
-    canvas_div.addEventListener(
+    rubberband_canvas.addEventListener(
         'mousedown',
         on_mouse_event_closure('button_press')
     );
-    canvas_div.addEventListener(
+    rubberband_canvas.addEventListener(
         'mouseup',
         on_mouse_event_closure('button_release')
     );
-    canvas_div.addEventListener(
-        'dblclick',
-        on_mouse_event_closure('dblclick')
-    );
     // Throttle sequential mouse events to 1 every 20ms.
-    canvas_div.addEventListener(
+    rubberband_canvas.addEventListener(
         'mousemove',
         on_mouse_event_closure('motion_notify')
     );
 
-    canvas_div.addEventListener(
+    rubberband_canvas.addEventListener(
         'mouseenter',
         on_mouse_event_closure('figure_enter')
     );
-    canvas_div.addEventListener(
+    rubberband_canvas.addEventListener(
         'mouseleave',
         on_mouse_event_closure('figure_leave')
     );
@@ -1261,7 +1241,7 @@ mpl.figure.prototype._init_canvas = function () {
     };
 
     // Disable right mouse context menu.
-    canvas_div.addEventListener('contextmenu', function (_e) {
+    this.rubberband_canvas.addEventListener('contextmenu', function (_e) {
         event.preventDefault();
         return false;
     });
@@ -1416,7 +1396,22 @@ mpl.figure.prototype.handle_figure_label = function (fig, msg) {
 };
 
 mpl.figure.prototype.handle_cursor = function (fig, msg) {
-    fig.canvas_div.style.cursor = msg['cursor'];
+    var cursor = msg['cursor'];
+    switch (cursor) {
+        case 0:
+            cursor = 'pointer';
+            break;
+        case 1:
+            cursor = 'default';
+            break;
+        case 2:
+            cursor = 'crosshair';
+            break;
+        case 3:
+            cursor = 'move';
+            break;
+    }
+    fig.rubberband_canvas.style.cursor = cursor;
 };
 
 mpl.figure.prototype.handle_message = function (fig, msg) {
@@ -1465,14 +1460,11 @@ mpl.figure.prototype.updated_canvas_event = function () {
 mpl.figure.prototype._make_on_message_function = function (fig) {
     return function socket_on_message(evt) {
         if (evt.data instanceof Blob) {
-            var img = evt.data;
-            if (img.type !== 'image/png') {
-                /* FIXME: We get "Resource interpreted as Image but
-                 * transferred with MIME type text/plain:" errors on
-                 * Chrome.  But how to set the MIME type?  It doesn't seem
-                 * to be part of the websocket stream */
-                img.type = 'image/png';
-            }
+            /* FIXME: We get "Resource interpreted as Image but
+             * transferred with MIME type text/plain:" errors on
+             * Chrome.  But how to set the MIME type?  It doesn't seem
+             * to be part of the websocket stream */
+            evt.data.type = 'image/png';
 
             /* Free the memory for the previous frames */
             if (fig.imageObj.src) {
@@ -1482,7 +1474,7 @@ mpl.figure.prototype._make_on_message_function = function (fig) {
             }
 
             fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
-                img
+                evt.data
             );
             fig.updated_canvas_event();
             fig.waiting = false;
@@ -1528,27 +1520,35 @@ mpl.figure.prototype._make_on_message_function = function (fig) {
     };
 };
 
-function getModifiers(event) {
-    var mods = [];
-    if (event.ctrlKey) {
-        mods.push('ctrl');
+// from http://stackoverflow.com/questions/1114465/getting-mouse-location-in-canvas
+mpl.findpos = function (e) {
+    //this section is from http://www.quirksmode.org/js/events_properties.html
+    var targ;
+    if (!e) {
+        e = window.event;
     }
-    if (event.altKey) {
-        mods.push('alt');
+    if (e.target) {
+        targ = e.target;
+    } else if (e.srcElement) {
+        targ = e.srcElement;
     }
-    if (event.shiftKey) {
-        mods.push('shift');
+    if (targ.nodeType === 3) {
+        // defeat Safari bug
+        targ = targ.parentNode;
     }
-    if (event.metaKey) {
-        mods.push('meta');
-    }
-    return mods;
-}
+
+    // pageX,Y are the mouse positions relative to the document
+    var boundingRect = targ.getBoundingClientRect();
+    var x = e.pageX - (boundingRect.left + document.body.scrollLeft);
+    var y = e.pageY - (boundingRect.top + document.body.scrollTop);
+
+    return { x: x, y: y };
+};
 
 /*
  * return a copy of an object with only non-object keys
  * we need this to avoid circular references
- * https://stackoverflow.com/a/24161582/3208463
+ * http://stackoverflow.com/a/24161582/3208463
  */
 function simpleKeys(original) {
     return Object.keys(original).reduce(function (obj, key) {
@@ -1560,25 +1560,29 @@ function simpleKeys(original) {
 }
 
 mpl.figure.prototype.mouse_event = function (event, name) {
+    var canvas_pos = mpl.findpos(event);
+
     if (name === 'button_press') {
         this.canvas.focus();
         this.canvas_div.focus();
     }
 
-    // from https://stackoverflow.com/q/1114465
-    var boundingRect = this.canvas.getBoundingClientRect();
-    var x = (event.clientX - boundingRect.left) * this.ratio;
-    var y = (event.clientY - boundingRect.top) * this.ratio;
+    var x = canvas_pos.x * this.ratio;
+    var y = canvas_pos.y * this.ratio;
 
     this.send_message(name, {
         x: x,
         y: y,
         button: event.button,
         step: event.step,
-        modifiers: getModifiers(event),
         guiEvent: simpleKeys(event),
     });
 
+    /* This prevents the web browser from automatically changing to
+     * the text insertion cursor when the button is pressed.  We want
+     * to control all of the cursor setting manually through the
+     * 'cursor' event from matplotlib */
+    event.preventDefault();
     return false;
 };
 
@@ -1589,10 +1593,10 @@ mpl.figure.prototype._key_event_extra = function (_event, _name) {
 mpl.figure.prototype.key_event = function (event, name) {
     // Prevent repeat events
     if (name === 'key_press') {
-        if (event.key === this._key) {
+        if (event.which === this._key) {
             return;
         } else {
-            this._key = event.key;
+            this._key = event.which;
         }
     }
     if (name === 'key_release') {
@@ -1600,17 +1604,18 @@ mpl.figure.prototype.key_event = function (event, name) {
     }
 
     var value = '';
-    if (event.ctrlKey && event.key !== 'Control') {
+    if (event.ctrlKey && event.which !== 17) {
         value += 'ctrl+';
     }
-    else if (event.altKey && event.key !== 'Alt') {
+    if (event.altKey && event.which !== 18) {
         value += 'alt+';
     }
-    else if (event.shiftKey && event.key !== 'Shift') {
+    if (event.shiftKey && event.which !== 16) {
         value += 'shift+';
     }
 
-    value += 'k' + event.key;
+    value += 'k';
+    value += event.which.toString();
 
     this._key_event_extra(event, name);
 
@@ -1633,9 +1638,9 @@ mpl.figure.prototype.toolbar_button_onmouseover = function (tooltip) {
 ///////////////// REMAINING CONTENT GENERATED BY embed_js.py /////////////////
 // prettier-ignore
 var _JSXTOOLS_RESIZE_OBSERVER=function(A){var t,i=new WeakMap,n=new WeakMap,a=new WeakMap,r=new WeakMap,o=new Set;function s(e){if(!(this instanceof s))throw new TypeError("Constructor requires 'new' operator");i.set(this,e)}function h(){throw new TypeError("Function is not a constructor")}function c(e,t,i,n){e=0 in arguments?Number(arguments[0]):0,t=1 in arguments?Number(arguments[1]):0,i=2 in arguments?Number(arguments[2]):0,n=3 in arguments?Number(arguments[3]):0,this.right=(this.x=this.left=e)+(this.width=i),this.bottom=(this.y=this.top=t)+(this.height=n),Object.freeze(this)}function d(){t=requestAnimationFrame(d);var s=new WeakMap,p=new Set;o.forEach((function(t){r.get(t).forEach((function(i){var r=t instanceof window.SVGElement,o=a.get(t),d=r?0:parseFloat(o.paddingTop),f=r?0:parseFloat(o.paddingRight),l=r?0:parseFloat(o.paddingBottom),u=r?0:parseFloat(o.paddingLeft),g=r?0:parseFloat(o.borderTopWidth),m=r?0:parseFloat(o.borderRightWidth),w=r?0:parseFloat(o.borderBottomWidth),b=u+f,F=d+l,v=(r?0:parseFloat(o.borderLeftWidth))+m,W=g+w,y=r?0:t.offsetHeight-W-t.clientHeight,E=r?0:t.offsetWidth-v-t.clientWidth,R=b+v,z=F+W,M=r?t.width:parseFloat(o.width)-R-E,O=r?t.height:parseFloat(o.height)-z-y;if(n.has(t)){var k=n.get(t);if(k[0]===M&&k[1]===O)return}n.set(t,[M,O]);var S=Object.create(h.prototype);S.target=t,S.contentRect=new c(u,d,M,O),s.has(i)||(s.set(i,[]),p.add(i)),s.get(i).push(S)}))})),p.forEach((function(e){i.get(e).call(e,s.get(e),e)}))}return s.prototype.observe=function(i){if(i instanceof window.Element){r.has(i)||(r.set(i,new Set),o.add(i),a.set(i,window.getComputedStyle(i)));var n=r.get(i);n.has(this)||n.add(this),cancelAnimationFrame(t),t=requestAnimationFrame(d)}},s.prototype.unobserve=function(i){if(i instanceof window.Element&&r.has(i)){var n=r.get(i);n.has(this)&&(n.delete(this),n.size||(r.delete(i),o.delete(i))),n.size||r.delete(i),o.size||cancelAnimationFrame(t)}},A.DOMRectReadOnly=c,A.ResizeObserver=s,A.ResizeObserverEntry=h,A}; // eslint-disable-line
-mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "fa fa-arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis", "fa fa-square-o", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o", "download"]];
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home icon-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left icon-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right icon-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "fa fa-arrows icon-move", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "fa fa-square-o icon-check-empty", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o icon-save", "download"]];
 
-mpl.extensions = ["eps", "jpeg", "pgf", "pdf", "png", "ps", "raw", "svg", "tif", "webp"];
+mpl.extensions = ["eps", "jpeg", "pdf", "png", "ps", "raw", "svg", "tif"];
 
 mpl.default_extension = "png";/* global mpl */
 
@@ -1644,19 +1649,6 @@ var comm_websocket_adapter = function (comm) {
     // object with the appropriate methods. Currently this is a non binary
     // socket, so there is still some room for performance tuning.
     var ws = {};
-
-    ws.binaryType = comm.kernel.ws.binaryType;
-    ws.readyState = comm.kernel.ws.readyState;
-    function updateReadyState(_event) {
-        if (comm.kernel.ws) {
-            ws.readyState = comm.kernel.ws.readyState;
-        } else {
-            ws.readyState = 3; // Closed state.
-        }
-    }
-    comm.kernel.ws.addEventListener('open', updateReadyState);
-    comm.kernel.ws.addEventListener('close', updateReadyState);
-    comm.kernel.ws.addEventListener('error', updateReadyState);
 
     ws.close = function () {
         comm.close();
@@ -1668,14 +1660,8 @@ var comm_websocket_adapter = function (comm) {
     // Register the callback with on_msg.
     comm.on_msg(function (msg) {
         //console.log('receiving', msg['content']['data'], msg);
-        var data = msg['content']['data'];
-        if (data['blob'] !== undefined) {
-            data = {
-                data: new Blob(msg['buffers'], { type: data['blob'] }),
-            };
-        }
         // Pass the mpl event to the overridden (by mpl) onmessage function.
-        ws.onmessage(data);
+        ws.onmessage(msg['content']['data']);
     });
     return ws;
 };
@@ -1867,6 +1853,11 @@ mpl.figure.prototype._canvas_extra_style = function (el) {
 };
 
 mpl.figure.prototype._key_event_extra = function (event, _name) {
+    var manager = IPython.notebook.keyboard_manager;
+    if (!manager) {
+        manager = IPython.keyboard_manager;
+    }
+
     // Check for shift+enter
     if (event.shiftKey && event.which === 13) {
         this.canvas_div.blur();
@@ -1912,107 +1903,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='ef00950e-f1b5-4522-934e-8397f40b928e'></div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_19199/1907106765.py:72: DeprecationWarning: Starting with ImageIO v3 the behavior of this function will switch to that of iio.v3.imread. To keep the current behavior (and make this warning disappear) use `import imageio.v2 as imageio` or call `imageio.v2.imread` directly.
-  image=imageio.imread(&#39;image{0}.png&#39;.format(cont))
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">72</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>     <span class="n">graf</span><span class="p">(</span><span class="n">pn_0</span><span class="p">,</span><span class="n">vc_0</span><span class="p">,</span><span class="n">pn_k</span><span class="p">,</span><span class="n">vc_k</span><span class="p">,</span><span class="n">pn_m</span><span class="p">,</span><span class="n">vc_m</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;image</span><span class="si">{0}</span><span class="s1">.png&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cont</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">72</span>     <span class="n">image</span><span class="o">=</span><span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;image</span><span class="si">{0}</span><span class="s1">.png&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cont</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="n">graphs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="n">tiempo</span><span class="o">=</span><span class="n">tiempo</span><span class="o">+</span><span class="n">dt</span>
-
-<span class="nn">File ~/mambaforge/envs/jbook/lib/python3.11/site-packages/imageio/__init__.py:97,</span> in <span class="ni">imread</span><span class="nt">(uri, format, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;imread(uri, format=None, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="sd"> Reads an image from the specified file. Returns a numpy array, which</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span><span class="sd">     to see what arguments are available for a particular format.</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">89</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>     <span class="s2">&quot;Starting with ImageIO v3 the behavior of this function will switch to that of&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>     <span class="s2">&quot; iio.v3.imread. To keep the current behavior (and make this warning disappear)&quot;</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span> <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">97</span> <span class="k">return</span> <span class="n">imread_v2</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/mambaforge/envs/jbook/lib/python3.11/site-packages/imageio/v2.py:227,</span> in <span class="ni">imread</span><span class="nt">(uri, format, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span> <span class="n">imopen_args</span><span class="p">[</span><span class="s2">&quot;legacy_mode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span> <span class="k">with</span> <span class="n">imopen</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="s2">&quot;ri&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">imopen_args</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">227</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File ~/mambaforge/envs/jbook/lib/python3.11/site-packages/imageio/core/legacy_plugin_wrapper.py:147,</span> in <span class="ni">LegacyPlugin.read</span><span class="nt">(self, index, **kwargs)</span>
-<span class="nn">    144     img = np.stack([im for im</span> in <span class="ni">self.iter</span><span class="nt">(**kwargs)])</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span>     <span class="k">return</span> <span class="n">img</span>
-<span class="ne">--&gt; </span><span class="mi">147</span> <span class="n">reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">legacy_get_reader</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span> <span class="k">return</span> <span class="n">reader</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
-
-<span class="nn">File ~/mambaforge/envs/jbook/lib/python3.11/site-packages/imageio/core/legacy_plugin_wrapper.py:116,</span> in <span class="ni">LegacyPlugin.legacy_get_reader</span><span class="nt">(self, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="o">.</span><span class="n">get_reader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_request</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="bp">self</span><span class="o">.</span><span class="n">_request</span><span class="o">.</span><span class="n">get_file</span><span class="p">()</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">116</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="o">.</span><span class="n">get_reader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_request</span><span class="p">)</span>
-
-<span class="nn">File ~/mambaforge/envs/jbook/lib/python3.11/site-packages/imageio/core/format.py:221,</span> in <span class="ni">Format.get_reader</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">if</span> <span class="n">select_mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">modes</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span>         <span class="sa">f</span><span class="s2">&quot;Format </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> cannot read in </span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">image_mode</span><span class="si">}</span><span class="s2"> mode&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">221</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Reader</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span>
-
-<span class="nn">File ~/mambaforge/envs/jbook/lib/python3.11/site-packages/imageio/core/format.py:312,</span> in <span class="ni">Format._BaseReaderWriter.__init__</span><span class="nt">(self, format, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span> <span class="bp">self</span><span class="o">.</span><span class="n">_request</span> <span class="o">=</span> <span class="n">request</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="c1"># Open the reader/writer</span>
-<span class="ne">--&gt; </span><span class="mi">312</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
-
-<span class="nn">File ~/mambaforge/envs/jbook/lib/python3.11/site-packages/imageio/plugins/pillow_legacy.py:391,</span> in <span class="ni">PNGFormat.Reader._open</span><span class="nt">(self, pilmode, as_gray, ignoregamma)</span>
-<span class="g g-Whitespace">    </span><span class="mi">390</span> <span class="k">def</span> <span class="nf">_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pilmode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">as_gray</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ignoregamma</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">391</span>     <span class="k">return</span> <span class="n">PillowFormat</span><span class="o">.</span><span class="n">Reader</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pilmode</span><span class="o">=</span><span class="n">pilmode</span><span class="p">,</span> <span class="n">as_gray</span><span class="o">=</span><span class="n">as_gray</span><span class="p">)</span>
-
-<span class="nn">File ~/mambaforge/envs/jbook/lib/python3.11/site-packages/imageio/plugins/pillow_legacy.py:297,</span> in <span class="ni">PillowFormat.Reader._open</span><span class="nt">(self, pilmode, as_gray)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_im</span><span class="o">.</span><span class="n">palette</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_im</span><span class="o">.</span><span class="n">palette</span><span class="o">.</span><span class="n">dirty</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_im</span><span class="o">.</span><span class="n">palette</span><span class="o">.</span><span class="n">rawmode_saved</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_im</span><span class="o">.</span><span class="n">palette</span><span class="o">.</span><span class="n">rawmode</span>
-<span class="ne">--&gt; </span><span class="mi">297</span> <span class="n">pil_try_read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_im</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span> <span class="c1"># Store args</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span>     <span class="n">as_gray</span><span class="o">=</span><span class="n">as_gray</span><span class="p">,</span> <span class="n">is_gray</span><span class="o">=</span><span class="n">_palette_is_grayscale</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_im</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span> <span class="p">)</span>
-
-<span class="nn">File ~/mambaforge/envs/jbook/lib/python3.11/site-packages/imageio/plugins/pillow_legacy.py:648,</span> in <span class="ni">pil_try_read</span><span class="nt">(im)</span>
-<span class="g g-Whitespace">    </span><span class="mi">645</span> <span class="k">def</span> <span class="nf">pil_try_read</span><span class="p">(</span><span class="n">im</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">646</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span>         <span class="c1"># this will raise an IOError if the file is not readable</span>
-<span class="ne">--&gt; </span><span class="mi">648</span>         <span class="n">im</span><span class="o">.</span><span class="n">getdata</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">649</span>     <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span>         <span class="n">site</span> <span class="o">=</span> <span class="s2">&quot;http://pillow.readthedocs.io/en/latest/installation.html&quot;</span>
-
-<span class="nn">File ~/mambaforge/envs/jbook/lib/python3.11/site-packages/PIL/Image.py:1381,</span> in <span class="ni">Image.getdata</span><span class="nt">(self, band)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1363</span> <span class="k">def</span> <span class="nf">getdata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1364</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1365</span><span class="sd">     Returns the contents of this image as a sequence object</span>
-<span class="g g-Whitespace">   </span><span class="mi">1366</span><span class="sd">     containing pixel values.  The sequence object is flattened, so</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1378</span><span class="sd">     :returns: A sequence-like object.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1379</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1381</span>     <span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1382</span>     <span class="k">if</span> <span class="n">band</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1383</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">im</span><span class="o">.</span><span class="n">getband</span><span class="p">(</span><span class="n">band</span><span class="p">)</span>
-
-<span class="nn">File ~/mambaforge/envs/jbook/lib/python3.11/site-packages/PIL/ImageFile.py:269,</span> in <span class="ni">ImageFile.load</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span>         <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">s</span>
-<span class="ne">--&gt; </span><span class="mi">269</span> <span class="n">n</span><span class="p">,</span> <span class="n">err_code</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span>     <span class="k">break</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
+</script><div class="output text_html"><div id='375cecee-bc0b-4492-947f-5a11b74bfeca'></div></div></div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -2045,18 +1936,18 @@ if (IPython.notebook.kernel !== null) {
 <p>Note that in our simple model we are allowing motion of the masses only in one dimension (i.e., we are allowing longitudinal motion of the chain, not transverse motion)</p>
 <p>For any coupled system system, a normal mode is defined to be a collective oscillation where all particles move at the same frequency. We now attempt a solution
 to Newton’s equations by using an ansatz that describes the normal modes as waves</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1aaff7d8-3d7b-4021-bf25-24eea0124470">
-<span class="eqno">(1)<a class="headerlink" href="#equation-1aaff7d8-3d7b-4021-bf25-24eea0124470" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-521fe522-374e-4838-8ed8-13d95300df6a">
+<span class="eqno">(1)<a class="headerlink" href="#equation-521fe522-374e-4838-8ed8-13d95300df6a" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_n^{\rm eq}=na\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c8ec575-8425-4e09-849f-99fe3f58e69c">
-<span class="eqno">(2)<a class="headerlink" href="#equation-3c8ec575-8425-4e09-849f-99fe3f58e69c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4f4960e4-d13f-4ac4-b7c3-fee64ade873d">
+<span class="eqno">(2)<a class="headerlink" href="#equation-4f4960e4-d13f-4ac4-b7c3-fee64ade873d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \delta x_n = A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>Solving the equation we obtain:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-acdf3c67-71ef-40f2-9baf-bd0ed7658d62">
-<span class="eqno">(3)<a class="headerlink" href="#equation-acdf3c67-71ef-40f2-9baf-bd0ed7658d62" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2aef8621-07eb-47aa-8d54-7e29dbdec3e6">
+<span class="eqno">(3)<a class="headerlink" href="#equation-2aef8621-07eb-47aa-8d54-7e29dbdec3e6" title="Permalink to this equation">#</a></span>\[\begin{align}
 \omega(k) = \sqrt{\frac{4\kappa}{m}} \bigg| \sin\bigg( \frac{ka}{2} \bigg) \bigg|
 \end{align}\]</div>
 <p>As we have seen, this exact solutions can help us to simulate the movement of atoms, in this case we will see how atoms in a periodic lattice move in a defined normal mode.</p>
@@ -3994,7 +3885,8 @@ Q= \frac{\omega _0}{\gamma}
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
@@ -4010,8 +3902,7 @@ Q= \frac{\omega _0}{\gamma}
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="nd">@interact</span><span class="p">(</span>  <span class="n">μ</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">γ</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">w_0</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@interact</span><span class="p">(</span>  <span class="n">μ</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">γ</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">w_0</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">QualityF</span><span class="p">(</span> <span class="n">μ</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">γ</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">w_0</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">F_0</span><span class="o">=</span><span class="mi">20</span>
@@ -4034,7 +3925,7 @@ Q= \frac{\omega _0}{\gamma}
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "4a8332f887a74abb8f2ff18d91306e1b", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "41e50b483870407b85f54cb23787e866", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="hydrogen-catalysis">
@@ -4474,6 +4365,9 @@ Can you guess what would happen with the vibrations is H_2 molecule?</p>
   }
 })(window);</script></div>
 </div>
+<video width="400"  controls>
+  <source src="Michaelson_interfermeter.mp4" type="video/mp4">
+</video>
 </section>
 
     <script type="text/x-thebe-config">
@@ -4502,7 +4396,10 @@ Can you guess what would happen with the vibrations is H_2 molecule?</p>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="inicio.html"
@@ -4522,7 +4419,10 @@ Can you guess what would happen with the vibrations is H_2 molecule?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -4559,7 +4459,7 @@ Can you guess what would happen with the vibrations is H_2 molecule?</p>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -4589,7 +4489,7 @@ By Dr. Mounir Mensi, Dr. Kevin Jablonka and  Antonio Doñez
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -4598,8 +4498,8 @@ By Dr. Mounir Mensi, Dr. Kevin Jablonka and  Antonio Doñez
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
