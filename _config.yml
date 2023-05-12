@@ -43,6 +43,7 @@ sphinx:
 
 execute:
   execute_notebooks: force
+  allow_errors: false
 
 
 parse:
