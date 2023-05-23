@@ -159,6 +159,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Basic_Notebook.html">Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Aritmetics.html">Python:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_ControlStructures.html">Control Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page1.html">Vibrational spectroscopy</a></li>
 
 
@@ -552,28 +556,6 @@ E = h \omega_i (n_i +\frac{1}{2})
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">25</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">Mdd</span>      <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">Δx</span><span class="o">*</span><span class="n">Δx</span><span class="p">)</span><span class="o">*</span><span class="p">(</span> <span class="n">diag</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">diag</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">diag</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">H</span>        <span class="o">=</span> <span class="o">-</span><span class="n">Eλ</span><span class="o">*</span><span class="n">Mdd</span> <span class="o">+</span> <span class="n">diag</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">25</span> <span class="n">E</span><span class="p">,</span><span class="n">ψT</span>     <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">ψ</span>        <span class="o">=</span> <span class="n">transpose</span><span class="p">(</span><span class="n">ψT</span><span class="p">)</span>
-
-<span class="nn">File &lt;__array_function__ internals&gt;:200,</span> in <span class="ni">eigh</span><span class="nt">(*args, **kwargs)</span>
-
-<span class="nn">File ~/psi4conda/envs/jbook/lib/python3.11/site-packages/numpy/linalg/linalg.py:1451,</span> in <span class="ni">eigh</span><span class="nt">(a, UPLO)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1448</span>     <span class="n">gufunc</span> <span class="o">=</span> <span class="n">_umath_linalg</span><span class="o">.</span><span class="n">eigh_up</span>
-<span class="g g-Whitespace">   </span><span class="mi">1450</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;dD&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;dd&#39;</span>
-<span class="ne">-&gt; </span><span class="mi">1451</span> <span class="n">w</span><span class="p">,</span> <span class="n">vt</span> <span class="o">=</span> <span class="n">gufunc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span> <span class="n">extobj</span><span class="o">=</span><span class="n">extobj</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1452</span> <span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">_realType</span><span class="p">(</span><span class="n">result_t</span><span class="p">),</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1453</span> <span class="n">vt</span> <span class="o">=</span> <span class="n">vt</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
