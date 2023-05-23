@@ -8,8 +8,12 @@ This notebook is aimed to illustrate the basic concepts of infrared espectra (IR
 
 In the following frames you will find useful information to run the notebooks in the official python repository of the EPFL: noto
 
-![Content](Frames_/Diapositiva2.png)
-![Content](Frames_/Diapositiva3.png)
-![Content](Frames_/Diapositiva4.png)
-![Content](Frames_/Diapositiva5.png)
+![Content](image_2.PNG)
+
+
+![Content](image_3.PNG)
+
+![Content](image_4.PNG)
+
+![Content](image_5.PNG)
 
