@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome &#8212; Interactive IR and Raman</title>
+    <title>Variables &#8212; Interactive IR and Raman</title>
   
   
   
@@ -62,10 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'inicio';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Basic_Variables';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Jupyter Notebook" href="Basic_Notebook.html" />
+    <link rel="next" title="Control Structures" href="Basic_ControlStructures.html" />
+    <link rel="prev" title="Python:" href="Basic_Aritmetics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -131,7 +132,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="inicio.html">
   
   
   
@@ -150,16 +151,16 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="inicio.html">
                     Welcome
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Basic_Notebook.html">Jupyter Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Basic_Aritmetics.html">Python:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Basic_Variables.html">Variables</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Basic_ControlStructures.html">Control Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page1.html">Vibrational spectroscopy</a></li>
 
@@ -224,6 +225,91 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/AntonioCd96/IR-and-Raman.git/master?urlpath=tree/Basic_Variables.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/AntonioCd96/IR-and-Raman.git&urlpath=tree/IR-and-Raman.git/Basic_Variables.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/AntonioCd96/IR-and-Raman.git/blob/master/Basic_Variables.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -249,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AntonioCd96/IR-and-Raman.git/issues/new?title=Issue%20on%20page%20%2Finicio.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AntonioCd96/IR-and-Raman.git/issues/new?title=Issue%20on%20page%20%2FBasic_Variables.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -279,7 +365,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/inicio.md" target="_blank"
+      <li><a href="_sources/Basic_Variables.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -289,7 +375,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -361,7 +447,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome</h1>
+    <h1>Variables</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -371,10 +457,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#get-started">Get Started …</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content">Content</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -385,20 +469,145 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this heading">#</a></h1>
-<p>This notebook is aimed to illustrate the basic concepts of infrared espectra (IR) and Raman spectra</p>
-<p><img alt="Content" src="_images/main_page.png" /></p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="get-started">
-<h1>Get Started …<a class="headerlink" href="#get-started" title="Permalink to this heading">#</a></h1>
-<p>In the following frames you will find useful information to run the notebooks in the official python repository of the EPFL: noto</p>
-<p><img alt="Content" src="_images/image_2.PNG" /></p>
-<p><img alt="Content" src="_images/image_3.PNG" /></p>
-<p><img alt="Content" src="_images/image_4.PNG" /></p>
-<p><img alt="Content" src="_images/image_5.PNG" /></p>
-<div class="toctree-wrapper compound">
+  <hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h1>
+<section id="content">
+<h2>Content<a class="headerlink" href="#content" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>*Variables: int, float, complex *</p></li>
+</ul>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># int (integer)</span>
+</pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mf">17.5</span> <span class="c1"># float</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">3</span><span class="n">J</span> <span class="c1"># complex</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>function</strong> <code class="docutils literal notranslate"><span class="pre">print(</span> <span class="pre">)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3333333333333333
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.333
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">5.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Greek variables</span>
+<span class="n">π</span> <span class="o">=</span> <span class="mf">3.141592</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">π</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong> Compute the volume of a cube of ℓ=3.141592 and save it in a variable called v. Print ν with two decimal numbers</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -432,12 +641,21 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Basic_Aritmetics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python:</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="Basic_Notebook.html"
+       href="Basic_ControlStructures.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Jupyter Notebook</p>
+        <p class="prev-next-title">Control Structures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -459,10 +677,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#get-started">Get Started …</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content">Content</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
