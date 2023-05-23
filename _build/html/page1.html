@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'page1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Calculate your own IR and Raman Spectra" href="page2.html" />
+    <link rel="next" title="Vibrational spectroscopy - Interactive" href="page1_5.html" />
     <link rel="prev" title="Welcome" href="inicio.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -167,11 +167,16 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="page1_5.html">Vibrational spectroscopy - Interactive</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="page2.html">Calculate your own IR and Raman Spectra</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="page3.html">Harmonic Oscillator - Quantum Mechanics Approach</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="page3_5.html">Harmonic Oscillator - Quantum Mechanics Approach - Interactive</a></li>
 </ul>
 
     </div>
@@ -1936,18 +1941,18 @@ if (IPython.notebook.kernel !== null) {
 <p>Note that in our simple model we are allowing motion of the masses only in one dimension (i.e., we are allowing longitudinal motion of the chain, not transverse motion)</p>
 <p>For any coupled system system, a normal mode is defined to be a collective oscillation where all particles move at the same frequency. We now attempt a solution
 to Newton’s equations by using an ansatz that describes the normal modes as waves</p>
-<div class="amsmath math notranslate nohighlight" id="equation-19e00210-3f9b-418d-8169-0fb4af1050ab">
-<span class="eqno">(1)<a class="headerlink" href="#equation-19e00210-3f9b-418d-8169-0fb4af1050ab" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5a6a1d06-2b3f-4e34-aae6-3af0e78e409d">
+<span class="eqno">(1)<a class="headerlink" href="#equation-5a6a1d06-2b3f-4e34-aae6-3af0e78e409d" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_n^{\rm eq}=na\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d06a5cdc-e348-4e42-8391-796142d58580">
-<span class="eqno">(2)<a class="headerlink" href="#equation-d06a5cdc-e348-4e42-8391-796142d58580" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-51890e18-c0e1-45a8-80c0-ab45cd2ed195">
+<span class="eqno">(2)<a class="headerlink" href="#equation-51890e18-c0e1-45a8-80c0-ab45cd2ed195" title="Permalink to this equation">#</a></span>\[\begin{align}
 \delta x_n = A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>Solving the equation we obtain:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-95ef58fd-1067-4b0a-bc4b-95e9f99268d4">
-<span class="eqno">(3)<a class="headerlink" href="#equation-95ef58fd-1067-4b0a-bc4b-95e9f99268d4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e4503968-eacb-4398-b80d-15eb2bf49848">
+<span class="eqno">(3)<a class="headerlink" href="#equation-e4503968-eacb-4398-b80d-15eb2bf49848" title="Permalink to this equation">#</a></span>\[\begin{align}
 \omega(k) = \sqrt{\frac{4\kappa}{m}} \bigg| \sin\bigg( \frac{ka}{2} \bigg) \bigg|
 \end{align}\]</div>
 <p>As we have seen, this exact solutions can help us to simulate the movement of atoms, in this case we will see how atoms in a periodic lattice move in a defined normal mode.</p>
@@ -3940,434 +3945,8 @@ Q= \frac{\omega _0}{\gamma}
 <div class="admonition">
 <p class="admonition-title">Real life problem</p>
 <p>Based on this problem, we can see that we have new bonds, which means a change in the chemical nature of the system
-Can you guess what would happen with the vibrations is H_2 molecule?</p>
+Can you guess what would happen with the vibrations is <span class="math notranslate nohighlight">\(H_2\)</span> molecule?</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-
-
-<span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtons</span><span class="p">(</span>
-    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span> <span class="s1">&#39;pineapple&#39;</span><span class="p">,</span> <span class="s1">&#39;anchovies&#39;</span><span class="p">],</span>
-<span class="c1">#    value=&#39;pineapple&#39;, # Defaults to &#39;pineapple&#39;</span>
-<span class="c1">#    layout={&#39;width&#39;: &#39;max-content&#39;}, # If the items&#39; names are long</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Pizza topping:&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtons</span><span class="p">(</span>
-    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span> <span class="s1">&#39;pineapple&#39;</span><span class="p">,</span> <span class="s1">&#39;anchovies&#39;</span><span class="p">],</span>
-<span class="c1">#    value=&#39;pineapple&#39;, # Defaults to &#39;pineapple&#39;</span>
-<span class="c1">#    layout={&#39;width&#39;: &#39;max-content&#39;}, # If the items&#39; names are long</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Pizza topping:&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "fa673ff8ba1f47b181aea15066aa3061", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<p>Here is something
-<code class="docutils literal notranslate"><span class="pre">{eval}`abc`</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/x-thebe-config&quot;</span><span class="o">&gt;</span>
-  <span class="p">{</span>
-      <span class="n">requestKernel</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-      <span class="n">mountActivateWidget</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-      <span class="n">mountStatusWidget</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-      <span class="n">binderOptions</span><span class="p">:</span> <span class="p">{</span>
-      <span class="n">repo</span><span class="p">:</span> <span class="s2">&quot;binder-examples/requirements&quot;</span><span class="p">,</span>
-      <span class="p">},</span>
-  <span class="p">}</span>
-<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-59-77edd8f3b255&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/x-thebe-config&quot;</span><span class="o">&gt;</span>
-    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
-<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">show</span>
-<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">CheckboxGroup</span><span class="p">,</span> <span class="n">CustomJS</span>
-<span class="n">output_notebook</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-    <div class="bk-root">
-        <a href="https://bokeh.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="1005">Loading BokehJS ...</span>
-    </div></div><script type="application/javascript">
-(function(root) {
-  function now() {
-    return new Date();
-  }
-
-  var force = true;
-
-  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
-    root._bokeh_onload_callbacks = [];
-    root._bokeh_is_loading = undefined;
-  }
-
-  var JS_MIME_TYPE = 'application/javascript';
-  var HTML_MIME_TYPE = 'text/html';
-  var EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
-  var CLASS_NAME = 'output_bokeh rendered_html';
-
-  /**
-   * Render data to the DOM node
-   */
-  function render(props, node) {
-    var script = document.createElement("script");
-    node.appendChild(script);
-  }
-
-  /**
-   * Handle when an output is cleared or removed
-   */
-  function handleClearOutput(event, handle) {
-    var cell = handle.cell;
-
-    var id = cell.output_area._bokeh_element_id;
-    var server_id = cell.output_area._bokeh_server_id;
-    // Clean up Bokeh references
-    if (id != null && id in Bokeh.index) {
-      Bokeh.index[id].model.document.clear();
-      delete Bokeh.index[id];
-    }
-
-    if (server_id !== undefined) {
-      // Clean up Bokeh references
-      var cmd = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
-      cell.notebook.kernel.execute(cmd, {
-        iopub: {
-          output: function(msg) {
-            var id = msg.content.text.trim();
-            if (id in Bokeh.index) {
-              Bokeh.index[id].model.document.clear();
-              delete Bokeh.index[id];
-            }
-          }
-        }
-      });
-      // Destroy server and session
-      var cmd = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
-      cell.notebook.kernel.execute(cmd);
-    }
-  }
-
-  /**
-   * Handle when a new output is added
-   */
-  function handleAddOutput(event, handle) {
-    var output_area = handle.output_area;
-    var output = handle.output;
-
-    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
-    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
-      return
-    }
-
-    var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
-
-    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
-      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
-      // store reference to embed id on output_area
-      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
-    }
-    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
-      var bk_div = document.createElement("div");
-      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
-      var script_attrs = bk_div.children[0].attributes;
-      for (var i = 0; i < script_attrs.length; i++) {
-        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
-        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
-      }
-      // store reference to server id on output_area
-      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
-    }
-  }
-
-  function register_renderer(events, OutputArea) {
-
-    function append_mime(data, metadata, element) {
-      // create a DOM node to render to
-      var toinsert = this.create_output_subarea(
-        metadata,
-        CLASS_NAME,
-        EXEC_MIME_TYPE
-      );
-      this.keyboard_manager.register_events(toinsert);
-      // Render to node
-      var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
-      render(props, toinsert[toinsert.length - 1]);
-      element.append(toinsert);
-      return toinsert
-    }
-
-    /* Handle when an output is cleared or removed */
-    events.on('clear_output.CodeCell', handleClearOutput);
-    events.on('delete.Cell', handleClearOutput);
-
-    /* Handle when a new output is added */
-    events.on('output_added.OutputArea', handleAddOutput);
-
-    /**
-     * Register the mime type and append_mime function with output_area
-     */
-    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
-      /* Is output safe? */
-      safe: true,
-      /* Index of renderer in `output_area.display_order` */
-      index: 0
-    });
-  }
-
-  // register the mime type if in Jupyter Notebook environment and previously unregistered
-  if (root.Jupyter !== undefined) {
-    var events = require('base/js/events');
-    var OutputArea = require('notebook/js/outputarea').OutputArea;
-
-    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
-      register_renderer(events, OutputArea);
-    }
-  }
-
-  
-  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
-    root._bokeh_timeout = Date.now() + 5000;
-    root._bokeh_failed_load = false;
-  }
-
-  var NB_LOAD_WARNING = {'data': {'text/html':
-     "<div style='background-color: #fdd'>\n"+
-     "<p>\n"+
-     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
-     "may be due to a slow or bad network connection. Possible fixes:\n"+
-     "</p>\n"+
-     "<ul>\n"+
-     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
-     "<li>use INLINE resources instead, as so:</li>\n"+
-     "</ul>\n"+
-     "<code>\n"+
-     "from bokeh.resources import INLINE\n"+
-     "output_notebook(resources=INLINE)\n"+
-     "</code>\n"+
-     "</div>"}};
-
-  function display_loaded() {
-    var el = document.getElementById("1005");
-    if (el != null) {
-      el.textContent = "BokehJS is loading...";
-    }
-    if (root.Bokeh !== undefined) {
-      if (el != null) {
-        el.textContent = "BokehJS " + root.Bokeh.version + " successfully loaded.";
-      }
-    } else if (Date.now() < root._bokeh_timeout) {
-      setTimeout(display_loaded, 100)
-    }
-  }
-
-
-  function run_callbacks() {
-    try {
-      root._bokeh_onload_callbacks.forEach(function(callback) {
-        if (callback != null)
-          callback();
-      });
-    } finally {
-      delete root._bokeh_onload_callbacks
-    }
-    console.debug("Bokeh: all callbacks have finished");
-  }
-
-  function load_libs(css_urls, js_urls, callback) {
-    if (css_urls == null) css_urls = [];
-    if (js_urls == null) js_urls = [];
-
-    root._bokeh_onload_callbacks.push(callback);
-    if (root._bokeh_is_loading > 0) {
-      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
-      return null;
-    }
-    if (js_urls == null || js_urls.length === 0) {
-      run_callbacks();
-      return null;
-    }
-    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
-    root._bokeh_is_loading = css_urls.length + js_urls.length;
-
-    function on_load() {
-      root._bokeh_is_loading--;
-      if (root._bokeh_is_loading === 0) {
-        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
-        run_callbacks()
-      }
-    }
-
-    function on_error(url) {
-      console.error("failed to load " + url);
-    }
-
-    for (let i = 0; i < css_urls.length; i++) {
-      const url = css_urls[i];
-      const element = document.createElement("link");
-      element.onload = on_load;
-      element.onerror = on_error.bind(null, url);
-      element.rel = "stylesheet";
-      element.type = "text/css";
-      element.href = url;
-      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
-      document.body.appendChild(element);
-    }
-
-    const hashes = {"https://cdn.bokeh.org/bokeh/release/bokeh-2.3.2.min.js": "XypntL49z55iwGVUW4qsEu83zKL3XEcz0MjuGOQ9SlaaQ68X/g+k1FcioZi7oQAc", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.2.min.js": "bEsM86IHGDTLCS0Zod8a8WM6Y4+lafAL/eSiyQcuPzinmWNgNO2/olUF0Z2Dkn5i", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.2.min.js": "TX0gSQTdXTTeScqxj6PVQxTiRW8DOoGVwinyi1D3kxv7wuxQ02XkOxv0xwiypcAH"};
-
-    for (let i = 0; i < js_urls.length; i++) {
-      const url = js_urls[i];
-      const element = document.createElement('script');
-      element.onload = on_load;
-      element.onerror = on_error.bind(null, url);
-      element.async = false;
-      element.src = url;
-      if (url in hashes) {
-        element.crossOrigin = "anonymous";
-        element.integrity = "sha384-" + hashes[url];
-      }
-      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
-      document.head.appendChild(element);
-    }
-  };
-
-  function inject_raw_css(css) {
-    const element = document.createElement("style");
-    element.appendChild(document.createTextNode(css));
-    document.body.appendChild(element);
-  }
-
-  
-  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-2.3.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.2.min.js"];
-  var css_urls = [];
-  
-
-  var inline_js = [
-    function(Bokeh) {
-      Bokeh.set_log_level("info");
-    },
-    function(Bokeh) {
-    
-    
-    }
-  ];
-
-  function run_inline_js() {
-    
-    if (root.Bokeh !== undefined || force === true) {
-      
-    for (var i = 0; i < inline_js.length; i++) {
-      inline_js[i].call(root, root.Bokeh);
-    }
-    if (force === true) {
-        display_loaded();
-      }} else if (Date.now() < root._bokeh_timeout) {
-      setTimeout(run_inline_js, 100);
-    } else if (!root._bokeh_failed_load) {
-      console.log("Bokeh: BokehJS failed to load within specified timeout.");
-      root._bokeh_failed_load = true;
-    } else if (force !== true) {
-      var cell = $(document.getElementById("1005")).parents('.cell').data().cell;
-      cell.output_area.append_execute_result(NB_LOAD_WARNING)
-    }
-
-  }
-
-  if (root._bokeh_is_loading === 0) {
-    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
-    run_inline_js();
-  } else {
-    load_libs(css_urls, js_urls, function() {
-      console.debug("Bokeh: BokehJS plotting callback run at", now());
-      run_inline_js();
-    });
-  }
-}(window));</script></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LABELS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Option 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Option 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Option 3&quot;</span><span class="p">]</span>
-
-<span class="n">checkbox_group</span> <span class="o">=</span> <span class="n">CheckboxGroup</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="n">LABELS</span><span class="p">,</span> <span class="n">active</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">checkbox_group</span><span class="o">.</span><span class="n">js_on_click</span><span class="p">(</span><span class="n">CustomJS</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    console.log(&#39;checkbox_group: active=&#39; + this.active, this.toString())</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">))</span>
-
-<span class="n">show</span><span class="p">(</span><span class="n">checkbox_group</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-
-
-
-
-
-  <div class="bk-root" id="a83bdf50-cc2a-45a1-b5c1-38eddfdd8ee9" data-root-id="1006"></div>
-</div><script type="application/javascript">(function(root) {
-  function embed_document(root) {
-    
-  var docs_json = {"8a7d72a1-867b-45a1-954c-8221a3e82861":{"defs":[],"roots":{"references":[{"attributes":{"active":[0,1],"js_property_callbacks":{"change:active":[{"id":"1007"}]},"labels":["Option 1","Option 2","Option 3"]},"id":"1006","type":"CheckboxGroup"},{"attributes":{"code":"\n    console.log('checkbox_group: active=' + this.active, this.toString())\n"},"id":"1007","type":"CustomJS"}],"root_ids":["1006"]},"title":"Bokeh Application","version":"2.3.2"}};
-  var render_items = [{"docid":"8a7d72a1-867b-45a1-954c-8221a3e82861","root_ids":["1006"],"roots":{"1006":"a83bdf50-cc2a-45a1-b5c1-38eddfdd8ee9"}}];
-  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
-
-  }
-  if (root.Bokeh !== undefined) {
-    embed_document(root);
-  } else {
-    var attempts = 0;
-    var timer = setInterval(function(root) {
-      if (root.Bokeh !== undefined) {
-        clearInterval(timer);
-        embed_document(root);
-      } else {
-        attempts++;
-        if (attempts > 100) {
-          clearInterval(timer);
-          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
-        }
-      }
-    }, 10, root)
-  }
-})(window);</script></div>
-</div>
-<video width="400"  controls>
-  <source src="Michaelson_interfermeter.mp4" type="video/mp4">
-</video>
 </section>
 
     <script type="text/x-thebe-config">
@@ -4411,11 +3990,11 @@ Can you guess what would happen with the vibrations is H_2 molecule?</p>
       </div>
     </a>
     <a class="right-next"
-       href="page2.html"
+       href="page1_5.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Calculate your own IR and Raman Spectra</p>
+        <p class="prev-next-title">Vibrational spectroscopy - Interactive</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
