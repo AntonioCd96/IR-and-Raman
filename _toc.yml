@@ -3,10 +3,6 @@ format: jb-book
 root:   inicio
 chapters:
 - file: Basic_Notebook
-- file: Basic_Aritmetics
-- file: Basic_Variables
-- file: Basic_List
-- file: Basic_ControlStructures
 - file: page1
 - file: page1_5
 - file: page2
