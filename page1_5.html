@@ -161,6 +161,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Basic_Notebook.html">Jupyter Notebook</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="Basic_Aritmetics.html">Python:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Basic_Variables.html">Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Basic_ControlStructures.html">Control Structures</a></li>
@@ -609,11 +613,11 @@ A=\frac{F_0/\mu}{\sqrt{(\omega_0^2-\omega_f^2)^2+4\omega_f^2γ^2}}
     
     <span class="n">x1_m</span><span class="o">=</span><span class="n">p_0</span><span class="p">[:,</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">y1_m</span><span class="o">=</span><span class="n">p_0</span><span class="p">[:,</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1_m</span><span class="p">,</span><span class="n">y1_m</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="n">m1</span><span class="o">*</span><span class="mi">50</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1_m</span><span class="p">,</span><span class="n">y1_m</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="n">m1</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">)</span>
     
     <span class="n">x2_m</span><span class="o">=</span><span class="n">p_0</span><span class="p">[:,</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">y2_m</span><span class="o">=</span><span class="n">p_0</span><span class="p">[:,</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> 
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x2_m</span><span class="p">,</span><span class="n">y2_m</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="n">m2</span><span class="o">*</span><span class="mi">50</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x2_m</span><span class="p">,</span><span class="n">y2_m</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="n">m2</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">)</span>
     
     
     <span class="n">w_0</span><span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">m</span><span class="p">)</span>
@@ -632,7 +636,7 @@ A=\frac{F_0/\mu}{\sqrt{(\omega_0^2-\omega_f^2)^2+4\omega_f^2γ^2}}
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "1e026990d6684b8191254f89bf3e3cc3", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "1d7559fe997b48a99a7cc45e2e9ba850", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">What happens with the frequency of oscillation when you increase k? How can you relate this with the bond order in a molecule?</p>
@@ -655,18 +659,18 @@ A=\frac{F_0/\mu}{\sqrt{(\omega_0^2-\omega_f^2)^2+4\omega_f^2γ^2}}
 <p>Note that in our simple model we are allowing motion of the masses only in one dimension (i.e., we are allowing longitudinal motion of the chain, not transverse motion)</p>
 <p>For any coupled system system, a normal mode is defined to be a collective oscillation where all particles move at the same frequency. We now attempt a solution
 to Newton’s equations by using an ansatz that describes the normal modes as waves</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d952be7f-f005-49d3-b7d3-868072a24ce6">
-<span class="eqno">(4)<a class="headerlink" href="#equation-d952be7f-f005-49d3-b7d3-868072a24ce6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-31ae4eb5-e3b2-4e0c-9e8b-bdcb12871133">
+<span class="eqno">(4)<a class="headerlink" href="#equation-31ae4eb5-e3b2-4e0c-9e8b-bdcb12871133" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_n^{\rm eq}=na\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ea0b5ec-aeda-4e37-abaf-5e79a7a8ef3f">
-<span class="eqno">(5)<a class="headerlink" href="#equation-5ea0b5ec-aeda-4e37-abaf-5e79a7a8ef3f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-da675f0b-2852-4f36-9b76-001a6e140310">
+<span class="eqno">(5)<a class="headerlink" href="#equation-da675f0b-2852-4f36-9b76-001a6e140310" title="Permalink to this equation">#</a></span>\[\begin{align}
 \delta x_n = A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>Solving the equation we obtain:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c8c0019f-9b8d-48d0-8af8-14ddb3c12e8a">
-<span class="eqno">(6)<a class="headerlink" href="#equation-c8c0019f-9b8d-48d0-8af8-14ddb3c12e8a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7746d859-e547-4d75-9a93-3912fe4ae7b4">
+<span class="eqno">(6)<a class="headerlink" href="#equation-7746d859-e547-4d75-9a93-3912fe4ae7b4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \omega(k) = \sqrt{\frac{4\kappa}{m}} \bigg| \sin\bigg( \frac{ka}{2} \bigg) \bigg|
 \end{align}\]</div>
 <p>As we have seen, this exact solutions can help us to simulate the movement of atoms, in this case we will see how atoms in a periodic lattice move in a defined normal mode.</p>
@@ -733,12 +737,15 @@ Q= \frac{\omega _0}{\gamma}
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Frequency [ω]&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_f</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
     
+    <span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;μ is the reduced mass&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;γ is the dissipation factor&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;w_0 is the natural frequency of oscillation&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "41e50b483870407b85f54cb23787e866", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "859c3135535d4c1b9e2a2690b0a2c4ca", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 
