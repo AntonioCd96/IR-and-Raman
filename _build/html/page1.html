@@ -161,6 +161,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Basic_Notebook.html">Jupyter Notebook</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="Basic_Aritmetics.html">Python:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Basic_Variables.html">Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Basic_ControlStructures.html">Control Structures</a></li>
@@ -1945,18 +1949,18 @@ if (IPython.notebook.kernel !== null) {
 <p>Note that in our simple model we are allowing motion of the masses only in one dimension (i.e., we are allowing longitudinal motion of the chain, not transverse motion)</p>
 <p>For any coupled system system, a normal mode is defined to be a collective oscillation where all particles move at the same frequency. We now attempt a solution
 to Newton’s equations by using an ansatz that describes the normal modes as waves</p>
-<div class="amsmath math notranslate nohighlight" id="equation-61fab2d0-7ba0-4089-89f0-44b1b1a062f5">
-<span class="eqno">(1)<a class="headerlink" href="#equation-61fab2d0-7ba0-4089-89f0-44b1b1a062f5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-73b7bab1-293d-4801-8746-c630b7abdc12">
+<span class="eqno">(1)<a class="headerlink" href="#equation-73b7bab1-293d-4801-8746-c630b7abdc12" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_n^{\rm eq}=na\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2fb6edb5-5324-41dc-906c-1b26271d156e">
-<span class="eqno">(2)<a class="headerlink" href="#equation-2fb6edb5-5324-41dc-906c-1b26271d156e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-628245c8-a456-4c66-9a51-534f1612b2cc">
+<span class="eqno">(2)<a class="headerlink" href="#equation-628245c8-a456-4c66-9a51-534f1612b2cc" title="Permalink to this equation">#</a></span>\[\begin{align}
 \delta x_n = A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>Solving the equation we obtain:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c6c74457-8c3a-476d-ac91-fd74f38ef31a">
-<span class="eqno">(3)<a class="headerlink" href="#equation-c6c74457-8c3a-476d-ac91-fd74f38ef31a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e6629398-4e69-437e-ab22-149b152a4f06">
+<span class="eqno">(3)<a class="headerlink" href="#equation-e6629398-4e69-437e-ab22-149b152a4f06" title="Permalink to this equation">#</a></span>\[\begin{align}
 \omega(k) = \sqrt{\frac{4\kappa}{m}} \bigg| \sin\bigg( \frac{ka}{2} \bigg) \bigg|
 \end{align}\]</div>
 <p>As we have seen, this exact solutions can help us to simulate the movement of atoms, in this case we will see how atoms in a periodic lattice move in a defined normal mode.</p>
