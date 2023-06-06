@@ -176,6 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Calculate your own IR and Raman Spectra</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="page3.html">Harmonic Oscillator - Quantum Mechanics Approach</a></li>
 
 
@@ -460,6 +461,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Calculate your own IR and Raman Spectra</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-your-own-theoretical-expectra">Obtain your own theoretical expectra</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cellphone-environment">Cellphone environment</a></li>
 </ul>
 
             </nav>
@@ -474,8 +476,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="calculate-your-own-ir-and-raman-spectra">
 <h1>Calculate your own IR and Raman Spectra<a class="headerlink" href="#calculate-your-own-ir-and-raman-spectra" title="Permalink to this heading">#</a></h1>
-<p>The following code is aimed to help you to obtain theoretical spectra of IR and Raman using the web service: xTB [<a class="reference external" href="https://ir.cheminfo.org/api/v1/docs#/default/get_ir_spectrum_ir_get">https://ir.cheminfo.org/api/v1/docs#/default/get_ir_spectrum_ir_get</a>]. As you will see, it uses three different theoretical methods GFN2xTB, GFN1xTB and GFNFF.The way you can use the following code is by executing th following cells. BEfore starting make sure you have the SMILES code of the molecule you are going to simulate.</p>
+<p>The following code is aimed to help you to obtain theoretical spectra of IR and Raman using the web service: xTB [<a class="reference external" href="https://ir.cheminfo.org/api/v1/docs#/default/get_ir_spectrum_ir_get">https://ir.cheminfo.org/api/v1/docs#/default/get_ir_spectrum_ir_get</a>] [1]. As you will see, it uses three different theoretical methods GFN2xTB, GFN1xTB and GFNFF.The way you can use the following code is by executing th following cells. BEfore starting make sure you have the SMILES code of the molecule you are going to simulate.</p>
 <p>If you do not have the smiles code, you can draw your molecule in the following page to obtain it:[<a class="reference external" href="https://www.cheminfo.org/flavor/malaria/Utilities/SMILES_generator___checker/index.html">https://www.cheminfo.org/flavor/malaria/Utilities/SMILES_generator___checker/index.html</a>]</p>
+<hr class="docutils" />
+<p><sup> Source: J. Chem. Educ. 2022, 99, 2, 561–569 </sup></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">rdkit</span><span class="p">;</span>
@@ -692,6 +696,34 @@ Requirement already satisfied: Pillow in /home/cd96/psi4conda/envs/jbook/lib/pyt
 </div>
 </div>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="cellphone-environment">
+<h1>Cellphone environment<a class="headerlink" href="#cellphone-environment" title="Permalink to this heading">#</a></h1>
+<p>NOTE: The clauses after the symbol # are instructions. See the last cell to execute and get the spectra of your molecule</p>
+<p>Populate the following variables as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+
+<span class="n">smiles</span>             <span class="o">=</span> <span class="s2">&quot;CCCO&quot;</span> <span class="c1"># STRING</span>
+<span class="n">method</span>             <span class="o">=</span>   <span class="s2">&quot;GFN2xTB&quot;</span>  <span class="c1"># STRING #&quot;please introduce the method (GFN2xTB, GFN1xTB, GFNFF)</span>
+<span class="n">sigma</span>              <span class="o">=</span> <span class="mi">20</span> <span class="c1"># INTEGER  #&quot;please introduce how much you want to broad the IR theoretical bands (a number between σ=[20,100])</span>
+<span class="n">sigma_raman</span>        <span class="o">=</span>  <span class="mi">20</span> <span class="c1"># INTEGER  #&quot;please introduce how much you want to broad the Raman theoretical bands (a number between σ=[20,100])</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
+<span class="n">smiles</span>             <span class="o">=</span> <span class="s2">&quot;CCCC&quot;</span>
+<span class="n">method</span>             <span class="o">=</span> <span class="s2">&quot;GFN2xTB&quot;</span>
+<span class="n">sigma</span>              <span class="o">=</span> <span class="mi">20</span>
+<span class="n">sigma_raman</span>        <span class="o">=</span> <span class="mi">50</span>
+
+
+<span class="n">Ploter_IR_theoretical</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">sigma_raman</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;IR_Raman_TheoreticalSpectra_</span><span class="si">{0}</span><span class="s2">_</span><span class="si">{1}</span><span class="s2">.png&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">smiles</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -762,6 +794,7 @@ Requirement already satisfied: Pillow in /home/cd96/psi4conda/envs/jbook/lib/pyt
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Calculate your own IR and Raman Spectra</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-your-own-theoretical-expectra">Obtain your own theoretical expectra</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cellphone-environment">Cellphone environment</a></li>
 </ul>
 
   </nav></div>
