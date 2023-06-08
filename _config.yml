@@ -42,7 +42,7 @@ sphinx:
           "emat" : ["\\end{array}\\right]"]
 
 execute:
-  execute_notebooks: force
+  execute_notebooks: cache
   allow_errors: false
 
 
