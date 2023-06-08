@@ -9,7 +9,7 @@ launch_buttons:
   thebe          : true
   jupyterhub_url : https://noto.epfl.ch
 
-notebook_interface : "notebook"
+notebook_interface : "jupyterlab"
 
 html:
   home_page_in_navbar         : false
