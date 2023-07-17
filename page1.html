@@ -232,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/AntonioCd96/IR-and-Raman.git/master?urlpath=tree/page1.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/AntonioCd96/IR-and-Raman.git/master?urlpath=lab/tree/page1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -250,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/AntonioCd96/IR-and-Raman.git&urlpath=tree/IR-and-Raman.git/page1.ipynb&branch=master" target="_blank"
+      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/AntonioCd96/IR-and-Raman.git&urlpath=lab/tree/IR-and-Raman.git/page1.ipynb&branch=master" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -1942,18 +1942,18 @@ if (IPython.notebook.kernel !== null) {
 <p>Note that in our simple model we are allowing motion of the masses only in one dimension (i.e., we are allowing longitudinal motion of the chain, not transverse motion)</p>
 <p>For any coupled system system, a normal mode is defined to be a collective oscillation where all particles move at the same frequency. We now attempt a solution
 to Newton’s equations by using an ansatz that describes the normal modes as waves</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4f1b6423-8572-423d-be8d-21f45218b6e4">
-<span class="eqno">(1)<a class="headerlink" href="#equation-4f1b6423-8572-423d-be8d-21f45218b6e4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eb3bca50-aa54-4156-aa3d-9a40dbf673ce">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eb3bca50-aa54-4156-aa3d-9a40dbf673ce" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_n^{\rm eq}=na\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c7a7858a-36c6-46f1-a249-911a87e5f8e0">
-<span class="eqno">(2)<a class="headerlink" href="#equation-c7a7858a-36c6-46f1-a249-911a87e5f8e0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-331c98c2-31d3-457b-990c-ef6fea1568bb">
+<span class="eqno">(2)<a class="headerlink" href="#equation-331c98c2-31d3-457b-990c-ef6fea1568bb" title="Permalink to this equation">#</a></span>\[\begin{align}
 \delta x_n = A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>Solving the equation we obtain:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-29668362-703a-4e92-aa7a-bbdaee254684">
-<span class="eqno">(3)<a class="headerlink" href="#equation-29668362-703a-4e92-aa7a-bbdaee254684" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d52bdbfe-fc68-4f64-9107-029cfec1339f">
+<span class="eqno">(3)<a class="headerlink" href="#equation-d52bdbfe-fc68-4f64-9107-029cfec1339f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \omega(k) = \sqrt{\frac{4\kappa}{m}} \bigg| \sin\bigg( \frac{ka}{2} \bigg) \bigg|
 \end{align}\]</div>
 <p>As we have seen, this exact solutions can help us to simulate the movement of atoms, in this case we will see how atoms in a periodic lattice move in a defined normal mode.</p>
