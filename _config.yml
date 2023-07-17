@@ -3,13 +3,19 @@ title: "Interactive IR and Raman"
 author: Dr. Mounir Mensi, Dr. Kevin Jablonka and  Antonio Doñez
 logo:  images/logo-LSMO.png
 #
+
 launch_buttons:
+
+  notebook_interface : jupyterlab
+
   colab_url      : https://colab.research.google.com # The URL of Google Colab (e.g., https://colab.research.google.com)
+
   binderhub_url  : https://mybinder.org
+
   thebe          : true
+
   jupyterhub_url : https://noto.epfl.ch/
 
-notebook_interface : "jupyterlab"
 
 html:
   home_page_in_navbar         : false
