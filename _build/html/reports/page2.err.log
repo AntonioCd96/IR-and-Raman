@@ -18,36 +18,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-plt.rcParams.update({'font.size': 14})
-smiles             = input("please introduce the smiles code: ")
-method             = input("please introduce the method (GFN2xTB, GFN1xTB, GFNFF): ")
-sigma              = int(input("please introduce how much you want to broad the theoretical bands (a number between σ=[20,100]): "))
-sigma_raman        = int(input("please introduce how much you want to broad the Raman theoretical bands (a number between σ=[20,100]): "))
+%matplotlib inline
 
-Ploter_IR_theoretical(smiles,method,sigma,sigma_raman)
-plt.savefig("IR_Raman_TheoreticalSpectra_{0}_{1}.png".format(method, smiles))
-
+import ipywidgets as widgets
+from IPython.display import display
+import matplotlib.pyplot as plt
+from helpers2 import show_normal_modes, parse_molden
+from Animator3000 import Animator_data
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
-Cell [0;32mIn[5], line 2[0m
-[1;32m      1[0m plt[38;5;241m.[39mrcParams[38;5;241m.[39mupdate({[38;5;124m'[39m[38;5;124mfont.size[39m[38;5;124m'[39m: [38;5;241m14[39m})
-[0;32m----> 2[0m smiles             [38;5;241m=[39m [38;5;28;43minput[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mplease introduce the smiles code: [39;49m[38;5;124;43m"[39;49m[43m)[49m
-[1;32m      3[0m method             [38;5;241m=[39m [38;5;28minput[39m([38;5;124m"[39m[38;5;124mplease introduce the method (GFN2xTB, GFN1xTB, GFNFF): [39m[38;5;124m"[39m)
-[1;32m      4[0m sigma              [38;5;241m=[39m [38;5;28mint[39m([38;5;28minput[39m([38;5;124m"[39m[38;5;124mplease introduce how much you want to broad the theoretical bands (a number between σ=[20,100]): [39m[38;5;124m"[39m))
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[5], line 6[0m
+[1;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mIPython[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdisplay[39;00m [38;5;28;01mimport[39;00m display
+[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[0;32m----> 6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mhelpers2[39;00m [38;5;28;01mimport[39;00m show_normal_modes, parse_molden
+[1;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mAnimator3000[39;00m [38;5;28;01mimport[39;00m Animator_data
 
-File [0;32m~/psi4conda/envs/jbook/lib/python3.11/site-packages/ipykernel/kernelbase.py:1190[0m, in [0;36mKernel.raw_input[0;34m(self, prompt)[0m
-[1;32m   1188[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
-[1;32m   1189[0m     msg [38;5;241m=[39m [38;5;124m"[39m[38;5;124mraw_input was called, but this frontend does not support input requests.[39m[38;5;124m"[39m
-[0;32m-> 1190[0m     [38;5;28;01mraise[39;00m StdinNotImplementedError(msg)
-[1;32m   1191[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_input_request(
-[1;32m   1192[0m     [38;5;28mstr[39m(prompt),
-[1;32m   1193[0m     [38;5;28mself[39m[38;5;241m.[39m_parent_ident[[38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m],
-[1;32m   1194[0m     [38;5;28mself[39m[38;5;241m.[39mget_parent([38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m),
-[1;32m   1195[0m     password[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
-[1;32m   1196[0m )
-
-[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+[0;31mModuleNotFoundError[0m: No module named 'helpers2'
 
