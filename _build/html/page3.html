@@ -160,6 +160,11 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Basic_Notebook.html">Jupyter Notebook</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="page1.html">Vibrational spectroscopy</a></li>
 
 
@@ -474,13 +479,13 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="harmonic-oscillator-quantum-mechanics-approach">
 <h1>Harmonic Oscillator - Quantum Mechanics Approach<a class="headerlink" href="#harmonic-oscillator-quantum-mechanics-approach" title="Permalink to this heading">#</a></h1>
 <p>While giving a good overview of the molecular vibrations, the classical model
-doesn’t describes the quantised observed
+doesn’t describes the quantized observed
 vibrations. As a first approximation, a
 quadratic harmonic potential can
 approximate the potential of a diatomic
 oscillator. The main results are:</p>
 <ul class="simple">
-<li><p>The vibration levels are quantised (<span class="math notranslate nohighlight">\(n\)</span>)</p></li>
+<li><p>The vibration levels are quantized (<span class="math notranslate nohighlight">\(n\)</span>)</p></li>
 <li><p>Can only give a probability for finding the  nuclei in a certain arrangement</p></li>
 <li><p>Nuclear tunnelling</p></li>
 <li><p>There is a so-called zero-point energy</p></li>
@@ -505,7 +510,7 @@ Populating the interactive namespace from numpy and matplotlib
 </div>
 </div>
 </div>
-<p>The mathematica approach is using the Hamiltonian operator of quantum mechanics:</p>
+<p>The mathematical approach is using the Hamiltonian operator of quantum mechanics:</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{H} = \frac{\hbar}{2m}\nabla^2 + \frac{1}{2}k \hat{x}^2 
@@ -515,13 +520,13 @@ Populating the interactive namespace from numpy and matplotlib
 \[
 \Psi \hat{H} = E \Psi 
 \]</div>
-<p>Then, we obtain a quatizied set or energy levels:</p>
+<p>Then, we obtain a quantized set or energy levels:</p>
 <div class="math notranslate nohighlight">
 \[
 E = h \omega_i (n_i +\frac{1}{2})
 \]</div>
-<p>But, what does it represen <span class="math notranslate nohighlight">\(n\)</span> furthermore of the quantization number?</p>
-<p><span class="math notranslate nohighlight">\(n\)</span> represents the each one of the normal modes. Since the normal modes are related with a determined frequency (<span class="math notranslate nohighlight">\(\omega_i\)</span>) and this directly related to the energy, we can see that each excitation of each normal mode will requiere a diffent energy</p>
+<p>But, what does it represent <span class="math notranslate nohighlight">\(n\)</span> furthermore of the quantization number?</p>
+<p><span class="math notranslate nohighlight">\(n\)</span> represents the each one of the normal modes. Since the normal modes are related with a determined frequency (<span class="math notranslate nohighlight">\(\omega_i\)</span>) and this directly related to the energy, we can see that each excitation of each normal mode will require a different energy</p>
 <div class="tip admonition">
 <p class="admonition-title">Normal Modes</p>
 <p>A normal mode of an oscillating system is a pattern of motion in which all parts of the system move sinusoidally with the same frequency. The frequencies of the normal modes of a system are known as its natural frequencies or resonant frequencies. A physical object, such as a building or bridge, has a set of normal modes (and frequencies) that depend on its structure and composition.</p>
@@ -624,7 +629,7 @@ E = h \omega_i (n_i +\frac{1}{2})
 <li><p>Overtones are allowed</p></li>
 <li><p>We find an energy for the dissociation of the molecule (<span class="math notranslate nohighlight">\(E_D\)</span>)</p></li>
 </ul>
-<p>In this case the energy levels can be descrbied as:</p>
+<p>In this case the energy levels can be described as:</p>
 <div class="math notranslate nohighlight">
 \[
 E = h \omega (n+\frac{1}{2})  -\frac{h^2 \omega^2}{4E_D} (n+\frac{1}{2})^2 
@@ -747,27 +752,27 @@ E = h \omega (n+\frac{1}{2})  -\frac{h^2 \omega^2}{4E_D} (n+\frac{1}{2})^2
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ir-spectroscopy-equipment">
 <h1>IR Spectroscopy - Equipment<a class="headerlink" href="#ir-spectroscopy-equipment" title="Permalink to this heading">#</a></h1>
-<p>It is natural to wonder how scientist manage to optain the IR spectra and if it is as difficult as the maths that are behind. The answer is yes, the system is complex if we start analysing the physical nature of the sensors or the calculations behind to fit the spectra. However, we are only going to review the basic components and the basic physics behind it.</p>
+<p>It is natural to wonder how scientist manage to obtain the IR spectra and if it is as difficult as the maths that are behind. The answer is yes, the system is complex if we start analyzing the physical nature of the sensors or the calculations behind to fit the spectra. However, we are only going to review the basic components and the basic physics behind it.</p>
 <p>The equipment that we use to obtain the finger print of the molecule is called IR spectrometer. The equipment is composed of the following components:</p>
 <ul class="simple">
-<li><p>Light source: it should be clear that we can not use a common lamps since the wavelength is not the optimal to excite the vibrations in molecules. In this way we can  distinghuis 2 different sources:</p>
+<li><p>Light source: it should be clear that we can not use a common lamps since the wavelength is not the optimal to excite the vibrations in molecules. In this way we can  distinguish 2 different sources:</p>
 <ul>
 <li><p>For far and mid IR: Nernst rod</p></li>
 <li><p>Near IR: light-bulb</p></li>
 </ul>
 </li>
-<li><p>Monocromador: this part does the selection of the wavelenght, deoending on the light source it can be:</p>
+<li><p>Monochromator: this part does the selection of the wavelength, depending on the light source it can be:</p>
 <ul>
 <li><p>CsI prism for far IR</p></li>
 <li><p>LiF prism for mid IR</p></li>
 <li><p>quartz prism for near IR</p></li>
 </ul>
 </li>
-<li><p>IR-Detector:the bolometer is used as detector, it is a cooled metal foil (Pt,Au) which absrbs IR radiation. the resulting rise of the the T is detected by a resistor-type thermometer.</p></li>
-<li><p>IR-Spectrometer: the first succesfull machine was the double beam by optical grading. This model was caracterized for making a sweep in wavelenght using a monocromator. Lately, it evolves to the Michaelson Interferometer which is a set of movable mirrors that use polychromatic light instead. In this way, we can distinguish 2 types of IR spectroscopy:</p>
+<li><p>IR-Detector:the bolometer is used as detector, it is a cooled metal foil (Pt,Au) which absorbs IR radiation. the resulting rise of the the T is detected by a resistor-type thermometer.</p></li>
+<li><p>IR-Spectrometer: the first successful machine was the double beam by optical grading. This model was characterized for making a sweep in wavelength using a monochromator. Lately, it evolves to the Michaelson Interferometer which is a set of movable mirrors that use polychromatic light instead. In this way, we can distinguish 2 types of IR spectroscopy:</p>
 <ul>
-<li><p>Classical (grading- prism) IR: this one uses the monocromator for the selection of the wavelenght</p></li>
-<li><p>Fourier-Transform IR: replaces the monochromator, so that, the sample is irradiated by polychromatic light and a movable produces a time dependent signal that is transformaed by Fourier transformation into a frequency spectrum</p></li>
+<li><p>Classical (grading- prism) IR: this one uses the monochromator for the selection of the wavelength</p></li>
+<li><p>Fourier-Transform IR: replaces the monochromator, so that, the sample is irradiated by polychromatic light and a movable produces a time dependent signal that is transformed by Fourier transformation into a frequency spectrum</p></li>
 </ul>
 </li>
 </ul>

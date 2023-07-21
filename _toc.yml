@@ -2,6 +2,7 @@
 format: jb-book
 root:   inicio
 chapters:
+- file: Basic_Notebook
 - file: page1
 - file: page1_5
 - file: page2
