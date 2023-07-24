@@ -6,7 +6,7 @@ logo:  images/logo-LSMO.png
 
 launch_buttons:
 
-  notebook_interface : "classic"
+  notebook_interface : jupyterlab
 
   colab_url      : https://colab.research.google.com # The URL of Google Colab (e.g., https://colab.research.google.com)
 
