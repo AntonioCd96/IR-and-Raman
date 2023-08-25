@@ -16,7 +16,7 @@ launch_buttons:
 
   jupyterhub_url : https://noto.epfl.ch/
 
-notebook_interface : "notebook"
+  notebook_interface : "jupyterlab"
 
 
 html:
