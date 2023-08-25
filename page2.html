@@ -235,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/AntonioCd96/IR-and-Raman.git/master?urlpath=lab/tree/page2.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/AntonioCd96/IR-and-Raman.git/master?urlpath=tree/page2.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -253,7 +253,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/AntonioCd96/IR-and-Raman.git&urlpath=lab/tree/IR-and-Raman.git/page2.ipynb&branch=master" target="_blank"
+      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/AntonioCd96/IR-and-Raman.git&urlpath=tree/IR-and-Raman.git/page2.ipynb&branch=master" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -505,12 +505,37 @@ Requirement already satisfied: Pillow in /home/cd96/psi4conda/envs/jbook/lib/pyt
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: kallisto in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (1.0.9)
+Requirement already satisfied: click&lt;9.0.0,&gt;=8.0.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (8.1.3)
+Requirement already satisfied: numpy&lt;2.0.0,&gt;=1.19.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.24.3)
+Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.9.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">py3Dmol</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
 <span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="s2">&quot;jax[cpu]&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -524,15 +549,75 @@ Requirement already satisfied: Pillow in /home/cd96/psi4conda/envs/jbook/lib/pyt
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="obtain-your-own-theoretical-expectra">
+<h1>Obtain your own theoretical expectra<a class="headerlink" href="#obtain-your-own-theoretical-expectra" title="Permalink to this heading">#</a></h1>
+<p>By executing the following code you will be able to obtain your own spectra, you only need:</p>
+<ul class="simple">
+<li><p>The smiles code of the molecule of your interest</p></li>
+<li><p>The method you want to use to calculate the theoretical spectra</p></li>
+<li><p>How much you want to broaden the peaks of the theoretical bands</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavenumbers</span>        <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4000</span><span class="p">,</span><span class="mi">10001</span><span class="p">)</span>
-<span class="n">smiles_code</span>        <span class="o">=</span> <span class="s2">&quot;O=C=O&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
+<span class="n">smiles_code</span>        <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce the smiles code: &quot;</span><span class="p">)</span>
+<span class="n">method</span>             <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce the method (GFN2xTB, GFN1xTB, GFNFF): &quot;</span><span class="p">)</span>
+<span class="n">sigma</span>              <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce how much you want to broad the theoretical bands (a number between σ=[20,100]): &quot;</span><span class="p">))</span>
+<span class="n">sigma_raman</span>        <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce how much you want to broad the Raman theoretical bands (a number between σ=[20,100]): &quot;</span><span class="p">))</span>
 
+<span class="n">wavenumbers</span>        <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4000</span><span class="p">,</span><span class="mi">10001</span><span class="p">)</span>
+<span class="n">Compound_wn</span><span class="p">,</span><span class="n">Compound_int</span>   <span class="o">=</span> <span class="n">wavenumbers</span><span class="p">,</span> <span class="n">IR_xTB</span><span class="p">(</span><span class="n">smiles_code</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span> <span class="n">sigma_raman</span><span class="p">)</span> 
+<span class="n">μ_all</span><span class="o">=</span> <span class="n">Compound_int</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">all_pol_mode</span> <span class="o">=</span> <span class="n">Compound_int</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">Animator_data</span><span class="p">(</span><span class="n">smiles_code</span><span class="p">,</span><span class="n">method</span><span class="p">)</span>
+<span class="n">filename</span>           <span class="o">=</span> <span class="s1">&#39;readme.txt&#39;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wavenumber [1/cm]&#39;</span><span class="p">:</span> <span class="n">Compound_wn</span><span class="p">,</span>
+       <span class="s1">&#39;intensity IR&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="o">*</span><span class="n">array</span><span class="p">(</span><span class="n">Compound_int</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span>
+       <span class="s1">&#39;intensity Raman&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="o">*</span><span class="n">array</span><span class="p">(</span><span class="n">Compound_int</span><span class="p">[</span><span class="mi">2</span><span class="p">])}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">excel</span><span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;Info_Spectroscopy_IR_Raman_</span><span class="si">{0}</span><span class="s1">_</span><span class="si">{1}</span><span class="s1">.xlsx&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">smiles_code</span><span class="p">,</span> <span class="n">method</span><span class="p">))</span>
+
+<span class="n">IR_axo</span><span class="p">(</span> <span class="n">filename</span><span class="p">,</span><span class="n">Compound_wn</span><span class="p">,</span> <span class="n">Compound_int</span><span class="p">,</span><span class="n">smiles_code</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">sigma_raman</span><span class="p">,</span><span class="n">μ_all</span><span class="p">,</span> <span class="n">all_pol_mode</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;IR_Raman_TheoreticalSpectra_</span><span class="si">{0}</span><span class="s2">_</span><span class="si">{1}</span><span class="s2">.png&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">smiles_code</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+There are 4 normal modes
+[&#39;O&#39;, &#39;C&#39;, &#39;O&#39;]
+Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.011 15.999]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "16b65e88e8c34bb696b827b175e2148d", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cellphone-environment">
+<h1>Cellphone environment<a class="headerlink" href="#cellphone-environment" title="Permalink to this heading">#</a></h1>
+<p>NOTE: The clauses after the symbol # are instructions. See the last cell to execute and get the spectra of your molecule</p>
+<p>Populate the following variables as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+
+<span class="n">smiles</span>             <span class="o">=</span> <span class="s2">&quot;CCCO&quot;</span> <span class="c1"># STRING</span>
+<span class="n">method</span>             <span class="o">=</span> <span class="s2">&quot;GFN2xTB&quot;</span>  <span class="c1"># STRING #&quot;please introduce the method (GFN2xTB, GFN1xTB, GFNFF)</span>
+<span class="n">sigma</span>              <span class="o">=</span> <span class="mi">20</span> <span class="c1"># INTEGER  #&quot;please introduce how much you want to broad the IR theoretical bands (a number between σ=[20,100])</span>
+<span class="n">sigma_raman</span>        <span class="o">=</span>  <span class="mi">20</span> <span class="c1"># INTEGER  #&quot;please introduce how much you want to broad the Raman theoretical bands (a number between σ=[20,100])</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles_code</span>        <span class="o">=</span> <span class="s2">&quot;O=C=O&quot;</span>
 <span class="n">method</span>             <span class="o">=</span> <span class="s2">&quot;GFN2xTB&quot;</span>
 <span class="n">sigma</span>              <span class="o">=</span> <span class="mi">20</span>
 <span class="n">sigma_raman</span>        <span class="o">=</span> <span class="mi">50</span>
 
+<span class="c1">### DO NOT MOVE</span>
+<span class="n">wavenumbers</span>        <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4000</span><span class="p">,</span><span class="mi">10001</span><span class="p">)</span>
 <span class="n">Compound_wn</span><span class="p">,</span><span class="n">Compound_int</span>   <span class="o">=</span> <span class="n">wavenumbers</span><span class="p">,</span> <span class="n">IR_xTB</span><span class="p">(</span><span class="n">smiles_code</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span> <span class="n">sigma_raman</span><span class="p">)</span> 
 <span class="n">μ_all</span><span class="o">=</span> <span class="n">Compound_int</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">all_pol_mode</span> <span class="o">=</span> <span class="n">Compound_int</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
@@ -557,88 +642,6 @@ Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "f38fb80abd684d6aacb3d08374094e52", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="obtain-your-own-theoretical-expectra">
-<h1>Obtain your own theoretical expectra<a class="headerlink" href="#obtain-your-own-theoretical-expectra" title="Permalink to this heading">#</a></h1>
-<p>By executing the following code you will be able to obtain your own spectra, you only need:</p>
-<ul class="simple">
-<li><p>The smiles code of the molecule of your interest</p></li>
-<li><p>The method you want to use to calculate the theoretical spectra</p></li>
-<li><p>How much you want to broaden the peaks of the theoretical bands</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
-<span class="n">smiles</span>             <span class="o">=</span> <span class="s2">&quot;O&quot;</span>
-<span class="n">method</span>             <span class="o">=</span> <span class="s2">&quot;GFN2xTB&quot;</span>
-<span class="n">sigma</span>              <span class="o">=</span> <span class="mi">20</span>
-<span class="n">sigma_raman</span>        <span class="o">=</span> <span class="mi">50</span>
-
-
-<span class="n">Ploter_IR_theoretical</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">sigma_raman</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;IR_Raman_TheoreticalSpectra_</span><span class="si">{0}</span><span class="s2">_</span><span class="si">{1}</span><span class="s2">.png&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">smiles</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
-<span class="n">smiles</span>             <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce the smiles code: &quot;</span><span class="p">)</span>
-<span class="n">method</span>             <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce the method (GFN2xTB, GFN1xTB, GFNFF): &quot;</span><span class="p">)</span>
-<span class="n">sigma</span>              <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce how much you want to broad the theoretical bands (a number between σ=[20,100]): &quot;</span><span class="p">))</span>
-<span class="n">sigma_raman</span>        <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce how much you want to broad the Raman theoretical bands (a number between σ=[20,100]): &quot;</span><span class="p">))</span>
-
-<span class="n">Ploter_IR_theoretical</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">sigma_raman</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;IR_Raman_TheoreticalSpectra_</span><span class="si">{0}</span><span class="s2">_</span><span class="si">{1}</span><span class="s2">.png&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">smiles</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="cellphone-environment">
-<h1>Cellphone environment<a class="headerlink" href="#cellphone-environment" title="Permalink to this heading">#</a></h1>
-<p>NOTE: The clauses after the symbol # are instructions. See the last cell to execute and get the spectra of your molecule</p>
-<p>Populate the following variables as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-
-<span class="n">smiles</span>             <span class="o">=</span> <span class="s2">&quot;CCCO&quot;</span> <span class="c1"># STRING</span>
-<span class="n">method</span>             <span class="o">=</span> <span class="s2">&quot;GFN2xTB&quot;</span>  <span class="c1"># STRING #&quot;please introduce the method (GFN2xTB, GFN1xTB, GFNFF)</span>
-<span class="n">sigma</span>              <span class="o">=</span> <span class="mi">20</span> <span class="c1"># INTEGER  #&quot;please introduce how much you want to broad the IR theoretical bands (a number between σ=[20,100])</span>
-<span class="n">sigma_raman</span>        <span class="o">=</span>  <span class="mi">20</span> <span class="c1"># INTEGER  #&quot;please introduce how much you want to broad the Raman theoretical bands (a number between σ=[20,100])</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">helpers3</span> <span class="kn">import</span> <span class="n">show_normal_modes</span><span class="p">,</span> <span class="n">parse_molden</span>
-<span class="kn">from</span> <span class="nn">Animator3000</span> <span class="kn">import</span> <span class="n">Animator_data</span>
-<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
-<span class="n">smiles</span>             <span class="o">=</span> <span class="s2">&quot;O&quot;</span>
-<span class="n">method</span>             <span class="o">=</span> <span class="s2">&quot;GFN2xTB&quot;</span>
-<span class="n">sigma</span>              <span class="o">=</span> <span class="mi">20</span>
-<span class="n">sigma_raman</span>        <span class="o">=</span> <span class="mi">50</span>
-
-
-<span class="n">Ploter_IR_theoretical</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">sigma_raman</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;IR_Raman_TheoreticalSpectra_</span><span class="si">{0}</span><span class="s2">_</span><span class="si">{1}</span><span class="s2">.png&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">smiles</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 
