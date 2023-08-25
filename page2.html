@@ -483,127 +483,87 @@ document.write(`
 More info abouth this project: <a class="reference external" href="mailto:cesar&#46;donezmiranda&#37;&#52;&#48;epfl&#46;ch">cesar<span>&#46;</span>donezmiranda<span>&#64;</span>epfl<span>&#46;</span>ch</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">rdkit</span><span class="p">;</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">py3dmol</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">rdkit</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">pip</span> <span class="n">install</span> <span class="n">rdkit</span><span class="p">;</span>
-        <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rdkit in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (2023.3.1)
+Requirement already satisfied: numpy in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from rdkit) (1.24.3)
+Requirement already satisfied: Pillow in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from rdkit) (9.5.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">kallisto</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+<span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">axolotl_1</span> <span class="kn">import</span> <span class="n">IR_xTB</span><span class="p">,</span> <span class="n">Animator_data</span><span class="p">,</span> <span class="n">IR_axo</span>
 <span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">argrelextrema</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
-<span class="kn">from</span> <span class="nn">rdkit.Chem.Draw</span> <span class="kn">import</span> <span class="n">IPythonConsole</span>
-<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Draw</span>
-<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">ipython_useSVG</span><span class="o">=</span><span class="kc">True</span> 
-<span class="kn">from</span> <span class="nn">helpers2</span> <span class="kn">import</span> <span class="n">show_normal_modes</span><span class="p">,</span> <span class="n">parse_molden</span>
-<span class="kn">from</span> <span class="nn">Animator3000</span> <span class="kn">import</span> <span class="n">Animator_data</span>
-<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
-</details>
 </div>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavenumbers</span><span class="o">=</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4000</span><span class="p">,</span><span class="mi">10001</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavenumbers</span>        <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4000</span><span class="p">,</span><span class="mi">10001</span><span class="p">)</span>
+<span class="n">smiles_code</span>        <span class="o">=</span> <span class="s2">&quot;O=C=O&quot;</span>
 
-<span class="c1">### Gausian function to broaden peaks</span>
-<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">wavenumb_sweep</span><span class="p">,</span> <span class="n">intensity_max</span><span class="p">,</span> <span class="n">wavenumber_max</span><span class="p">,</span> <span class="n">σ</span><span class="p">):</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">intensity_max</span> <span class="o">/</span> <span class="p">(</span><span class="n">σ</span> <span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">wavenumb_sweep</span><span class="o">-</span><span class="n">wavenumber_max</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-    <span class="n">new_y</span><span class="o">=</span><span class="n">array</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  
-    <span class="k">return</span> <span class="n">new_y</span>
-       
-<span class="c1">### Getting IR from xTB GFN2xTB, GFN1xTB and GFNFF</span>
-<span class="k">def</span> <span class="nf">IR_xTB</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">σ</span><span class="p">,</span><span class="n">σ_R</span><span class="p">):</span>
-    <span class="n">r</span>          <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://ir.cheminfo.org/v1/ir?smiles=</span><span class="si">{0}</span><span class="s1">&amp;method=</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span> <span class="n">method</span><span class="p">))</span>
-    <span class="n">data_bytes</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">content</span>
-    <span class="n">data_dic</span>   <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data_bytes</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-    
-    <span class="n">norm_int</span>   <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">norm_int_R</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="n">wavenumb</span>   <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">data_dic</span><span class="p">[</span><span class="s2">&quot;wavenumbers&quot;</span><span class="p">])</span>
-    
-    <span class="n">max_int</span>    <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">data_dic</span><span class="p">[</span><span class="s2">&quot;intensities&quot;</span><span class="p">])</span>
-    <span class="n">max_int_Ram</span><span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">data_dic</span><span class="p">[</span><span class="s2">&quot;ramanIntensities&quot;</span><span class="p">])</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data_dic</span><span class="p">[</span><span class="s2">&quot;intensities&quot;</span><span class="p">]:</span>
-        <span class="n">norm_int</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">max_int</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data_dic</span><span class="p">[</span><span class="s2">&quot;ramanIntensities&quot;</span><span class="p">]:</span>
-        <span class="n">norm_int_R</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">max_int_Ram</span><span class="p">)</span>
-        
+<span class="n">method</span>             <span class="o">=</span> <span class="s2">&quot;GFN2xTB&quot;</span>
+<span class="n">sigma</span>              <span class="o">=</span> <span class="mi">20</span>
+<span class="n">sigma_raman</span>        <span class="o">=</span> <span class="mi">50</span>
 
-    <span class="c1">### Gausian function to broaden peaks</span>
-    <span class="n">pos_max</span>    <span class="o">=</span> <span class="n">argrelextrema</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">norm_int</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">)</span>
-    <span class="n">x</span>          <span class="o">=</span> <span class="n">wavenumb</span>
-    <span class="n">all_curve</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pos_max</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-        <span class="n">all_curve</span> <span class="o">+=</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">norm_int</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">wavenumb</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">σ</span><span class="p">)</span>      
-    <span class="n">broad_int</span> <span class="o">=</span> <span class="n">all_curve</span>   
-    
-    <span class="c1">#Raman</span>
-    <span class="n">pos_max_R</span>    <span class="o">=</span> <span class="n">argrelextrema</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">norm_int_R</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">)</span>
-    <span class="n">x_R</span>          <span class="o">=</span> <span class="n">wavenumb</span>
-    <span class="n">all_curve_R</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pos_max_R</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-        <span class="n">all_curve_R</span> <span class="o">+=</span> <span class="n">g</span><span class="p">(</span><span class="n">x_R</span><span class="p">,</span> <span class="n">norm_int_R</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">wavenumb</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">σ_R</span><span class="p">)</span>      
-    <span class="n">broad_int_R</span> <span class="o">=</span> <span class="n">all_curve_R</span>  
-    
-    
-    <span class="c1">### Normalization</span>
-    
-    <span class="n">max_y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">broad_int</span><span class="p">)</span>
-    <span class="n">int_norm</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">broad_int</span><span class="p">:</span>
-        <span class="n">int_norm</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">/</span><span class="n">max_y</span><span class="p">))</span>
-        
-    <span class="c1">### Normalization Raman</span>
-    
-    <span class="n">max_y_R</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">broad_int_R</span><span class="p">)</span>
-    <span class="n">int_norm_R</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">broad_int_R</span><span class="p">:</span>
-        <span class="n">int_norm_R</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">/</span><span class="n">max_y_R</span><span class="p">))</span>
-       
-    <span class="c1">#Transmitance</span>
-    <span class="n">trans</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">int_norm</span><span class="p">:</span> 
-        <span class="n">trans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">)</span>
-       
-    <span class="k">return</span>  <span class="n">int_norm</span><span class="p">,</span> <span class="n">trans</span><span class="p">,</span> <span class="n">int_norm_R</span><span class="p">,</span><span class="n">norm_int</span>
+<span class="n">Compound_wn</span><span class="p">,</span><span class="n">Compound_int</span>   <span class="o">=</span> <span class="n">wavenumbers</span><span class="p">,</span> <span class="n">IR_xTB</span><span class="p">(</span><span class="n">smiles_code</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span> <span class="n">sigma_raman</span><span class="p">)</span> 
+<span class="n">μ_all</span><span class="o">=</span> <span class="n">Compound_int</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">all_pol_mode</span> <span class="o">=</span> <span class="n">Compound_int</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">Animator_data</span><span class="p">(</span><span class="n">smiles_code</span><span class="p">,</span><span class="n">method</span><span class="p">)</span>
+<span class="n">filename</span>           <span class="o">=</span> <span class="s1">&#39;readme.txt&#39;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wavenumber [1/cm]&#39;</span><span class="p">:</span> <span class="n">Compound_wn</span><span class="p">,</span>
+       <span class="s1">&#39;intensity IR&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="o">*</span><span class="n">array</span><span class="p">(</span><span class="n">Compound_int</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span>
+       <span class="s1">&#39;intensity Raman&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="o">*</span><span class="n">array</span><span class="p">(</span><span class="n">Compound_int</span><span class="p">[</span><span class="mi">2</span><span class="p">])}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">excel</span><span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;Info_Spectroscopy_IR_Raman_</span><span class="si">{0}</span><span class="s1">_</span><span class="si">{1}</span><span class="s1">.xlsx&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">smiles_code</span><span class="p">,</span> <span class="n">method</span><span class="p">))</span>
+
+<span class="n">IR_axo</span><span class="p">(</span> <span class="n">filename</span><span class="p">,</span><span class="n">Compound_wn</span><span class="p">,</span> <span class="n">Compound_int</span><span class="p">,</span><span class="n">smiles_code</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">sigma_raman</span><span class="p">,</span><span class="n">μ_all</span><span class="p">,</span> <span class="n">all_pol_mode</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+There are 4 normal modes
+[&#39;O&#39;, &#39;C&#39;, &#39;O&#39;]
+Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.011 15.999]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f38fb80abd684d6aacb3d08374094e52", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="obtain-your-own-theoretical-expectra">
@@ -614,78 +574,20 @@ More info abouth this project: <a class="reference external" href="mailto:cesar&
 <li><p>The method you want to use to calculate the theoretical spectra</p></li>
 <li><p>How much you want to broaden the peaks of the theoretical bands</p></li>
 </ul>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Ploter_IR_theoretical</span><span class="p">(</span><span class="n">smiles_code</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">sigma_raman</span><span class="p">):</span>
-    <span class="n">wavenumbers</span>                <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4000</span><span class="p">,</span><span class="mi">10001</span><span class="p">)</span>
-   
-    <span class="n">smiles</span>                     <span class="o">=</span> <span class="n">smiles_code</span>
-    
-    <span class="n">Compound_wn</span><span class="p">,</span><span class="n">Compound_int</span>   <span class="o">=</span> <span class="n">wavenumbers</span><span class="p">,</span> <span class="n">IR_xTB</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span> <span class="n">sigma_raman</span><span class="p">)</span>  
-    
-    <span class="n">a</span><span class="o">=</span><span class="n">argrelextrema</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">Compound_int</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">)</span>
-    <span class="n">max_int_n</span><span class="o">=</span><span class="p">[]</span>
-    <span class="n">max_wn_n</span><span class="o">=</span><span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-        <span class="n">max_int_n</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Compound_int</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
-        <span class="n">max_wn_n</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Compound_wn</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    
-    
-    <span class="n">dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
-        <span class="n">options</span><span class="o">=</span><span class="n">max_wn_n</span><span class="p">,</span> <span class="c1"># integers instead of strings</span>
-        <span class="n">value</span><span class="o">=</span><span class="n">max_wn_n</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>  <span class="c1"># integer instead of string</span>
-        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Normal Mode frequency[1/cm]:&#39;</span><span class="p">,)</span>
-    
-    <span class="k">def</span> <span class="nf">Dropdown_Menu</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">2009</span><span class="p">):</span>
-        <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
-                           <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">max_int_n</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">max_wn_n</span>
-            <span class="c1"># select values</span>
-        <span class="n">pos</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-        <span class="n">selected_x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
-        <span class="n">selected_y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
+<span class="n">smiles</span>             <span class="o">=</span> <span class="s2">&quot;O&quot;</span>
+<span class="n">method</span>             <span class="o">=</span> <span class="s2">&quot;GFN2xTB&quot;</span>
+<span class="n">sigma</span>              <span class="o">=</span> <span class="mi">20</span>
+<span class="n">sigma_raman</span>        <span class="o">=</span> <span class="mi">50</span>
 
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;wavenumber:&#39;</span><span class="p">,</span> <span class="n">selected_x</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;intensity:&#39;</span><span class="p">,</span> <span class="n">selected_y</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;There are </span><span class="si">{0}</span><span class="s1"> normal modes:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
-        <span class="c1">#plt.show()</span>
-        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">selected_x</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">array</span><span class="p">(</span><span class="n">selected_y</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Selected frequency&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">selected_x</span><span class="p">)</span>
-        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Compound_wn</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">array</span><span class="p">(</span><span class="n">Compound_int</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Theoretical </span><span class="si">{0}</span><span class="s2">- IR&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">))</span>
-        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Compound_wn</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">array</span><span class="p">(</span><span class="n">Compound_int</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Theoretical </span><span class="si">{0}</span><span class="s2"> -Raman&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">))</span>
-        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.3</span><span class="p">)</span>
-        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity&quot;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;wavenumber $[cm^{-1}]$&quot;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span>
-        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
-        <span class="n">im</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Draw</span><span class="o">.</span><span class="n">MolToImage</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-    <span class="c1">#     ax = plt.axes([0.6, 0.47, 0.38, 0.38], frameon=True)</span>
 
-        <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
-        <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-    <span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">Dropdown_Menu</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">dropdown</span><span class="p">)</span>
-    <span class="n">Animator_data</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span><span class="n">method</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are </span><span class="si">{0}</span><span class="s2"> normal modes&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">parse_molden</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;readme.txt&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])))</span>
-    <span class="n">show_normal_modes</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;readme.txt&#39;</span><span class="p">)</span>
-
-    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wavenumber [1/cm]&#39;</span><span class="p">:</span><span class="n">Compound_wn</span><span class="p">,</span>
-           <span class="s1">&#39;intensity IR&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="o">*</span><span class="n">array</span><span class="p">(</span><span class="n">Compound_int</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span>
-           <span class="s1">&#39;intensity Raman&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="o">*</span><span class="n">array</span><span class="p">(</span><span class="n">Compound_int</span><span class="p">[</span><span class="mi">2</span><span class="p">])}</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="n">excel</span><span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;Info_Spectroscopy_IR_Raman_</span><span class="si">{0}</span><span class="s1">_</span><span class="si">{1}</span><span class="s1">.xlsx&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span> <span class="n">method</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">excel</span>
+<span class="n">Ploter_IR_theoretical</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">sigma_raman</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;IR_Raman_TheoreticalSpectra_</span><span class="si">{0}</span><span class="s2">_</span><span class="si">{1}</span><span class="s2">.png&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">smiles</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -716,7 +618,7 @@ More info abouth this project: <a class="reference external" href="mailto:cesar&
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">helpers2</span> <span class="kn">import</span> <span class="n">show_normal_modes</span><span class="p">,</span> <span class="n">parse_molden</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">helpers3</span> <span class="kn">import</span> <span class="n">show_normal_modes</span><span class="p">,</span> <span class="n">parse_molden</span>
 <span class="kn">from</span> <span class="nn">Animator3000</span> <span class="kn">import</span> <span class="n">Animator_data</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 </pre></div>
@@ -726,7 +628,7 @@ More info abouth this project: <a class="reference external" href="mailto:cesar&
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
-<span class="n">smiles</span>             <span class="o">=</span> <span class="s2">&quot;c1ccccc1&quot;</span>
+<span class="n">smiles</span>             <span class="o">=</span> <span class="s2">&quot;O&quot;</span>
 <span class="n">method</span>             <span class="o">=</span> <span class="s2">&quot;GFN2xTB&quot;</span>
 <span class="n">sigma</span>              <span class="o">=</span> <span class="mi">20</span>
 <span class="n">sigma_raman</span>        <span class="o">=</span> <span class="mi">50</span>
