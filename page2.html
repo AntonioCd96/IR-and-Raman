@@ -523,6 +523,9 @@ Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/l
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting py3Dmol
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
 <span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
 
@@ -584,17 +587,6 @@ Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/l
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
-There are 4 normal modes
-[&#39;O&#39;, &#39;C&#39;, &#39;O&#39;]
-Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.011 15.999]
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "16b65e88e8c34bb696b827b175e2148d", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="cellphone-environment">
@@ -635,13 +627,35 @@ Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
 There are 4 normal modes
 [&#39;O&#39;, &#39;C&#39;, &#39;O&#39;]
 Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.011 15.999]
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f38fb80abd684d6aacb3d08374094e52", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d14732651a8747d78d6e0ff3e702205d", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="n">command</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;kallisto&quot;</span><span class="p">,</span> <span class="s2">&quot;alp&quot;</span><span class="p">,</span> <span class="s2">&quot;--molecular&quot;</span><span class="p">,</span> <span class="s2">&quot;mode_0_O=C=O_GFN2xTB_1.xyz&quot;</span><span class="p">]</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 
