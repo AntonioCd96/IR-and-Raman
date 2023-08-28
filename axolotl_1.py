@@ -359,9 +359,9 @@ def IR_xTB(smiles, method, σ,σ_R):
             myfile.close()
             files_gen.append(xyz_file)
             
-            command = f'kallisto alp --molecular {xyz_file}'
+            command = ["kallisto", "alp", "--molecular", xyz_file]
              # Execute the command
-            output  = subprocess.check_output(command, shell=True, text=True)
+            output  = subprocess.check_output(command, text=True)
             pol_mode.append(float(output))
 
 
