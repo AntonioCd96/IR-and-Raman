@@ -1,0 +1,2058 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Working do not move &#8212; Interactive IR and Raman</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IR-Raman-Axolotl/Phonons-2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../inicio.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-LSMO.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo-LSMO.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../inicio.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Basic_Notebook.html">Jupyter Notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page1.html">Vibrational spectroscopy</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page1_5.html">Vibrational spectroscopy - Interactive</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page2.html">Calculate your own IR and Raman Spectra</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page3.html">Harmonic Oscillator - Quantum Mechanics Approach</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page3_5.html">Harmonic Oscillator - Quantum Mechanics Approach - Interactive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../page4_IR-Raman-Phonon-Dispersion.html">IR and raman</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page4_phonon-band%20structure.html">Phonon structure of different solids</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page4_Solids_IR-Raman_3D_anim.html">Auxilair documents</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/AntonioCd96/IR-and-Raman.git/master?urlpath=lab/tree/IR-Raman-Axolotl/Phonons-2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/AntonioCd96/IR-and-Raman.git&urlpath=lab/tree/IR-and-Raman.git/IR-Raman-Axolotl/Phonons-2.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/AntonioCd96/IR-and-Raman.git/blob/master/IR-Raman-Axolotl/Phonons-2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AntonioCd96/IR-and-Raman.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AntonioCd96/IR-and-Raman.git/issues/new?title=Issue%20on%20page%20%2FIR-Raman-Axolotl/Phonons-2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/IR-Raman-Axolotl/Phonons-2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Working do not move</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Working do not move</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ir-and-raman">IR and raman</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-rruff-exp-data">Import RRUFF exp data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-database">Using DATABASE</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">mp</span><span class="o">-</span><span class="n">api</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mp-api in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (0.40.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (67.7.2)
+Requirement already satisfied: msgpack in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (1.0.7)
+Requirement already satisfied: maggma&gt;=0.57.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (0.63.1)
+Requirement already satisfied: pymatgen&gt;=2022.3.7 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (2024.2.8)
+Requirement already satisfied: typing-extensions&gt;=3.7.4.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (4.9.0)
+Requirement already satisfied: requests&gt;=2.23.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (2.29.0)
+Requirement already satisfied: monty&gt;=2023.9.25 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (2024.2.2)
+Requirement already satisfied: emmet-core&gt;=0.78.0rc3 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (0.78.0rc3)
+Requirement already satisfied: pydantic&gt;=2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from emmet-core&gt;=0.78.0rc3-&gt;mp-api) (2.6.1)
+Requirement already satisfied: pydantic-settings&gt;=2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from emmet-core&gt;=0.78.0rc3-&gt;mp-api) (2.1.0)
+Requirement already satisfied: pybtex~=0.24 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from emmet-core&gt;=0.78.0rc3-&gt;mp-api) (0.24.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ruamel.yaml&lt;0.18 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (0.17.40)
+Requirement already satisfied: pymongo&gt;=4.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (4.6.1)
+Requirement already satisfied: mongomock&gt;=3.10.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (4.1.2)
+Requirement already satisfied: pydash&gt;=4.1.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (7.0.7)
+Requirement already satisfied: jsonschema&gt;=3.1.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (4.17.3)
+Requirement already satisfied: tqdm&gt;=4.19.6 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (4.66.2)
+Requirement already satisfied: mongogrant&gt;=0.3.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (0.3.3)
+Requirement already satisfied: aioitertools&gt;=0.5.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (0.11.0)
+Requirement already satisfied: numpy&gt;=1.17.3 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (1.25.2)
+Requirement already satisfied: fastapi&gt;=0.42.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (0.109.2)
+Requirement already satisfied: pyzmq&gt;=24.0.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (25.0.2)
+Requirement already satisfied: dnspython&gt;=1.16.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (2.5.0)
+Requirement already satisfied: sshtunnel&gt;=0.1.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (0.4.0)
+Requirement already satisfied: orjson&gt;=3.9.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (3.9.14)
+Requirement already satisfied: boto3&gt;=1.20.41 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (1.34.43)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (2.8.2)
+Requirement already satisfied: uvicorn&gt;=0.18.3 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (0.27.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib&gt;=1.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (3.7.1)
+Requirement already satisfied: networkx&gt;=2.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (3.2.1)
+Requirement already satisfied: palettable&gt;=3.1.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (3.3.3)
+Requirement already satisfied: pandas in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (2.0.1)
+Requirement already satisfied: plotly&gt;=4.5.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (5.14.1)
+Requirement already satisfied: scipy&gt;=1.5.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (1.9.2)
+Requirement already satisfied: spglib&gt;=2.0.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (2.3.1)
+Requirement already satisfied: sympy in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (1.12)
+Requirement already satisfied: tabulate in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (0.9.0)
+Requirement already satisfied: uncertainties&gt;=3.1.4 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (3.1.7)
+Requirement already satisfied: joblib in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (1.3.2)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.23.0-&gt;mp-api) (3.1.0)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.23.0-&gt;mp-api) (3.4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.23.0-&gt;mp-api) (1.26.15)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.23.0-&gt;mp-api) (2023.7.22)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: botocore&lt;1.35.0,&gt;=1.34.43 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from boto3&gt;=1.20.41-&gt;maggma&gt;=0.57.1-&gt;mp-api) (1.34.43)
+Requirement already satisfied: jmespath&lt;2.0.0,&gt;=0.7.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from boto3&gt;=1.20.41-&gt;maggma&gt;=0.57.1-&gt;mp-api) (1.0.1)
+Requirement already satisfied: s3transfer&lt;0.11.0,&gt;=0.10.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from boto3&gt;=1.20.41-&gt;maggma&gt;=0.57.1-&gt;mp-api) (0.10.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: starlette&lt;0.37.0,&gt;=0.36.3 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from fastapi&gt;=0.42.0-&gt;maggma&gt;=0.57.1-&gt;mp-api) (0.36.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: attrs&gt;=17.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema&gt;=3.1.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (23.1.0)
+Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema&gt;=3.1.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (0.19.3)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (1.0.7)
+Requirement already satisfied: cycler&gt;=0.10 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (0.11.0)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (4.39.4)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (1.4.4)
+Requirement already satisfied: packaging&gt;=20.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (23.1)
+Requirement already satisfied: pillow&gt;=6.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (9.5.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (3.0.9)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Click in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mongogrant&gt;=0.3.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (8.1.3)
+Requirement already satisfied: Flask&gt;=1.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mongogrant&gt;=0.3.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (3.0.2)
+Requirement already satisfied: sentinels in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mongomock&gt;=3.10.0-&gt;maggma&gt;=0.57.1-&gt;mp-api) (1.0.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tenacity&gt;=6.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from plotly&gt;=4.5.0-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (8.2.2)
+Requirement already satisfied: PyYAML&gt;=3.01 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pybtex~=0.24-&gt;emmet-core&gt;=0.78.0rc3-&gt;mp-api) (6.0)
+Requirement already satisfied: latexcodec&gt;=1.0.4 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pybtex~=0.24-&gt;emmet-core&gt;=0.78.0rc3-&gt;mp-api) (2.0.1)
+Requirement already satisfied: six in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pybtex~=0.24-&gt;emmet-core&gt;=0.78.0rc3-&gt;mp-api) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: annotated-types&gt;=0.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pydantic&gt;=2.0-&gt;emmet-core&gt;=0.78.0rc3-&gt;mp-api) (0.6.0)
+Requirement already satisfied: pydantic-core==2.16.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pydantic&gt;=2.0-&gt;emmet-core&gt;=0.78.0rc3-&gt;mp-api) (2.16.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dotenv&gt;=0.21.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pydantic-settings&gt;=2.0-&gt;emmet-core&gt;=0.78.0rc3-&gt;mp-api) (1.0.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.7 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ruamel.yaml&lt;0.18-&gt;maggma&gt;=0.57.1-&gt;mp-api) (0.2.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: paramiko&gt;=2.7.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from sshtunnel&gt;=0.1.5-&gt;maggma&gt;=0.57.1-&gt;mp-api) (3.4.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: future in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from uncertainties&gt;=3.1.4-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (0.18.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: h11&gt;=0.8 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from uvicorn&gt;=0.18.3-&gt;maggma&gt;=0.57.1-&gt;mp-api) (0.14.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pandas-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (2023.3)
+Requirement already satisfied: tzdata&gt;=2022.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pandas-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (2023.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&gt;=0.19 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from sympy-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Werkzeug&gt;=3.0.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from Flask&gt;=1.0-&gt;mongogrant&gt;=0.3.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (3.0.1)
+Requirement already satisfied: Jinja2&gt;=3.1.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from Flask&gt;=1.0-&gt;mongogrant&gt;=0.3.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (3.1.2)
+Requirement already satisfied: itsdangerous&gt;=2.1.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from Flask&gt;=1.0-&gt;mongogrant&gt;=0.3.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (2.1.2)
+Requirement already satisfied: blinker&gt;=1.6.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from Flask&gt;=1.0-&gt;mongogrant&gt;=0.3.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (1.7.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: bcrypt&gt;=3.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from paramiko&gt;=2.7.2-&gt;sshtunnel&gt;=0.1.5-&gt;maggma&gt;=0.57.1-&gt;mp-api) (4.1.2)
+Requirement already satisfied: cryptography&gt;=3.3 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from paramiko&gt;=2.7.2-&gt;sshtunnel&gt;=0.1.5-&gt;maggma&gt;=0.57.1-&gt;mp-api) (40.0.2)
+Requirement already satisfied: pynacl&gt;=1.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from paramiko&gt;=2.7.2-&gt;sshtunnel&gt;=0.1.5-&gt;maggma&gt;=0.57.1-&gt;mp-api) (1.5.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: anyio&lt;5,&gt;=3.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from starlette&lt;0.37.0,&gt;=0.36.3-&gt;fastapi&gt;=0.42.0-&gt;maggma&gt;=0.57.1-&gt;mp-api) (3.6.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sniffio&gt;=1.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from anyio&lt;5,&gt;=3.4.0-&gt;starlette&lt;0.37.0,&gt;=0.36.3-&gt;fastapi&gt;=0.42.0-&gt;maggma&gt;=0.57.1-&gt;mp-api) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cffi&gt;=1.12 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from cryptography&gt;=3.3-&gt;paramiko&gt;=2.7.2-&gt;sshtunnel&gt;=0.1.5-&gt;maggma&gt;=0.57.1-&gt;mp-api) (1.15.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: MarkupSafe&gt;=2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from Jinja2&gt;=3.1.2-&gt;Flask&gt;=1.0-&gt;mongogrant&gt;=0.3.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (2.1.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pycparser in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from cffi&gt;=1.12-&gt;cryptography&gt;=3.3-&gt;paramiko&gt;=2.7.2-&gt;sshtunnel&gt;=0.1.5-&gt;maggma&gt;=0.57.1-&gt;mp-api) (2.21)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">mpcontribs</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpcontribs-client in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (5.7.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: boltons in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (23.1.1)
+Requirement already satisfied: bravado in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (11.0.3)
+Requirement already satisfied: filetype in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (1.2.0)
+Requirement already satisfied: flatten-dict in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (0.4.2)
+Requirement already satisfied: ipython in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (8.13.2)
+Requirement already satisfied: json2html in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (1.3.0)
+Requirement already satisfied: pandas in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (2.0.1)
+Requirement already satisfied: pint&lt;0.20 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (0.19.2)
+Requirement already satisfied: plotly in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (5.14.1)
+Requirement already satisfied: pyIsEmail in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (2.0.1)
+Requirement already satisfied: pymatgen in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (2024.2.8)
+Requirement already satisfied: pymongo in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (4.6.1)
+Requirement already satisfied: requests-futures in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (1.0.1)
+Requirement already satisfied: swagger-spec-validator in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (3.0.3)
+Requirement already satisfied: tqdm in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (4.66.2)
+Requirement already satisfied: ujson in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (5.9.0)
+Requirement already satisfied: semantic-version in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (2.10.0)
+Requirement already satisfied: cachetools in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (5.3.2)
+Requirement already satisfied: bravado-core&gt;=5.16.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (6.1.1)
+Requirement already satisfied: msgpack in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (1.0.7)
+Requirement already satisfied: python-dateutil in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (2.8.2)
+Requirement already satisfied: pyyaml in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (6.0)
+Requirement already satisfied: requests&gt;=2.17 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (2.29.0)
+Requirement already satisfied: six in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (1.16.0)
+Requirement already satisfied: simplejson in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (3.19.2)
+Requirement already satisfied: monotonic in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (1.6)
+Requirement already satisfied: typing-extensions in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (4.9.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: backcall in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (0.2.0)
+Requirement already satisfied: decorator in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (5.1.1)
+Requirement already satisfied: jedi&gt;=0.16 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (0.18.2)
+Requirement already satisfied: matplotlib-inline in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (0.1.6)
+Requirement already satisfied: pickleshare in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (0.7.5)
+Requirement already satisfied: prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (3.0.38)
+Requirement already satisfied: pygments&gt;=2.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (2.15.1)
+Requirement already satisfied: stack-data in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (0.6.2)
+Requirement already satisfied: traitlets&gt;=5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (5.9.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pexpect&gt;4.3 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (4.8.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pandas-&gt;mpcontribs-client) (2023.3)
+Requirement already satisfied: tzdata&gt;=2022.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pandas-&gt;mpcontribs-client) (2023.3)
+Requirement already satisfied: numpy&gt;=1.21.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pandas-&gt;mpcontribs-client) (1.25.2)
+Requirement already satisfied: tenacity&gt;=6.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from plotly-&gt;mpcontribs-client) (8.2.2)
+Requirement already satisfied: packaging in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from plotly-&gt;mpcontribs-client) (23.1)
+Requirement already satisfied: dnspython&gt;=2.0.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pyIsEmail-&gt;mpcontribs-client) (2.5.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib&gt;=1.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (3.7.1)
+Requirement already satisfied: monty&gt;=2024.2.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (2024.2.2)
+Requirement already satisfied: networkx&gt;=2.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (3.2.1)
+Requirement already satisfied: palettable&gt;=3.1.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (3.3.3)
+Requirement already satisfied: pybtex in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (0.24.0)
+Requirement already satisfied: ruamel.yaml&gt;=0.17.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (0.17.40)
+Requirement already satisfied: scipy&gt;=1.5.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (1.9.2)
+Requirement already satisfied: spglib&gt;=2.0.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (2.3.1)
+Requirement already satisfied: sympy in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (1.12)
+Requirement already satisfied: tabulate in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (0.9.0)
+Requirement already satisfied: uncertainties&gt;=3.1.4 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (3.1.7)
+Requirement already satisfied: joblib in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (1.3.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jsonschema in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from swagger-spec-validator-&gt;mpcontribs-client) (4.17.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jsonref in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-core&gt;=5.16.1-&gt;bravado-&gt;mpcontribs-client) (1.1.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;mpcontribs-client) (0.8.3)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen-&gt;mpcontribs-client) (1.0.7)
+Requirement already satisfied: cycler&gt;=0.10 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen-&gt;mpcontribs-client) (0.11.0)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen-&gt;mpcontribs-client) (4.39.4)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen-&gt;mpcontribs-client) (1.4.4)
+Requirement already satisfied: pillow&gt;=6.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen-&gt;mpcontribs-client) (9.5.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen-&gt;mpcontribs-client) (3.0.9)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ptyprocess&gt;=0.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;mpcontribs-client) (0.7.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wcwidth in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30-&gt;ipython-&gt;mpcontribs-client) (0.2.6)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.17-&gt;bravado-&gt;mpcontribs-client) (3.1.0)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.17-&gt;bravado-&gt;mpcontribs-client) (3.4)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.17-&gt;bravado-&gt;mpcontribs-client) (1.26.15)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: certifi&gt;=2017.4.17 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.17-&gt;bravado-&gt;mpcontribs-client) (2023.7.22)
+Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.7 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ruamel.yaml&gt;=0.17.0-&gt;pymatgen-&gt;mpcontribs-client) (0.2.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: future in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from uncertainties&gt;=3.1.4-&gt;pymatgen-&gt;mpcontribs-client) (0.18.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: attrs&gt;=17.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (23.1.0)
+Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (0.19.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: latexcodec&gt;=1.0.4 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pybtex-&gt;pymatgen-&gt;mpcontribs-client) (2.0.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: executing&gt;=1.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;mpcontribs-client) (1.2.0)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;mpcontribs-client) (2.2.1)
+Requirement already satisfied: pure-eval in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;mpcontribs-client) (0.2.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&gt;=0.19 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from sympy-&gt;pymatgen-&gt;mpcontribs-client) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: fqdn in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (1.5.1)
+Requirement already satisfied: isoduration in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (20.11.0)
+Requirement already satisfied: jsonpointer&gt;1.13 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (2.3)
+Requirement already satisfied: rfc3339-validator in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (0.1.4)
+Requirement already satisfied: rfc3986-validator&gt;0.1.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (0.1.1)
+Requirement already satisfied: uri-template in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (1.2.0)
+Requirement already satisfied: webcolors&gt;=1.11 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (1.13)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: arrow&gt;=0.15.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from isoduration-&gt;jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (1.2.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">crystal</span><span class="o">-</span><span class="n">toolkit</span> <span class="o">--</span><span class="n">upgrade</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting crystal-toolkit
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached crystal_toolkit-2023.11.3-py3-none-any.whl (15.9 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting crystaltoolkit-extension (from crystal-toolkit)
+  Using cached crystaltoolkit-extension-0.6.0.tar.gz (2.9 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+?25h canceled
+<span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">dash</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="http://henriquemiranda.github.io/phononwebsite/phonon.html?rest=https://materialsproject.org/rest/v2/materials/mp-66/phononbs&amp;amp;name=C&amp;amp;link=https://materialsproject.org/materials/mp-66&amp;amp;hidematlist=true">http://henriquemiranda.github.io/phononwebsite/phonon.html?rest=https://materialsproject.org/rest/v2/materials/mp-66/phononbs&amp;name=C&amp;link=https://materialsproject.org/materials/mp-66&amp;hidematlist=true</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mp_api.client</span> <span class="kn">import</span> <span class="n">MPRester</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">emmet.core.summary</span> <span class="kn">import</span> <span class="n">HasProps</span>
+<span class="kn">from</span> <span class="nn">pymatgen.io.xyz</span> <span class="kn">import</span> <span class="n">XYZ</span>
+<span class="kn">import</span> <span class="nn">py3Dmol</span>
+<span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
+<span class="kn">from</span> <span class="nn">nglview</span> <span class="kn">import</span> <span class="n">show_structure_file</span>
+<span class="kn">from</span> <span class="nn">pymatgen.io.cif</span> <span class="kn">import</span> <span class="n">CifWriter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_id</span> <span class="o">=</span> <span class="s2">&quot;mp-996941&quot;</span>
+<span class="n">API_key</span><span class="o">=</span> <span class="s2">&quot;A55hSVu7NuwvlISilTvVtw37IB5ES26w&quot;</span>
+
+<span class="k">with</span> <span class="n">MPRester</span><span class="p">(</span><span class="n">API_key</span><span class="p">)</span> <span class="k">as</span> <span class="n">mpr</span><span class="p">:</span>
+    <span class="n">docs</span> <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+        <span class="n">has_props</span> <span class="o">=</span> <span class="p">[</span><span class="n">HasProps</span><span class="o">.</span><span class="n">phonon</span><span class="p">],</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;material_id&quot;</span><span class="p">,</span> <span class="s2">&quot;formula_pretty&quot;</span><span class="p">,</span><span class="s2">&quot;elements&quot;</span><span class="p">,</span> <span class="s2">&quot;composition&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">mpids</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span><span class="o">.</span><span class="n">material_id</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+    <span class="n">mpformulas</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span><span class="o">.</span><span class="n">formula_pretty</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+    <span class="n">mpcomposition</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span><span class="o">.</span><span class="n">composition</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;mp ID&quot;</span><span class="p">:</span> <span class="n">mpids</span><span class="p">,</span> <span class="s2">&quot;Formula&quot;</span><span class="p">:</span> <span class="n">mpformulas</span> <span class="p">}</span>
+<span class="n">df_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df_data</span>
+
+
+<span class="k">with</span> <span class="n">MPRester</span><span class="p">(</span><span class="n">API_key</span><span class="p">)</span> <span class="k">as</span> <span class="n">mpr</span><span class="p">:</span>
+    <span class="n">ph_bs</span>     <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">get_phonon_bandstructure_by_material_id</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>
+    <span class="n">ph_dos</span>    <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">get_phonon_dos_by_material_id</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">get_structure_by_material_id</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>
+
+
+
+<span class="n">position</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">label</span><span class="o">=</span> <span class="p">[]</span>
+<span class="n">lines</span><span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ph_bs</span><span class="o">.</span><span class="n">as_phononwebsite</span><span class="p">()[</span><span class="s2">&quot;line_breaks&quot;</span><span class="p">]:</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ph_bs</span><span class="o">.</span><span class="n">as_phononwebsite</span><span class="p">()[</span><span class="s2">&quot;highsym_qpts&quot;</span><span class="p">]:</span>
+    <span class="n">position</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">label</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="o">+</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot;$&quot;</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+                           <span class="n">gridspec_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ph_bs</span><span class="o">.</span><span class="n">as_phononwebsite</span><span class="p">()[</span><span class="s2">&quot;eigenvalues&quot;</span><span class="p">]);</span>
+<span class="n">density_points</span> <span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">ph_dos</span><span class="o">.</span><span class="n">as_dict</span><span class="p">()[</span><span class="s2">&quot;densities&quot;</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">density_points</span><span class="p">));</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">position</span> <span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">label</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ph_dos</span><span class="o">.</span><span class="n">as_dict</span><span class="p">()[</span><span class="s2">&quot;densities&quot;</span><span class="p">],</span><span class="n">arange</span><span class="p">(</span><span class="n">density_points</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">density_points</span><span class="p">));</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">cif_filename</span> <span class="o">=</span> <span class="s2">&quot;material_structure_</span><span class="si">{0}</span><span class="s2">.cif&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>  <span class="c1"># Name of the output CIF file</span>
+
+<span class="n">cif_writer</span> <span class="o">=</span> <span class="n">CifWriter</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+<span class="n">cif_writer</span><span class="o">.</span><span class="n">write_file</span><span class="p">(</span><span class="n">cif_filename</span><span class="p">)</span>
+<span class="n">struct_file</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">FileStructure</span><span class="p">(</span><span class="n">cif_filename</span><span class="p">)</span>
+<span class="n">view</span>        <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">show_file</span><span class="p">(</span><span class="n">struct_file</span><span class="p">)</span>
+<span class="n">view</span><span class="o">.</span><span class="n">_remote_call</span><span class="p">(</span><span class="s2">&quot;setSize&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;600px&quot;</span><span class="p">])</span>
+<span class="n">view</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="s2">&quot;orthographic&quot;</span>
+<span class="n">view</span><span class="o">.</span><span class="n">add_unitcell</span><span class="p">()</span>
+<span class="n">view</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># Sample dictionary</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ph_bs</span><span class="o">.</span><span class="n">as_phononwebsite</span><span class="p">()</span>
+
+<span class="c1"># Define the output JSON file name</span>
+<span class="n">output_filename</span> <span class="o">=</span> <span class="s2">&quot;data_</span><span class="si">{0}</span><span class="s2">.json&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>
+
+<span class="c1"># Convert the dictionary to JSON and write to the file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">json_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dictionary has been converted and saved to </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="working-do-not-move">
+<h1>Working do not move<a class="headerlink" href="#working-do-not-move" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">Dropdown</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pymatgen.io.cif</span> <span class="kn">import</span> <span class="n">CifWriter</span>
+<span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pymatgen.ext.matproj</span> <span class="kn">import</span> <span class="n">MPRester</span>
+<span class="kn">from</span> <span class="nn">mp_api.client</span> <span class="kn">import</span> <span class="n">MPRester</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">emmet.core.summary</span> <span class="kn">import</span> <span class="n">HasProps</span>
+
+<span class="kn">from</span> <span class="nn">nglview</span> <span class="kn">import</span> <span class="n">show_structure_file</span>
+<span class="kn">from</span> <span class="nn">pymatgen.io.cif</span> <span class="kn">import</span> <span class="n">CifWriter</span>
+
+<span class="n">API_key</span><span class="o">=</span> <span class="s2">&quot;A55hSVu7NuwvlISilTvVtw37IB5ES26w&quot;</span>
+
+<span class="k">with</span> <span class="n">MPRester</span><span class="p">(</span><span class="n">API_key</span><span class="p">)</span> <span class="k">as</span> <span class="n">mpr</span><span class="p">:</span>
+    <span class="n">docs</span> <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+        <span class="n">has_props</span> <span class="o">=</span> <span class="p">[</span><span class="n">HasProps</span><span class="o">.</span><span class="n">phonon</span><span class="p">],</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;material_id&quot;</span><span class="p">,</span> <span class="s2">&quot;formula_pretty&quot;</span><span class="p">,</span><span class="s2">&quot;elements&quot;</span><span class="p">,</span> <span class="s2">&quot;composition&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">mpids</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span><span class="o">.</span><span class="n">material_id</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+    <span class="n">mpformulas</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span><span class="o">.</span><span class="n">formula_pretty</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+    <span class="n">mpcomposition</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span><span class="o">.</span><span class="n">composition</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+    
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;mp ID&quot;</span><span class="p">:</span> <span class="n">mpids</span><span class="p">,</span> <span class="s2">&quot;Formula&quot;</span><span class="p">:</span> <span class="n">mpformulas</span><span class="p">}</span>
+<span class="n">df_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">d_look_up</span>      <span class="o">=</span> <span class="p">{</span> <span class="n">mpformulas</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span><span class="n">mpids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mpformulas</span><span class="p">))}</span>
+<span class="n">d_look_up_comp</span> <span class="o">=</span> <span class="p">{</span> <span class="n">mpformulas</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span><span class="n">mpcomposition</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mpformulas</span><span class="p">))}</span>
+
+<span class="c1"># Interactive function</span>
+<span class="nd">@interact</span><span class="p">(</span><span class="n">material</span><span class="o">=</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">sort</span><span class="p">(</span><span class="n">df_data</span><span class="p">[</span><span class="s2">&quot;Formula&quot;</span><span class="p">]),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Materials available&quot;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">plot_phonon_and_structure</span><span class="p">(</span><span class="n">material</span><span class="p">):</span>
+    <span class="n">material_id</span> <span class="o">=</span> <span class="n">d_look_up</span><span class="p">[</span><span class="n">material</span><span class="p">][:]</span>
+    <span class="n">mat_comp</span>    <span class="o">=</span> <span class="n">d_look_up_comp</span><span class="p">[</span><span class="n">material</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The ID of the material is: &quot;</span><span class="p">,</span> <span class="n">material_id</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The composition of the material is: &quot;</span><span class="p">,</span> <span class="n">mat_comp</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">MPRester</span><span class="p">(</span><span class="n">API_key</span><span class="p">)</span> <span class="k">as</span> <span class="n">mpr</span><span class="p">:</span>
+        <span class="n">ph_bs</span> <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">get_phonon_bandstructure_by_material_id</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>
+        <span class="n">ph_dos</span> <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">get_phonon_dos_by_material_id</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>
+        <span class="n">structure</span> <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">get_structure_by_material_id</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>
+
+    <span class="n">position</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ph_bs</span><span class="o">.</span><span class="n">as_phononwebsite</span><span class="p">()[</span><span class="s2">&quot;line_breaks&quot;</span><span class="p">]:</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ph_bs</span><span class="o">.</span><span class="n">as_phononwebsite</span><span class="p">()[</span><span class="s2">&quot;highsym_qpts&quot;</span><span class="p">]:</span>
+        <span class="n">position</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;$&quot;</span> <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;$&quot;</span><span class="p">)</span>
+
+    
+    <span class="n">cif_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;material_structure_</span><span class="si">{</span><span class="n">material_id</span><span class="si">}</span><span class="s2">.cif&quot;</span>  <span class="c1"># Name of the output CIF file</span>
+
+    <span class="n">cif_writer</span> <span class="o">=</span> <span class="n">CifWriter</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+    <span class="n">cif_writer</span><span class="o">.</span><span class="n">write_file</span><span class="p">(</span><span class="n">cif_filename</span><span class="p">)</span>
+    <span class="n">struct_file</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">FileStructure</span><span class="p">(</span><span class="n">cif_filename</span><span class="p">)</span>
+    
+    <span class="n">view</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">show_file</span><span class="p">(</span><span class="n">struct_file</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">_remote_call</span><span class="p">(</span><span class="s2">&quot;setSize&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;300px&quot;</span><span class="p">])</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="s2">&quot;orthographic&quot;</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">add_unitcell</span><span class="p">()</span>
+    <span class="n">view</span>
+
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;wspace&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;hspace&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ph_bs</span><span class="o">.</span><span class="n">as_phononwebsite</span><span class="p">()[</span><span class="s2">&quot;eigenvalues&quot;</span><span class="p">])</span>
+    <span class="n">density_points</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ph_dos</span><span class="o">.</span><span class="n">as_dict</span><span class="p">()[</span><span class="s2">&quot;densities&quot;</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">density_points</span><span class="p">))</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">position</span><span class="p">))</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ph_dos</span><span class="o">.</span><span class="n">as_dict</span><span class="p">()[</span><span class="s2">&quot;densities&quot;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">density_points</span><span class="p">))</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">density_points</span><span class="p">))</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    
+    <span class="n">ph_ws_filename</span> <span class="o">=</span> <span class="s2">&quot;ph_ws_material_structure_</span><span class="si">{0}</span><span class="s2">_</span><span class="si">{1}</span><span class="s2">.json&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">material_id</span><span class="p">,</span><span class="n">material</span><span class="p">)</span>
+    <span class="n">ph_bs</span><span class="o">.</span><span class="n">write_phononwebsite</span><span class="p">(</span><span class="n">ph_ws_filename</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">view</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "bc1a6f3f52db42428c133e5de6386141", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "caaa01754609402db3886eb44d1a9f69", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "6efde33fc66d4f6d962b5c3ef7f2533d", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">structure</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ir-and-raman">
+<h1>IR and raman<a class="headerlink" href="#ir-and-raman" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_id</span> <span class="o">=</span> <span class="s2">&quot;mp-2657&quot;</span>
+<span class="n">API_key</span><span class="o">=</span> <span class="s2">&quot;A55hSVu7NuwvlISilTvVtw37IB5ES26w&quot;</span>
+
+<span class="k">with</span> <span class="n">MPRester</span><span class="p">(</span><span class="n">API_key</span><span class="p">)</span> <span class="k">as</span> <span class="n">mpr</span><span class="p">:</span>
+    <span class="n">docs</span> <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+        <span class="n">has_props</span> <span class="o">=</span> <span class="p">[</span><span class="n">HasProps</span><span class="o">.</span><span class="n">phonon</span><span class="p">],</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;material_id&quot;</span><span class="p">,</span> <span class="s2">&quot;formula_pretty&quot;</span><span class="p">,</span><span class="s2">&quot;elements&quot;</span><span class="p">,</span> <span class="s2">&quot;composition&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">mpids</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span><span class="o">.</span><span class="n">material_id</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+    <span class="n">mpformulas</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span><span class="o">.</span><span class="n">formula_pretty</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+    <span class="n">mpcomposition</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span><span class="o">.</span><span class="n">composition</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;mp ID&quot;</span><span class="p">:</span> <span class="n">mpids</span><span class="p">,</span> <span class="s2">&quot;Formula&quot;</span><span class="p">:</span> <span class="n">mpformulas</span> <span class="p">}</span>
+<span class="n">df_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df_data</span>
+
+
+<span class="k">with</span> <span class="n">MPRester</span><span class="p">(</span><span class="n">API_key</span><span class="p">)</span> <span class="k">as</span> <span class="n">mpr</span><span class="p">:</span>
+    <span class="n">ph_bs</span>     <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">get_phonon_bandstructure_by_material_id</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>
+    <span class="n">ph_bs_r</span>     <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">get_phonon_bandstructure_by_material_id</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>
+    <span class="n">ph_dos</span>    <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">get_phonon_dos_by_material_id</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">get_structure_by_material_id</span><span class="p">(</span><span class="n">material_id</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ph_bs</span><span class="o">.</span><span class="n">band_reorder</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigenvectors</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">bands</span><span class="p">,</span> <span class="n">qpoints</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">vector</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">ph_bs</span><span class="o">.</span><span class="n">eigendisplacements</span><span class="p">)</span>
+<span class="c1"># Sample eigenvectors and eigenvalues (replace with your actual data)</span>
+
+<span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">ph_bs</span><span class="o">.</span><span class="n">eigendisplacements</span>
+<span class="n">eigenvalues</span>  <span class="o">=</span> <span class="n">ph_bs</span><span class="o">.</span><span class="n">bands</span>
+<span class="n">qpoints_v</span> <span class="o">=</span> <span class="n">ph_bs</span><span class="o">.</span><span class="n">as_dict</span><span class="p">()[</span><span class="s2">&quot;qpoints&quot;</span><span class="p">]</span>
+
+
+
+<span class="c1"># Constants (you might need to adjust these)</span>
+<span class="n">proportionality_IR</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">proportionality_Raman</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># Calculate IR intensities</span>
+<span class="n">IR_intensities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">bands</span><span class="p">,</span> <span class="n">qpoints</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bands</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">qpoints</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">basis_dir</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">basis</span><span class="p">):</span>
+            <span class="n">IR_intensities</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">q</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span>
+                <span class="n">eigenvectors</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">basis_dir</span><span class="p">],</span>
+                <span class="n">qpoints_v</span><span class="p">[</span><span class="n">q</span><span class="p">])</span>  <span class="c1"># Replace with actual Cartesian direction vector</span>
+            <span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="c1"># Calculate Raman intensities</span>
+<span class="n">Raman_intensities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">bands</span><span class="p">,</span> <span class="n">qpoints</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bands</span><span class="p">):</span>
+    <span class="c1"># for q in range(qpoints):</span>
+    <span class="k">for</span> <span class="n">basis_dir_alpha</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">basis</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">basis_dir_beta</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">basis</span><span class="p">):</span>
+            <span class="n">Raman_intensities</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span>
+                        <span class="n">eigenvectors</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">basis_dir_alpha</span><span class="p">],</span>
+                        <span class="n">eigenvectors</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">basis_dir_beta</span><span class="p">]</span>
+                    <span class="p">))</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">proportionality_Raman</span>
+
+<span class="c1"># Normalize intensities</span>
+<span class="n">IR_intensities</span> <span class="o">*=</span> <span class="n">proportionality_IR</span>
+<span class="n">Raman_intensities</span> <span class="o">*=</span> <span class="n">proportionality_Raman</span>
+
+<span class="c1"># Now you can plot the IR and Raman spectra using your preferred plotting library</span>
+<span class="c1"># (e.g., Matplotlib)</span>
+<span class="c1"># Plot Raman Spectrum</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">frequencies</span><span class="o">=</span><span class="n">eigenvalues</span>
+<span class="n">IR_total</span><span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">frequencies</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+<span class="n">Freq_total</span><span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">frequencies</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bands</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">frequencies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mf">33.356</span><span class="p">,</span> <span class="n">Raman_intensities</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Mode </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">IR_total</span><span class="o">+=</span><span class="nb">list</span><span class="p">(</span><span class="n">Raman_intensities</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">Freq_total</span><span class="o">+=</span><span class="nb">list</span><span class="p">(</span><span class="n">frequencies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mf">33.356</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (cm$^{-1}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Raman Spectrum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">Freq_0</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="n">IR_0</span>   <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Freq_0</span><span class="p">)))</span>
+
+<span class="n">Freq_total_s</span> <span class="o">=</span> <span class="n">Freq_0</span> <span class="o">+</span> <span class="n">Freq_total</span>
+<span class="n">IR_total_s</span>   <span class="o">=</span> <span class="n">IR_0</span> <span class="o">+</span> <span class="n">IR_total</span>
+<span class="nb">all</span><span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">IR_total_s</span><span class="p">)):</span>
+    <span class="nb">all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">((</span><span class="n">Freq_total_s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">IR_total_s</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+
+<span class="nb">all</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">x</span><span class="o">=</span> <span class="p">[]</span>
+<span class="n">y</span><span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">all</span><span class="p">:</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frequencies</span> <span class="o">=</span> <span class="n">x</span> 
+<span class="n">intensities</span> <span class="o">=</span> <span class="n">y</span> 
+
+
+<span class="c1"># Crear un diccionario para realizar un seguimiento de las sumas de intensidades por frecuencia</span>
+<span class="n">frequency_intensity_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<span class="k">for</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">intensity</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">intensities</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">frequency</span> <span class="ow">in</span> <span class="n">frequency_intensity_dict</span><span class="p">:</span>
+        <span class="n">frequency_intensity_dict</span><span class="p">[</span><span class="n">frequency</span><span class="p">]</span> <span class="o">+=</span> <span class="n">intensity</span>
+    <span class="k">else</span><span class="p">:</span>
+       
+        <span class="n">frequency_intensity_dict</span><span class="p">[</span><span class="n">frequency</span><span class="p">]</span> <span class="o">=</span> <span class="n">intensity</span>
+
+<span class="n">result_frequencies_TIO2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">frequency_intensity_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">result_intensities_TIO2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">frequency_intensity_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">result_frequencies</span><span class="p">,</span><span class="n">result_intensities</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">argrelextrema</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">wavenumb_sweep</span><span class="p">,</span> <span class="n">intensity_max</span><span class="p">,</span> <span class="n">wavenumber_max</span><span class="p">,</span> <span class="n">σ</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">intensity_max</span> <span class="o">/</span> <span class="p">(</span><span class="n">σ</span> <span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">wavenumb_sweep</span><span class="o">-</span><span class="n">wavenumber_max</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">new_y</span><span class="o">=</span><span class="n">array</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  
+    <span class="k">return</span> <span class="n">new_y</span>
+<span class="n">result_frequencies</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">frequency_intensity_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">result_intensities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">frequency_intensity_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>      
+
+<span class="n">wavenumb</span>   <span class="o">=</span> <span class="n">result_frequencies</span>
+<span class="n">max_int</span>    <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">result_intensities</span><span class="p">)</span>
+
+<span class="n">norm_int</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">result_intensities</span><span class="p">:</span>
+    <span class="n">norm_int</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">max_int</span><span class="p">)</span>
+
+<span class="c1">### Gausian function to broaden peaks</span>
+<span class="n">pos_max</span>    <span class="o">=</span> <span class="n">argrelextrema</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">norm_int</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">)</span>
+<span class="n">x</span>          <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">wavenumb</span><span class="p">)</span>
+<span class="n">all_curve</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">σ</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pos_max</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">all_curve</span> <span class="o">+=</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">norm_int</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">wavenumb</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">σ</span><span class="p">)</span>      
+<span class="n">broad_int</span> <span class="o">=</span> <span class="n">all_curve</span>   
+
+<span class="c1">### Normalization</span>
+
+<span class="n">max_y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">broad_int</span><span class="p">)</span>
+<span class="n">int_norm</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">broad_int</span><span class="p">:</span>
+    <span class="n">int_norm</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">/</span><span class="n">max_y</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">wavenumb</span><span class="p">,</span><span class="n">int_norm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">curses</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">stdscr</span><span class="p">):</span>
+    <span class="c1"># Configurar curses</span>
+    <span class="n">curses</span><span class="o">.</span><span class="n">curs_set</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">stdscr</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+    <span class="c1"># Lista de elementos</span>
+    <span class="n">elementos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Elemento 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Elemento 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Elemento 3&quot;</span><span class="p">,</span> <span class="s2">&quot;Otro elemento&quot;</span><span class="p">,</span> <span class="s2">&quot;Ejemplo&quot;</span><span class="p">]</span>
+    
+    <span class="c1"># Crear ventana para la búsqueda</span>
+    <span class="n">buscar_win</span> <span class="o">=</span> <span class="n">curses</span><span class="o">.</span><span class="n">newwin</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">curses</span><span class="o">.</span><span class="n">COLS</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">buscar_win</span><span class="o">.</span><span class="n">addstr</span><span class="p">(</span><span class="s2">&quot;Buscar: &quot;</span><span class="p">)</span>
+    <span class="n">buscar_win</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+
+    <span class="c1"># Crear ventana para mostrar la lista de elementos</span>
+    <span class="n">lista_win</span> <span class="o">=</span> <span class="n">curses</span><span class="o">.</span><span class="n">newwin</span><span class="p">(</span><span class="n">curses</span><span class="o">.</span><span class="n">LINES</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">curses</span><span class="o">.</span><span class="n">COLS</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Crear el dropdown</span>
+    <span class="n">dropdown</span> <span class="o">=</span> <span class="n">curses</span><span class="o">.</span><span class="n">newwin</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elementos</span><span class="p">),</span> <span class="n">curses</span><span class="o">.</span><span class="n">COLS</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">dropdown</span><span class="o">.</span><span class="n">keypad</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">curses</span><span class="o">.</span><span class="n">noecho</span><span class="p">()</span>
+
+    <span class="c1"># Loop principal</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">lista_filtrada</span> <span class="o">=</span> <span class="p">[</span><span class="n">elem</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">elementos</span> <span class="k">if</span> <span class="n">buscar_win</span><span class="o">.</span><span class="n">instr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">elem</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+        <span class="n">lista_win</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lista_filtrada</span><span class="p">):</span>
+            <span class="n">lista_win</span><span class="o">.</span><span class="n">addstr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
+        <span class="n">lista_win</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+
+        <span class="n">ch</span> <span class="o">=</span> <span class="n">dropdown</span><span class="o">.</span><span class="n">getch</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">):</span>
+            <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="n">curses</span><span class="o">.</span><span class="n">KEY_DOWN</span><span class="p">:</span>
+            <span class="n">dropdown</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">ch</span> <span class="o">==</span> <span class="n">curses</span><span class="o">.</span><span class="n">KEY_UP</span><span class="p">:</span>
+            <span class="n">dropdown</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">curses</span><span class="o">.</span><span class="n">wrapper</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq_dft</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.129780207231549269e+02</span> <span class="p">,</span> <span class="mf">1.129780207231552680e+02</span> <span class="p">,</span><span class="mf">1.749879864729470853e+02</span> <span class="p">,</span><span class="mf">1.749879864729474264e+02</span> <span class="p">,</span><span class="mf">3.611532269867757350e+02</span> <span class="p">,</span><span class="mf">4.793102600546089320e+02</span> <span class="p">,</span><span class="mf">4.957302896450344178e+02</span> <span class="p">,</span><span class="mf">6.001592985713667758e+02</span> <span class="p">,</span><span class="mf">6.001592985713667758e+02</span><span class="p">]</span> 
+<span class="n">int_dft</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.000000000000000000e+00</span><span class="p">,</span><span class="mf">9.999999999999938938e-01</span><span class="p">,</span><span class="mf">2.939221091892205324e-03</span><span class="p">,</span><span class="mf">2.939221091892158921e-03</span><span class="p">,</span><span class="mf">1.494269659327405464e-01</span><span class="p">,</span><span class="mf">1.890540997545240437e-02</span><span class="p">,</span><span class="mf">1.019312927046264333e-01</span><span class="p">,</span><span class="mf">1.445200115409593922e-01</span><span class="p">,</span><span class="mf">1.445200115409594477e-01</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">Gaus_norm</span><span class="p">(</span> <span class="n">list_freq</span><span class="p">,</span><span class="n">list_int</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="c1">### Gausian function to broaden peaks</span>
+    <span class="n">int_dft_m</span>      <span class="o">=</span> <span class="n">list_int</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wavenumb</span><span class="p">)))</span>
+    <span class="n">x_dft</span>          <span class="o">=</span> <span class="n">list_freq</span> <span class="o">+</span> <span class="n">wavenumb</span>
+    
+    <span class="nb">all</span><span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">int_dft_m</span> <span class="p">)):</span>
+        <span class="nb">all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">((</span><span class="n">x_dft</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">int_dft_m</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+    
+    <span class="nb">all</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">x</span><span class="o">=</span> <span class="p">[]</span>
+    <span class="n">y</span><span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">all</span><span class="p">:</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    
+    <span class="n">frequencies</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">intensities</span> <span class="o">=</span> <span class="n">y</span>
+    
+    <span class="c1"># Crear un diccionario para realizar un seguimiento de las sumas de intensidades por frecuencia</span>
+    <span class="n">frequency_intensity_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">for</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">intensity</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">intensities</span><span class="p">):</span>
+    
+        <span class="k">if</span> <span class="n">frequency</span> <span class="ow">in</span> <span class="n">frequency_intensity_dict</span><span class="p">:</span>
+            <span class="n">frequency_intensity_dict</span><span class="p">[</span><span class="n">frequency</span><span class="p">]</span> <span class="o">+=</span> <span class="n">intensity</span>
+        <span class="k">else</span><span class="p">:</span>
+           
+            <span class="n">frequency_intensity_dict</span><span class="p">[</span><span class="n">frequency</span><span class="p">]</span> <span class="o">=</span> <span class="n">intensity</span>
+    
+    <span class="n">result_frequencies_dft</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">frequency_intensity_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">result_intensities_dft</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">frequency_intensity_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>    
+    
+    
+    <span class="n">wavenumb_dft</span>   <span class="o">=</span> <span class="n">result_frequencies_dft</span>
+    <span class="n">max_int</span>    <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">result_intensities_dft</span><span class="p">)</span>
+    
+    <span class="n">norm_int</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">result_intensities_dft</span><span class="p">:</span>
+        <span class="n">norm_int</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">max_int</span><span class="p">)</span>
+    
+    <span class="c1">### Gausian function to broaden peaks</span>
+    <span class="n">pos_max</span>    <span class="o">=</span> <span class="n">argrelextrema</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">norm_int</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">)</span>
+    
+    <span class="n">x</span>          <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">wavenumb</span><span class="p">)</span>
+    
+    <span class="n">all_curve</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">σ</span> <span class="o">=</span> <span class="n">sigma</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pos_max</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">all_curve</span> <span class="o">+=</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">norm_int</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">wavenumb</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">σ</span><span class="p">)</span>      
+    <span class="n">broad_int</span> <span class="o">=</span> <span class="n">all_curve</span>   
+    
+    <span class="c1">### Normalization</span>
+    
+    <span class="n">max_y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">broad_int</span><span class="p">)</span>
+    <span class="n">int_norm_dft</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">broad_int</span><span class="p">:</span>
+        <span class="n">int_norm_dft</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">/</span><span class="n">max_y</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">wavenumb</span><span class="p">,</span> <span class="n">int_norm_dft</span><span class="p">,</span> <span class="n">result_intensities_dft</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot(result_frequencies, int_norm, label= &quot;from Phonon Disp&quot;)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">df2</span><span class="o">=</span><span class="n">RRUFF_text</span><span class="p">(</span><span class="s2">&quot;anastase_532_exp.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">_read_file</span><span class="p">()</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;wavenumbers&quot;</span><span class="p">],</span> <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;intensities_normalized&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exp Anatase 532 nm&quot;</span><span class="p">)</span>
+
+<span class="n">freq_dft</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.129780207231549269e+02</span> <span class="p">,</span> <span class="mf">1.129780207231552680e+02</span> <span class="p">,</span><span class="mf">1.749879864729470853e+02</span> <span class="p">,</span><span class="mf">1.749879864729474264e+02</span> <span class="p">,</span><span class="mf">3.611532269867757350e+02</span> <span class="p">,</span><span class="mf">4.793102600546089320e+02</span> <span class="p">,</span><span class="mf">4.957302896450344178e+02</span> <span class="p">,</span><span class="mf">6.001592985713667758e+02</span> <span class="p">,</span><span class="mf">6.001592985713667758e+02</span><span class="p">]</span> 
+<span class="n">int_dft</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.000000000000000000e+00</span><span class="p">,</span><span class="mf">9.999999999999938938e-01</span><span class="p">,</span><span class="mf">2.939221091892205324e-03</span><span class="p">,</span><span class="mf">2.939221091892158921e-03</span><span class="p">,</span><span class="mf">1.494269659327405464e-01</span><span class="p">,</span><span class="mf">1.890540997545240437e-02</span><span class="p">,</span><span class="mf">1.019312927046264333e-01</span><span class="p">,</span><span class="mf">1.445200115409593922e-01</span><span class="p">,</span><span class="mf">1.445200115409594477e-01</span><span class="p">]</span>
+<span class="n">freq_gn</span><span class="p">,</span> <span class="n">int_gn</span> <span class="o">=</span> <span class="n">Gaus_norm</span><span class="p">(</span><span class="n">freq_dft</span><span class="p">,</span><span class="n">int_dft</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">freq_gn</span><span class="p">,</span> <span class="n">int_gn</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span> <span class="s2">&quot;DFT-Lorenzo&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot(df[&quot;Frequency&quot;],df[&quot;Norm&quot;], label=&quot;Exp Anatase&quot;)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$Frequency[cm^{-1}]$&quot;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity&quot;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="import-rruff-exp-data">
+<h2>Import RRUFF exp data<a class="headerlink" href="#import-rruff-exp-data" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">txt_raman_reader</span> <span class="kn">import</span> <span class="n">RRUFF_text</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">RRUFF_text</span><span class="p">(</span><span class="s2">&quot;anastase_532_exp.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">_read_file</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read by default 1st sheet of an excel file</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;anatase_exp.xlsx&#39;</span><span class="p">)</span>
+ 
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">])),</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Norm&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">]:</span>
+    <span class="n">freq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="using-database">
+<h1>Using DATABASE<a class="headerlink" href="#using-database" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+ 
+<span class="c1"># Opening JSON file</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;crd.json&#39;</span><span class="p">)</span>
+ 
+<span class="c1"># returns JSON object as</span>
+<span class="c1"># a dictionary</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;key_value_pairs&quot;</span><span class="p">][</span><span class="s2">&quot;mpid&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;lattice_angles&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_formula</span>   <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;chemical_formula&quot;</span><span class="p">]</span>
+<span class="n">lattice_parameters</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;lattice_parameters&quot;</span><span class="p">]</span>
+<span class="n">lattice_angles</span>     <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;lattice_angles&quot;</span><span class="p">]</span>
+<span class="n">cell_vectors</span>       <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;cell&quot;</span><span class="p">][</span><span class="s2">&quot;array&quot;</span><span class="p">][</span><span class="s2">&quot;__ndarray__&quot;</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">mpid</span>               <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;key_value_pairs&quot;</span><span class="p">][</span><span class="s2">&quot;mpid&quot;</span><span class="p">]</span>
+<span class="n">density</span>            <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;mass&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">30</span><span class="o">*</span><span class="mf">1.6726e-27</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The chemical formula of this material is: &quot;</span><span class="p">,</span> <span class="n">chemical_formula</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The lattice parameters of this material are, in the order (a,b,c) [A]: &quot;</span><span class="p">,</span> <span class="n">lattice_parameters</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The lattice angles of this material are, in the order (α,β,γ): &quot;</span><span class="p">,</span> <span class="n">lattice_angles</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The cell vectors of this material are, in matrix notation: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cell_vectors</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;The density of this material in [kg/m^3]: &quot;</span><span class="p">,</span> <span class="n">density</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For more properties of the material you can consult it in the materials project webpage with the following ID: &quot;</span><span class="p">,</span> <span class="n">mpid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_vectors</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">][</span><span class="s2">&quot;cell&quot;</span><span class="p">][</span><span class="s2">&quot;array&quot;</span><span class="p">][</span><span class="s2">&quot;__ndarray__&quot;</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">cell_vectors</span>
+<span class="n">mpid</span>         <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">][</span><span class="s2">&quot;key_value_pairs&quot;</span><span class="p">][</span><span class="s2">&quot;mpid&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;born&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;IRactive&quot;</span><span class="p">][</span><span class="s1">&#39;__ndarray__&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;Ramanactive&quot;</span><span class="p">][</span><span class="s1">&#39;__ndarray__&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(((</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;key_value_pairs&quot;</span><span class="p">][</span><span class="s2">&quot;frequencies_cm&quot;</span><span class="p">])))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;eigenvec&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ID</span><span class="o">=</span><span class="s2">&quot;4146&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;born&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;eigenvec&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;numbers&quot;</span><span class="p">][</span><span class="s1">&#39;__ndarray__&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;numbers&quot;</span><span class="p">][</span><span class="s1">&#39;__ndarray__&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;born&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="n">ID</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;eigenvec&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;numbers&quot;</span><span class="p">][</span><span class="s1">&#39;__ndarray__&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;positions&quot;</span><span class="p">][</span><span class="s2">&quot;__ndarray__&quot;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq_pos</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;positions&quot;</span><span class="p">][</span><span class="s2">&quot;__ndarray__&quot;</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span>\
+                 <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;positions&quot;</span><span class="p">][</span><span class="s2">&quot;__ndarray__&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>\
+                  <span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;positions&quot;</span><span class="p">][</span><span class="s2">&quot;__ndarray__&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">eq_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;positions&quot;</span><span class="p">][</span><span class="s2">&quot;__ndarray__&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xyz</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;12</span>
+<span class="s1">* (null), Energy   -1000.0000000</span>
+<span class="s1">Ti    8.44346146e+00       0.00000000e+00       4.47994206e+00        0.3644459717394135         5.973428763633715e-05        0.13044106010002338</span>
+<span class="s1">Ti    -1.22098741e-01      0.00000000e+00       4.43473766e+00        0.36444596702979787        5.973428763589211e-05        0.1304411344755619</span>
+<span class="s1">Ti    1.83503573e+00      -2.22044605e-16       1.77994600e+00        0.36444597173941456        5.9734287635064e-05          0.1304410601000229</span>
+<span class="s1">Ti    1.04005959e+01       0.00000000e+00       1.82515040e+00        0.36444596702979853        5.9734287634556656e-05       0.13044113447556266</span>
+<span class="s1">O     4.53203947e-03       2.08166817e-16       2.31518849e+00        0.21070125145747576        3.4534838727218664e-05       0.07541266128956095</span>
+<span class="s1">O     6.43306226e+00       0.00000000e+00       4.41253375e+00        0.21070108110973979        3.453483872759117e-05        0.07541290373989451</span>
+<span class="s1">O     1.62407700e+00       2.22044605e-16       2.18768765e-02        0.2107014462466366         3.453483872736387e-05        0.07541313635197812</span>
+<span class="s1">O     1.02739652e+01       0.00000000e+00       3.94469957e+00        0.21070125145747542        3.453483872757558e-05        0.0754126612895609</span>
+<span class="s1">O     8.30906545e+00       0.00000000e+00       2.18423795e+00        0.21070093688908031        3.453483872721332e-05        0.07541376066561453</span>
+<span class="s1">O     8.65442019e+00       0.00000000e+00       6.23801118e+00        0.21070144624663606        3.453483872743842e-05        0.0754131363519781</span>
+<span class="s1">O     1.96943174e+00       0.00000000e+00       4.07565011e+00        0.21070093688908015        3.453483872753387e-05        0.07541376066561405</span>
+<span class="s1">O     3.84543493e+00       0.00000000e+00       1.84735431e+00        0.2107010811097403         3.4534838727183766e-05       0.07541290373989427</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">view</span> <span class="o">=</span> <span class="n">py3Dmol</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">view</span><span class="o">.</span><span class="n">addModel</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="s2">&quot;xyz&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;vibrate&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;frames&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;amplitude&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}})</span>
+<span class="n">view</span><span class="o">.</span><span class="n">vibrate</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="kc">True</span><span class="p">,{</span><span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span>
+                  <span class="s2">&quot;radiusRadio&quot;</span><span class="p">:</span><span class="mf">0.8</span><span class="p">,</span>
+                  <span class="s2">&quot;mid&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#8db600&quot;</span><span class="p">})</span>
+<span class="n">view</span><span class="o">.</span><span class="n">setStyle</span><span class="p">({</span><span class="s1">&#39;sphere&#39;</span><span class="p">:{</span><span class="s1">&#39;scale&#39;</span><span class="p">:</span><span class="mf">0.30</span><span class="p">},</span><span class="s1">&#39;stick&#39;</span><span class="p">:{</span><span class="s1">&#39;scale&#39;</span><span class="p">:</span><span class="mf">0.15</span><span class="p">}})</span>
+<span class="n">view</span><span class="o">.</span><span class="n">setBackgroundColor</span><span class="p">(</span><span class="s1">&#39;0xeeeeee&#39;</span><span class="p">)</span>
+<span class="n">view</span><span class="o">.</span><span class="n">animate</span><span class="p">({</span><span class="s1">&#39;loop&#39;</span><span class="p">:</span> <span class="s1">&#39;backAndForth&#39;</span><span class="p">})</span>
+<span class="n">view</span><span class="o">.</span><span class="n">zoomTo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;eigenvec&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;raman_tensors&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;eigenvec&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;born&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;born&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;eigenvec&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">ints_ram_t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">formulas</span> <span class="o">=</span><span class="p">[]</span>
+<span class="n">compounds</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5100</span><span class="p">):</span>
+    <span class="n">compounds</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;chemical_formula&quot;</span><span class="p">],</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">formulas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;chemical_formula&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compounds</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">compounds</span>
+
+<span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">Dash</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span><span class="p">,</span><span class="n">callback</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">formulas</span><span class="p">,</span> <span class="n">formulas</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;demo-dropdown&#39;</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;dd-output-container&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+
+
+<span class="nd">@callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;dd-output-container&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;demo-dropdown&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">update_output</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;You have selected </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">compounds</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;Ti2O4&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;key_value_pairs&quot;</span><span class="p">][</span><span class="s2">&quot;frequencies_cm&quot;</span><span class="p">]</span>
+<span class="n">freq</span><span class="o">=</span> <span class="n">freq</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;]&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">freqs_db</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span>  <span class="ow">in</span> <span class="n">freq</span> <span class="p">]</span> 
+<span class="n">ints_ram_t</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;raman_tensors&quot;</span><span class="p">]:</span>
+    <span class="n">ints_ram_t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">intensity_raman</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    
+<span class="n">int_db</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;4146&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;Ramanactive&quot;</span><span class="p">][</span><span class="s2">&quot;__ndarray__&quot;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># freq_gn, int_gn, int_n = Gaus_norm(freqs_db,int_db,10)</span>
+<span class="c1"># plot(freq_gn, int_n, label= &quot;DFT-DB-1&quot;)</span>
+
+<span class="n">freq_gn</span><span class="p">,</span> <span class="n">int_gn</span><span class="p">,</span> <span class="n">int_n</span> <span class="o">=</span> <span class="n">Gaus_norm</span><span class="p">(</span><span class="n">freqs_db</span><span class="p">,</span><span class="n">ints_ram_t</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">freq_gn</span><span class="p">,</span> <span class="n">int_gn</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span> <span class="s2">&quot;DFT-DB&quot;</span><span class="p">)</span>
+
+
+<span class="n">df2</span><span class="o">=</span><span class="n">RRUFF_text</span><span class="p">(</span><span class="s2">&quot;anastase_532_exp.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">_read_file</span><span class="p">()</span>
+<span class="c1"># plot(df2[&quot;wavenumbers&quot;], df2[&quot;intensities_normalized&quot;], label=&quot;Exp Anatase 532 nm&quot;)</span>
+
+
+<span class="n">df3</span><span class="o">=</span><span class="n">RRUFF_text</span><span class="p">(</span><span class="s2">&quot;rutile_exp_dep.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">_read_file</span><span class="p">()</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">df3</span><span class="p">[</span><span class="s2">&quot;wavenumbers&quot;</span><span class="p">],</span> <span class="n">df3</span><span class="p">[</span><span class="s2">&quot;intensities_normalized&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exp Rutile 532 nm&quot;</span><span class="p">)</span>
+
+
+<span class="n">freq_dft</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.129780207231549269e+02</span> <span class="p">,</span> <span class="mf">1.129780207231552680e+02</span> <span class="p">,</span><span class="mf">1.749879864729470853e+02</span> <span class="p">,</span><span class="mf">1.749879864729474264e+02</span> <span class="p">,</span><span class="mf">3.611532269867757350e+02</span> <span class="p">,</span><span class="mf">4.793102600546089320e+02</span> <span class="p">,</span><span class="mf">4.957302896450344178e+02</span> <span class="p">,</span><span class="mf">6.001592985713667758e+02</span> <span class="p">,</span><span class="mf">6.001592985713667758e+02</span><span class="p">]</span> 
+<span class="n">int_dft</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.000000000000000000e+00</span><span class="p">,</span><span class="mf">9.999999999999938938e-01</span><span class="p">,</span><span class="mf">2.939221091892205324e-03</span><span class="p">,</span><span class="mf">2.939221091892158921e-03</span><span class="p">,</span><span class="mf">1.494269659327405464e-01</span><span class="p">,</span><span class="mf">1.890540997545240437e-02</span><span class="p">,</span><span class="mf">1.019312927046264333e-01</span><span class="p">,</span><span class="mf">1.445200115409593922e-01</span><span class="p">,</span><span class="mf">1.445200115409594477e-01</span><span class="p">]</span>
+<span class="n">freq_dft</span><span class="p">,</span> <span class="n">int_dft</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Gaus_norm</span><span class="p">(</span><span class="n">freq_dft</span><span class="p">,</span><span class="n">int_dft</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># plot(freq_dft, int_dft, label= &quot;DFT-Lorenzo&quot;)</span>
+
+<span class="n">wavenum</span> <span class="p">,</span> <span class="n">int_norm</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Gaus_norm</span><span class="p">(</span><span class="n">result_frequencies_TIO2</span><span class="p">,</span> <span class="n">result_intensities_TIO2</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">wavenumb</span><span class="p">,</span><span class="n">int_norm</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Phonon dis&quot;</span><span class="p">)</span>
+<span class="c1"># plot(df[&quot;Frequency&quot;],df[&quot;Norm&quot;], label=&quot;Exp Anatase&quot;)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$Frequency[cm^{-1}]$&quot;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot(freq_db_all, new_int_all, label=r&quot;$Combined - \Gamma point$&quot;)</span>
+<span class="n">legend</span><span class="p">()</span>
+
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freqs_db_r</span> <span class="o">=</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">freqs_db</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">freqs_db_r</span><span class="p">,</span><span class="n">int_db</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+ 
+<span class="c1"># Opening JSON file</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;crd.json&#39;</span><span class="p">)</span>
+ 
+<span class="c1"># returns JSON object as</span>
+<span class="c1"># a dictionary</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">ID</span><span class="o">=</span><span class="s2">&quot;52&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quetzalcoatl_1</span> <span class="kn">import</span> <span class="n">Animator_data</span><span class="p">,</span> <span class="n">spectra_data</span><span class="p">,</span> <span class="n">solids_spectra</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ID</span> <span class="o">=</span><span class="s2">&quot;78&quot;</span>
+<span class="n">Animator_data</span><span class="p">(</span><span class="n">ID</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma_IR</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">sigma_Raman</span><span class="o">=</span><span class="mf">0.1</span>
+
+<span class="n">freq_gn_ir</span><span class="p">,</span> <span class="n">int_gn_ir</span><span class="p">,</span> <span class="n">int_n_ir</span> <span class="p">,</span> <span class="n">freq_gn_raman</span><span class="p">,</span> <span class="n">int_gn_raman</span><span class="p">,</span> <span class="n">int_n_raman</span><span class="o">=</span> <span class="n">spectra_data</span><span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="n">sigma_IR</span><span class="p">,</span> <span class="n">sigma_Raman</span><span class="p">)</span>
+<span class="n">solids_spectra</span><span class="p">(</span><span class="s2">&quot;readme_solids.txt&quot;</span><span class="p">,</span> <span class="n">freq_gn_ir</span><span class="p">,</span> <span class="n">int_gn_ir</span><span class="p">,</span> <span class="n">freq_gn_raman</span><span class="p">,</span> <span class="n">int_gn_raman</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The chemical formula of this material is:  Ba8Cu4I4O8
+The lattice parameters of this material are, in the order (a,b,c) [A]:  [10.95891831  4.38039471 13.93294818]
+The lattice angles of this material are, in the order (α,β,γ):  [90.         91.18449953 90.        ]
+The cell vectors of this material are, in matrix notation: 
+[[10.95890004  0.          0.02001305]
+ [ 0.          4.38039471  0.        ]
+ [-0.3134594   0.         13.92942167]]
+The density of this material in [kg/m^3]:  4973.55
+For more properties of the material you can consult it in the materials project webpage with the following ID:  mp-561179
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "601bd6ddd126441194861879f16ecfcd", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "AntonioCd96/IR-and-Raman.git",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./IR-Raman-Axolotl"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Working do not move</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ir-and-raman">IR and raman</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-rruff-exp-data">Import RRUFF exp data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-database">Using DATABASE</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. Mounir Mensi, Dr. Kevin Jablonka and  Antonio Doñez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

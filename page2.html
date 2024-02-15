@@ -181,6 +181,14 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="page3_5.html">Harmonic Oscillator - Quantum Mechanics Approach - Interactive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page4_IR-Raman-Phonon-Dispersion.html">IR and raman</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="page4_phonon-band%20structure.html">Phonon structure of different solids</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="page4_Solids_IR-Raman_3D_anim.html">Auxilair documents</a></li>
 </ul>
 
     </div>
@@ -489,7 +497,7 @@ More info abouth this project: <a class="reference external" href="mailto:cesar&
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rdkit in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (2023.3.1)
-Requirement already satisfied: numpy in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from rdkit) (1.24.3)
+Requirement already satisfied: numpy in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from rdkit) (1.25.2)
 Requirement already satisfied: Pillow in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from rdkit) (9.5.0)
 </pre></div>
 </div>
@@ -507,7 +515,7 @@ Requirement already satisfied: Pillow in /home/cd96/psi4conda/envs/jbook/lib/pyt
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: kallisto in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (1.0.9)
 Requirement already satisfied: click&lt;9.0.0,&gt;=8.0.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (8.1.3)
-Requirement already satisfied: numpy&lt;2.0.0,&gt;=1.19.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.24.3)
+Requirement already satisfied: numpy&lt;2.0.0,&gt;=1.19.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.25.2)
 Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.9.2)
 </pre></div>
 </div>
@@ -523,12 +531,7 @@ Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting py3Dmol
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-<span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: py3Dmol in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (2.0.4)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -539,6 +542,21 @@ Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/l
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="s2">&quot;jax[cpu]&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jax[cpu] in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (0.4.24)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ml-dtypes&gt;=0.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (0.3.2)
+Requirement already satisfied: numpy&gt;=1.22 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (1.25.2)
+Requirement already satisfied: opt-einsum in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (3.3.0)
+Requirement already satisfied: scipy&gt;=1.9 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (1.9.2)
+Requirement already satisfied: jaxlib==0.4.24 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (0.4.24)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 </div>
@@ -584,6 +602,30 @@ Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/l
 
 <span class="n">IR_axo</span><span class="p">(</span> <span class="n">filename</span><span class="p">,</span><span class="n">Compound_wn</span><span class="p">,</span> <span class="n">Compound_int</span><span class="p">,</span><span class="n">smiles_code</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">sigma_raman</span><span class="p">,</span><span class="n">μ_all</span><span class="p">,</span> <span class="n">all_pol_mode</span> <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;IR_Raman_TheoreticalSpectra_</span><span class="si">{0}</span><span class="s2">_</span><span class="si">{1}</span><span class="s2">.png&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">smiles_code</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">smiles_code</span>        <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce the smiles code: &quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">method</span>             <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce the method (GFN2xTB, GFN1xTB, GFNFF): &quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sigma</span>              <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce how much you want to broad the theoretical bands (a number between σ=[20,100]): &quot;</span><span class="p">))</span>
+
+<span class="nn">File ~/psi4conda/envs/jbook/lib/python3.11/site-packages/ipykernel/kernelbase.py:1190,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1188</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1190</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1192</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1193</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1194</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1195</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1196</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>

@@ -1,0 +1,962 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; Interactive IR and Raman</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IR-Raman-Axolotl/Using jax-CH4 case';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../inicio.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-LSMO.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo-LSMO.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../inicio.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Basic_Notebook.html">Jupyter Notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page1.html">Vibrational spectroscopy</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page1_5.html">Vibrational spectroscopy - Interactive</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page2.html">Calculate your own IR and Raman Spectra</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page3.html">Harmonic Oscillator - Quantum Mechanics Approach</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page3_5.html">Harmonic Oscillator - Quantum Mechanics Approach - Interactive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../page4_IR-Raman-Phonon-Dispersion.html">IR and raman</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page4_phonon-band%20structure.html">Phonon structure of different solids</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../page4_Solids_IR-Raman_3D_anim.html">Auxilair documents</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/AntonioCd96/IR-and-Raman.git/master?urlpath=lab/tree/IR-Raman-Axolotl/Using jax-CH4 case.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/AntonioCd96/IR-and-Raman.git&urlpath=lab/tree/IR-and-Raman.git/IR-Raman-Axolotl/Using+jax-CH4+case.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/AntonioCd96/IR-and-Raman.git/blob/master/IR-Raman-Axolotl/Using jax-CH4 case.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AntonioCd96/IR-and-Raman.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AntonioCd96/IR-and-Raman.git/issues/new?title=Issue%20on%20page%20%2FIR-Raman-Axolotl/Using jax-CH4 case.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/IR-Raman-Axolotl/Using jax-CH4 case.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jax</span><span class="o">==</span><span class="mf">0.3.13</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">whls</span><span class="o">.</span><span class="n">blob</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">windows</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">unstable</span><span class="o">/</span><span class="n">cuda111</span><span class="o">/</span><span class="n">jaxlib</span><span class="o">-</span><span class="mf">0.3.7</span><span class="o">+</span><span class="n">cuda11</span><span class="o">.</span><span class="n">cudnn82</span><span class="o">-</span><span class="n">cp38</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="n">win_amd64</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">ERROR: jaxlib-0.3.7+cuda11.cudnn82-cp38-none-win_amd64.whl is not a supported wheel on this platform.</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">argrelextrema</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.Draw</span> <span class="kn">import</span> <span class="n">IPythonConsole</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Draw</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">ipython_useSVG</span><span class="o">=</span><span class="kc">True</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">jax</span>
+<span class="kn">import</span> <span class="nn">jax.numpy</span> <span class="k">as</span> <span class="nn">jnp</span>
+<span class="kn">from</span> <span class="nn">jax</span> <span class="kn">import</span> <span class="n">grad</span><span class="p">,</span> <span class="n">jit</span><span class="p">,</span> <span class="n">vmap</span>
+<span class="kn">from</span> <span class="nn">jax</span> <span class="kn">import</span> <span class="n">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">AllChem</span>
+
+
+<span class="k">def</span> <span class="nf">dipole_moment_plot</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+    <span class="c1"># Correction of smiles for triple bonds</span>
+    <span class="n">smiles_xTB</span> <span class="o">=</span> <span class="n">smiles</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">,</span><span class="s2">&quot;%23&quot;</span><span class="p">)</span>
+    
+    <span class="c1">#Request the calcualtion in xTB service</span>
+    <span class="n">r</span>          <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://ir.cheminfo.org/v1/ir?smiles=</span><span class="si">{0}</span><span class="s1">&amp;method=</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">smiles_xTB</span><span class="p">,</span> <span class="n">method</span><span class="p">))</span>
+    <span class="n">data_bytes</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">content</span>
+    <span class="n">data_dic</span>   <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data_bytes</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+
+
+    <span class="n">wavenumb</span>   <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">data_dic</span><span class="p">[</span><span class="s2">&quot;wavenumbers&quot;</span><span class="p">])</span>
+    
+    <span class="c1"># Import normal modes</span>
+    <span class="n">modes</span> <span class="o">=</span> <span class="n">data_dic</span><span class="p">[</span><span class="s2">&quot;modes&quot;</span><span class="p">]</span>
+    <span class="n">vib_modes</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">modes</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">modes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;modeType&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;vibration&#39;</span><span class="p">:</span>
+            <span class="n">vib_modes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">modes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            
+    <span class="c1"># Import frequencies</span>
+    <span class="n">frequency</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">vib_modes</span><span class="p">)):</span>
+        <span class="n">frequency</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vib_modes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;wavenumber&quot;</span><span class="p">])</span>
+        
+    <span class="c1"># Import normal modes coordinates</span>
+    <span class="n">a</span>        <span class="o">=</span> <span class="n">vib_modes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;displacements&quot;</span><span class="p">]</span>
+    <span class="n">ar_s</span>     <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">modes_al</span> <span class="o">=</span> <span class="n">ar_s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">modes_al_c</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">modes_al</span><span class="p">:</span>
+        <span class="n">modes_al_c</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are </span><span class="si">{0}</span><span class="s2"> normal modes&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vib_modes</span><span class="p">)))</span>
+   
+    <span class="n">elements</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">modes_al_c</span><span class="p">:</span>
+        <span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            
+    <span class="nb">print</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>  
+    <span class="c1"># Define the function to calculate the dipole moment for a configuration</span>
+    <span class="k">def</span> <span class="nf">calculate_dipole_moment</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="n">charges</span><span class="p">,</span> <span class="n">masses</span><span class="p">):</span>
+        <span class="c1"># Calculate the center of mass</span>
+        <span class="n">total_mass</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">masses</span><span class="p">)</span>
+        <span class="n">center_of_mass</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">coordinates</span> <span class="o">*</span> <span class="n">masses</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">total_mass</span>
+
+        <span class="c1"># Calculate the dipole moment</span>
+        <span class="n">dipole_moment</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">charge</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">charges</span><span class="p">,</span> <span class="n">coordinates</span><span class="p">):</span>
+            <span class="n">dipole_moment</span> <span class="o">+=</span> <span class="n">charge</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">])</span> <span class="o">-</span> <span class="n">charge</span> <span class="o">*</span> <span class="n">center_of_mass</span>
+
+        <span class="k">return</span> <span class="n">dipole_moment</span>
+
+    <span class="c1"># Define the function for linear interpolation of configurations</span>
+    <span class="k">def</span> <span class="nf">interpolate_configurations</span><span class="p">(</span><span class="n">initial_coords</span><span class="p">,</span> <span class="n">final_coords</span><span class="p">,</span> <span class="n">num_steps</span><span class="p">):</span>
+        <span class="n">steps</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">num_steps</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">initial_coords</span> <span class="o">+</span> <span class="n">steps</span> <span class="o">*</span> <span class="p">(</span><span class="n">final_coords</span> <span class="o">-</span> <span class="n">initial_coords</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">calculate_partial_charges</span><span class="p">(</span><span class="n">molecule_smiles</span><span class="p">):</span>
+        <span class="c1"># Create an RDKit molecule object</span>
+        <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">molecule_smiles</span><span class="p">)</span>
+
+        <span class="c1"># Add hydrogens and generate 3D coordinates</span>
+        <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">AddHs</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+        <span class="n">AllChem</span><span class="o">.</span><span class="n">EmbedMolecule</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">AllChem</span><span class="o">.</span><span class="n">ETKDG</span><span class="p">())</span>
+
+        <span class="c1"># Compute Gasteiger partial charges</span>
+        <span class="n">AllChem</span><span class="o">.</span><span class="n">ComputeGasteigerCharges</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+        <span class="c1"># Get the computed partial charges for each atom</span>
+        <span class="n">partial_charges</span> <span class="o">=</span> <span class="p">[</span><span class="n">atom</span><span class="o">.</span><span class="n">GetDoubleProp</span><span class="p">(</span><span class="s2">&quot;_GasteigerCharge&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()]</span>
+        <span class="n">atom_masses</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
+            <span class="n">atom_mass</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">GetMass</span><span class="p">()</span>
+            <span class="n">atom_masses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atom_mass</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">partial_charges</span><span class="p">,</span> <span class="n">atom_masses</span>
+
+    <span class="n">partial_charges</span><span class="p">,</span> <span class="n">atom_masses</span> <span class="o">=</span> <span class="n">calculate_partial_charges</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+    
+    <span class="n">charges</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">partial_charges</span><span class="p">)</span>
+    <span class="n">masses</span>  <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">atom_masses</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tha charges are </span><span class="si">{0}</span><span class="s2"> with a mass of </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">charges</span><span class="p">,</span> <span class="n">masses</span><span class="p">))</span>
+
+    <span class="c1">########## ---------- Writing the initial positions --------- </span>
+    <span class="n">μ_all</span><span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">mode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">vib_modes</span><span class="p">)):</span>
+        <span class="n">μ_i_f</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">a</span>        <span class="o">=</span> <span class="n">vib_modes</span><span class="p">[</span><span class="n">mode</span><span class="p">][</span><span class="s2">&quot;displacements&quot;</span><span class="p">]</span>
+        <span class="n">ar_s</span>     <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">modes_al</span> <span class="o">=</span> <span class="n">ar_s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">modes_al_c</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">modes_al</span><span class="p">:</span>
+            <span class="n">modes_al_c</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+        <span class="n">num_modes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">elements</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">modes_al_c</span><span class="p">:</span>
+            <span class="n">atom</span>      <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+                <span class="n">atom</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span> 
+            <span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">num_modes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
+
+        <span class="n">coordinates</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">num_modes</span><span class="p">:</span>
+            <span class="n">coordinates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="n">initial_coordinates</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">num_modes</span><span class="p">)</span>
+<span class="c1">#         print(initial_coordiantes)</span>
+        
+
+        <span class="c1">#### Final positions  </span>
+        <span class="n">vib_modes_1</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">modes_al_c</span><span class="p">:</span>
+            <span class="n">atom</span>      <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+                <span class="n">atom</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span> 
+            <span class="n">vib_modes_1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
+
+        <span class="n">coordinates_vib</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vib_modes_1</span><span class="p">:</span>
+            <span class="n">coordinates_vib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="n">final_coordinates</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vib_modes_1</span><span class="p">)</span>
+<span class="c1">#         print(final_coordinates)</span>
+
+        <span class="c1"># Compute 100 intermediate configurations using linear interpolation for each coordinate</span>
+        <span class="n">num_interpolations</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="n">interpolated_coordinates</span> <span class="o">=</span> <span class="n">interpolate_configurations</span><span class="p">((</span><span class="n">initial_coordinates</span><span class="p">)[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="p">(</span><span class="n">initial_coordinates</span><span class="o">+</span><span class="n">final_coordinates</span><span class="p">)[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="n">num_interpolations</span><span class="p">)</span>
+
+        <span class="c1"># Calculate the dipole moment magnitudes for each configuration</span>
+        <span class="n">dipole_moment_magnitudes</span> <span class="o">=</span> <span class="n">vmap</span><span class="p">(</span><span class="n">calculate_dipole_moment</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))(</span><span class="n">interpolated_coordinates</span><span class="p">,</span> <span class="n">charges</span><span class="p">,</span> <span class="n">masses</span><span class="p">)</span>
+
+        <span class="c1"># Print the list of dipole moment magnitudes</span>
+        <span class="c1"># print(dipole_moment_magnitudes)</span>
+        <span class="n">news</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dipole_moment_magnitudes</span><span class="p">:</span>
+            <span class="n">news</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+        
+        <span class="n">plot</span><span class="p">(</span><span class="n">news</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\nu= </span><span class="si">{0}</span><span class="s2"> \ cm-1$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">frequency</span><span class="p">[</span><span class="n">mode</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span> <span class="p">))</span>
+        <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">)</span>
+        
+        <span class="n">legend</span><span class="p">()</span>
+        <span class="n">μ_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">news</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">μ_all</span><span class="p">,</span><span class="n">frequency</span>
+    
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">dipoles_f</span><span class="o">=</span><span class="n">dipole_moment_plot</span><span class="p">(</span><span class="s2">&quot;O=C=O&quot;</span><span class="p">,</span> <span class="s2">&quot;GFN2xTB&quot;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 4 normal modes
+[&#39;O&#39;, &#39;C&#39;, &#39;O&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.011 15.999]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
+</pre></div>
+</div>
+<img alt="../_images/1874485b005202fd242319ab70e88773ca58d5f03104d7cffa89f7ad712e759d.png" src="../_images/1874485b005202fd242319ab70e88773ca58d5f03104d7cffa89f7ad712e759d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f73307984d0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/5a9466b46828c36a6edd945cb61f0f5f5c42cff94677a26313807961044fb799.png" src="../_images/5a9466b46828c36a6edd945cb61f0f5f5c42cff94677a26313807961044fb799.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">k</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">dipoles_f</span><span class="p">):</span>
+    <span class="n">b</span><span class="o">=</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">gradient</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;At frequency: &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">,</span> <span class="s2">&quot;the gradient is: &quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>At frequency:  538.85 the gradient is:  0.01237182161427186
+At frequency:  600.02 the gradient is:  0.012747023778889111
+At frequency:  1425.06 the gradient is:  2.634178031930877e-08
+At frequency:  2593.65 the gradient is:  0.01274685415017222
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dipoles_f</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[538.8491979154783, 600.0227301046334, 1425.0631449431842, 2593.6543235739987]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0,
+ 0.001237182063050568,
+ 0.002474364126101136,
+ 0.003711545839905739,
+ 0.004948728252202272,
+ 0.006185909733176231,
+ 0.007423091679811478,
+ 0.00866027269512415,
+ 0.009897456504404545,
+ 0.011134638451039791,
+ 0.012371819466352463,
+ 0.013609002344310284,
+ 0.014846183359622955,
+ 0.0160833653062582,
+ 0.0173205453902483,
+ 0.018557731062173843,
+ 0.01979491300880909,
+ 0.021032093092799187,
+ 0.022269276902079582,
+ 0.02350645698606968,
+ 0.024743638932704926,
+ 0.02598082274198532,
+ 0.027218004688620567,
+ 0.028455186635255814,
+ 0.02969236671924591,
+ 0.030929548665881157,
+ 0.0321667306125164,
+ 0.0334039181470871,
+ 0.0346410907804966,
+ 0.03587827831506729,
+ 0.03711546212434769,
+ 0.038352642208337784,
+ 0.03958982601761818,
+ 0.040827009826898575,
+ 0.04206418618559837,
+ 0.04330137372016907,
+ 0.044538553804159164,
+ 0.04577573388814926,
+ 0.04701291397213936,
+ 0.048250094056129456,
+ 0.04948727786540985,
+ 0.05072446167469025,
+ 0.05196164548397064,
+ 0.05319882556796074,
+ 0.054436009377241135,
+ 0.05567318946123123,
+ 0.05691037327051163,
+ 0.058147553354501724,
+ 0.05938473343849182,
+ 0.06062191352248192,
+ 0.061859097331762314,
+ 0.06309627741575241,
+ 0.0643334612250328,
+ 0.0655706450343132,
+ 0.0668078362941742,
+ 0.06804502010345459,
+ 0.0692821815609932,
+ 0.07051937282085419,
+ 0.07175655663013458,
+ 0.07299374043941498,
+ 0.07423092424869537,
+ 0.07546810060739517,
+ 0.07670528441667557,
+ 0.07794246077537537,
+ 0.07917965203523636,
+ 0.08041682094335556,
+ 0.08165401965379715,
+ 0.08289118111133575,
+ 0.08412837237119675,
+ 0.08536554872989655,
+ 0.08660274744033813,
+ 0.08783993124961853,
+ 0.08907710760831833,
+ 0.09031426906585693,
+ 0.09155146777629852,
+ 0.09278865158557892,
+ 0.09402582794427872,
+ 0.09526301175355911,
+ 0.09650018811225891,
+ 0.0977373793721199,
+ 0.0989745557308197,
+ 0.1002117395401001,
+ 0.1014489233493805,
+ 0.10268610715866089,
+ 0.10392329096794128,
+ 0.10516045987606049,
+ 0.10639765113592148,
+ 0.10763482749462128,
+ 0.10887201875448227,
+ 0.11010920256376266,
+ 0.11134637892246246,
+ 0.11258354783058167,
+ 0.11382074654102325,
+ 0.11505793780088425,
+ 0.11629510670900345,
+ 0.11753229796886444,
+ 0.11876946687698364,
+ 0.12000666558742523,
+ 0.12124382704496384,
+ 0.12248102575540543]
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "AntonioCd96/IR-and-Raman.git",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./IR-Raman-Axolotl"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. Mounir Mensi, Dr. Kevin Jablonka and  Antonio Doñez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
