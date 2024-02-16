@@ -139,14 +139,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/logo-LSMO.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo-LSMO.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">Interactive IR and Raman</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -652,7 +646,7 @@ A=\frac{F_0/\mu}{\sqrt{(\omega_0^2-\omega_f^2)^2+4\omega_f^2γ^2}}
 <p class="admonition-title">What happens with the frequency of oscillation when you increase one of the masses? How can you relate this with the bond order in a molecule?</p>
 <p>The frequency of oscillation decreases, this can be translated into chemical language as if the bond order increases too! This means that bond gets stronger or similarly we add a bond to the molecule</p>
 </div>
-<p><img alt="SegmentLocal" src="Notebooks/images/example_2.gif" /></p>
+<p><img alt="SegmentLocal" src="../_images/example_2.gif" /></p>
 <div class="dropdown admonition">
 <p class="admonition-title">Which facts can you conclude with this animation?</p>
 <p>With this animation we can confirm several guess:</p>
@@ -665,18 +659,18 @@ A=\frac{F_0/\mu}{\sqrt{(\omega_0^2-\omega_f^2)^2+4\omega_f^2γ^2}}
 <p>Note that in our simple model we are allowing motion of the masses only in one dimension (i.e., we are allowing longitudinal motion of the chain, not transverse motion)</p>
 <p>For any coupled system system, a normal mode is defined to be a collective oscillation where all particles move at the same frequency. We now attempt a solution
 to Newton’s equations by using an ansatz that describes the normal modes as waves</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e4a28526-d3e7-4eb2-8829-daf948f97b6e">
-<span class="eqno">(4)<a class="headerlink" href="#equation-e4a28526-d3e7-4eb2-8829-daf948f97b6e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7278f2a3-526e-440c-a838-9b793b97743a">
+<span class="eqno">(4)<a class="headerlink" href="#equation-7278f2a3-526e-440c-a838-9b793b97743a" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_n^{\rm eq}=na\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-67b49c28-82a6-454a-aa29-822815e08699">
-<span class="eqno">(5)<a class="headerlink" href="#equation-67b49c28-82a6-454a-aa29-822815e08699" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0167063f-47b8-48ce-85ce-4ed237880198">
+<span class="eqno">(5)<a class="headerlink" href="#equation-0167063f-47b8-48ce-85ce-4ed237880198" title="Permalink to this equation">#</a></span>\[\begin{align}
 \delta x_n = A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>Solving the equation we obtain:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0c4f70c0-6be2-4222-87f2-1e22c24ca84e">
-<span class="eqno">(6)<a class="headerlink" href="#equation-0c4f70c0-6be2-4222-87f2-1e22c24ca84e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c718e240-afef-4ad2-b00b-a729e59fcfd3">
+<span class="eqno">(6)<a class="headerlink" href="#equation-c718e240-afef-4ad2-b00b-a729e59fcfd3" title="Permalink to this equation">#</a></span>\[\begin{align}
 \omega(k) = \sqrt{\frac{4\kappa}{m}} \bigg| \sin\bigg( \frac{ka}{2} \bigg) \bigg|
 \end{align}\]</div>
 <p>As we have seen, this exact solutions can help us to simulate the movement of atoms, in this case we will see how atoms in a periodic lattice move in a defined normal mode.</p>
