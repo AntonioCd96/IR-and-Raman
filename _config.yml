@@ -1,7 +1,7 @@
 # archivo: _config.yml 
 title: "Interactive IR and Raman"
 author: Dr. Mounir Mensi, Dr. Kevin Jablonka and  Antonio Doñez
-logo:  images/logo-LSMO.png
+logo:  Notebooks/images/logo-LSMO.png
 #
 
 launch_buttons:
