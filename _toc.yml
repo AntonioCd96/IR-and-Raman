@@ -2,12 +2,15 @@
 format: jb-book
 root:   inicio
 chapters:
-- file: Basic_Notebook
-- file: page1
-- file: page1_5
-- file: page2
-- file: page3
-- file: page3_5
+- file: Notebooks/Basic_Notebook
+- file: Notebooks/page1
+- file: Notebooks/page1_5
+- file: Notebooks/page2
+- file: Notebooks/page3
+- file: Notebooks/page3_5
+- file: Notebooks/page4_IR-Raman-Phonon-Dispersion
+- file: Notebooks/page4_phonon-band structure
+- file: Notebooks/page4_Solids_IR-Raman_3D_anim
 
 
 
