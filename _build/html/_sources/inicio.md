@@ -6,7 +6,8 @@ This notebook is aimed to illustrate the basic concepts of infrared spectra (IR)
 
 # Get Started ... 
 
-In the following frames you will find useful information to run the notebooks in the official python repository of the EPFL: noto
+In the following frames you will find useful information to run the notebooks in the official python repository of the EPFL: NOTO
+Notice that you can also run the notebooks using colab - google
 
 ![Content](./Notebooks/images/image_2.png)
 
