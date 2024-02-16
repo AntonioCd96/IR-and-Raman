@@ -1,0 +1,789 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>\(H_2O\) &#8212; Interactive IR and Raman</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Notebooks/Simulations vs Experimental ';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../inicio.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-LSMO.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo-LSMO.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../inicio.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Basic_Notebook.html">Jupyter Notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="page1.html">Vibrational spectroscopy</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="page1_5.html">Vibrational spectroscopy - Interactive</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="page2.html">Calculate your own IR and Raman Spectra</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="page3.html">Harmonic Oscillator - Quantum Mechanics Approach</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="page3_5.html">Harmonic Oscillator - Quantum Mechanics Approach - Interactive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page4_IR-Raman-Phonon-Dispersion.html">IR and raman</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="page4_phonon-band%20structure.html">Phonon structure of different solids</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="page4_Solids_IR-Raman_3D_anim.html">Auxilair documents</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/AntonioCd96/IR-and-Raman.git/master?urlpath=lab/tree/Notebooks/Simulations vs Experimental .ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/AntonioCd96/IR-and-Raman.git&urlpath=lab/tree/IR-and-Raman.git/Notebooks/Simulations+vs+Experimental+.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/AntonioCd96/IR-and-Raman.git/blob/master/Notebooks/Simulations vs Experimental .ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AntonioCd96/IR-and-Raman.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AntonioCd96/IR-and-Raman.git/issues/new?title=Issue%20on%20page%20%2FNotebooks/Simulations vs Experimental .html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Notebooks/Simulations vs Experimental .ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>H_2O</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span class="math notranslate nohighlight">\(H_2O\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#co-2"><span class="math notranslate nohighlight">\(CO_2\)</span></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">):</span>
+    <span class="n">File_open</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+    <span class="n">File_loaded</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">File_open</span><span class="p">)</span>
+    <span class="n">Dic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;File&quot;</span><span class="p">:</span> <span class="n">File</span><span class="p">,</span>
+           <span class="s2">&quot;wavenumbers&quot;</span>   <span class="p">:</span> <span class="n">File_loaded</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span>
+           <span class="s2">&quot;intensities&quot;</span>  <span class="p">:</span> <span class="n">File_loaded</span><span class="p">[</span><span class="s1">&#39;intensities&#39;</span><span class="p">]</span>
+           <span class="p">}</span>
+    <span class="k">return</span> <span class="n">Dic</span>
+<span class="k">def</span> <span class="nf">IR_exp</span><span class="p">(</span><span class="n">IR_data</span><span class="p">):</span>
+    <span class="n">name</span>                <span class="o">=</span> <span class="n">IR_data</span>
+    <span class="n">file</span>                <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">new_archive</span>         <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">_2.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+    <span class="n">headerList</span>          <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">,</span> <span class="s1">&#39;intensities&#39;</span><span class="p">]</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">new_archive</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">headerList</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">file2</span>               <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">new_archive</span><span class="p">)</span> 
+    <span class="n">file2</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">new_intensities</span>     <span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">file2</span><span class="p">[</span><span class="s1">&#39;intensities&#39;</span><span class="p">]:</span>
+        <span class="n">new_intensities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">Dic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;File&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+           <span class="s2">&quot;wavenumbers&quot;</span>   <span class="p">:</span> <span class="n">file2</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span>
+           <span class="s2">&quot;intensities&quot;</span>  <span class="p">:</span> <span class="n">new_intensities</span>
+           <span class="p">}</span>
+    <span class="k">return</span> <span class="n">Dic</span>
+
+<span class="k">def</span> <span class="nf">Normal</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">new_intensities</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">old_intensities</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;intensities&quot;</span><span class="p">]</span>
+    <span class="n">a</span>               <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">old_intensities</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">old_intensities</span><span class="p">:</span>
+        <span class="n">new_intensities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_intensities</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="h-2o">
+<h1><span class="math notranslate nohighlight">\(H_2O\)</span><a class="headerlink" href="#h-2o" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./*.json&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;./id-formula.json&#39;, &#39;./formulas-mpid.json&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">File</span>          <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679606406055_H2O_GFNFF.json&#39;</span>
+<span class="n">H2_O_GFNFF</span>    <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679607003317_H2O_GFN1xTB.json&#39;</span>
+<span class="n">H2_O_GFN1xTB</span> <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+<span class="n">File</span>         <span class="o">=</span> <span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679607376257_H2O_GFN2xTB.json&#39;</span>
+<span class="n">H2_O_GFN2xTB</span> <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">H2_O_exp.csv&#39;</span>
+<span class="n">H2_O_exp</span>     <span class="o">=</span> <span class="n">IR_exp</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">File</span>          <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679606406055_H2O_GFNFF.json&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">H2_O_GFNFF</span>    <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679607003317_H2O_GFN1xTB.json&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">H2_O_GFN1xTB</span> <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+
+<span class="nn">Cell In[2], line 2,</span> in <span class="ni">LoadData</span><span class="nt">(File)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">File_open</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">File_loaded</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">File_open</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">Dic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;File&quot;</span><span class="p">:</span> <span class="n">File</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>            <span class="s2">&quot;wavenumbers&quot;</span>   <span class="p">:</span> <span class="n">File_loaded</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>            <span class="s2">&quot;intensities&quot;</span>  <span class="p">:</span> <span class="n">File_loaded</span><span class="p">[</span><span class="s1">&#39;intensities&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>            <span class="p">}</span>
+
+<span class="nn">File ~/psi4conda/envs/jbook/lib/python3.11/site-packages/IPython/core/interactiveshell.py:284,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">284</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;.\\response_1679606406055_H2O_GFNFF.json&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+    
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">H2_O_GFNFF</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span><span class="n">Normal</span><span class="p">(</span><span class="n">H2_O_GFNFF</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GFNFF&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">H2_O_GFN1xTB</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span><span class="n">Normal</span><span class="p">(</span><span class="n">H2_O_GFN1xTB</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GFN1xTB&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">H2_O_GFN2xTB</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span><span class="n">Normal</span><span class="p">(</span><span class="n">H2_O_GFN2xTB</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GFN2xTB&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">H2_O_exp</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span><span class="n">Normal</span><span class="p">(</span><span class="n">H2_O_exp</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Experiment&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;wavenumber[1/cm]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity [a.u.]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ab16dbcccf54ffb61478d09daed520c8876e0d99ac74fde8a56a02c6fcfbe13e.png" src="../_images/ab16dbcccf54ffb61478d09daed520c8876e0d99ac74fde8a56a02c6fcfbe13e.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="co-2">
+<h1><span class="math notranslate nohighlight">\(CO_2\)</span><a class="headerlink" href="#co-2" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./*.json&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;.\\EtOH_exp.json&#39;,
+ &#39;.\\response_1679440595996_CS2_GFNFF.json&#39;,
+ &#39;.\\response_1679485578314_CS2_GFN1xTB.json&#39;,
+ &#39;.\\response_1679485961310_CS2_GFN2xTB.json&#39;,
+ &#39;.\\response_1679606406055_H2O_GFNFF.json&#39;,
+ &#39;.\\response_1679607003317_H2O_GFN1xTB.json&#39;,
+ &#39;.\\response_1679607376257_H2O_GFN2xTB.json&#39;,
+ &#39;.\\response_1679610558006_CO2_GF2xTB.json&#39;,
+ &#39;.\\response_1679611104569_CO2_GFN1xTB.json&#39;,
+ &#39;.\\response_1679611604838_CO2_GFNFF.json&#39;,
+ &#39;.\\response_1679612847840_Ben_GFNFF.json&#39;,
+ &#39;.\\response_1679613935215_Ben_GFN2xTB.json&#39;,
+ &#39;.\\response_1679614160476_Ben_GFN1xTB.json&#39;,
+ &#39;.\\response_1679659777727_POCl_3_GFN1xTB.json&#39;,
+ &#39;.\\response_1679660569925_POCl_3GFN2xTB.json&#39;,
+ &#39;.\\response_1679660682243_POCl3_GFNFF.json&#39;,
+ &#39;.\\response_1679662150668_EtOH_GFNFF.json&#39;,
+ &#39;.\\response_1679662928012_EtOH_GFN1xTB.json&#39;,
+ &#39;.\\response_1679663134619_EtOH_GFN2xTB.json&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">File</span>          <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679611604838_CO2_GFNFF.json&#39;</span>
+<span class="n">CO_2_GFNFF</span>    <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679611104569_CO2_GFN1xTB.json&#39;</span>
+<span class="n">CO_2_GFN1xTB</span> <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+<span class="n">File</span>         <span class="o">=</span> <span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679610558006_CO2_GF2xTB.json&#39;</span>
+<span class="n">CO_2_GFN2xTB</span> <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">CO_2.csv&#39;</span>
+<span class="n">CO_2_exp</span>     <span class="o">=</span> <span class="n">IR_exp</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+    
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">CO_2_GFNFF</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span><span class="n">Normal</span><span class="p">(</span><span class="n">CO_2_GFNFF</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GFNFF&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">CO_2_GFN1xTB</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span><span class="n">Normal</span><span class="p">(</span><span class="n">CO_2_GFN1xTB</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GFN1xTB&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">CO_2_GFN2xTB</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span><span class="n">Normal</span><span class="p">(</span><span class="n">CO_2_GFN2xTB</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GFN2xTB&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">CO_2_exp</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span><span class="n">Normal</span><span class="p">(</span><span class="n">CO_2_exp</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Experiment&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;wavenumber[1/cm]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity [a.u.]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0f81ed0e7d5c092d0fa62e0e7acfe033430e156c205ee522f04348055665297f.png" src="../_images/0f81ed0e7d5c092d0fa62e0e7acfe033430e156c205ee522f04348055665297f.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "AntonioCd96/IR-and-Raman.git",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span class="math notranslate nohighlight">\(H_2O\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#co-2"><span class="math notranslate nohighlight">\(CO_2\)</span></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. Mounir Mensi, Dr. Kevin Jablonka and  Antonio Doñez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
