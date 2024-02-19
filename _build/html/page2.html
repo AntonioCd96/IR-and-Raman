@@ -65,8 +65,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'page2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Harmonic Oscillator - Quantum Mechanics Approach" href="page3.html" />
-    <link rel="prev" title="Vibrational spectroscopy - Interactive" href="page1_5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,30 +155,39 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Basic_Notebook.html">Jupyter Notebook</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Notebooks/Basic_Notebook.html">L/A - Jupyter Notebook</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="page1.html">Vibrational spectroscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notebooks/page1.html">L - Vibrational spectroscopy</a></li>
 
 
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="page1_5.html">Vibrational spectroscopy - Interactive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notebooks/page1_5.html">I - Vibrational spectroscopy</a></li>
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Calculate your own IR and Raman Spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notebooks/page2.html">A - Calculate your own IR and Raman Spectra</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="page3.html">Harmonic Oscillator - Quantum Mechanics Approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notebooks/page3.html">L - Harmonic Oscillator - Quantum Mechanics Approach</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="page3_5.html">Harmonic Oscillator - Quantum Mechanics Approach - Interactive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notebooks/page3_5.html">A - Harmonic Oscillator - Quantum Mechanics Approach - Interactive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notebooks/page4_IR-Raman-Phonon-Dispersion.html">L - IR and raman of solids</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Notebooks/page4_phonon-band%20structure.html">I - Phonon structure of different solids</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Notebooks/page4_Solids_IR-Raman_3D_anim.html">A - Generation of IR and raman spectra for solids</a></li>
+
 </ul>
 
     </div>
@@ -489,7 +496,9 @@ More info abouth this project: <a class="reference external" href="mailto:cesar&
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rdkit in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (2023.3.1)
-Requirement already satisfied: numpy in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from rdkit) (1.24.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from rdkit) (1.25.2)
 Requirement already satisfied: Pillow in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from rdkit) (9.5.0)
 </pre></div>
 </div>
@@ -507,8 +516,10 @@ Requirement already satisfied: Pillow in /home/cd96/psi4conda/envs/jbook/lib/pyt
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: kallisto in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (1.0.9)
 Requirement already satisfied: click&lt;9.0.0,&gt;=8.0.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (8.1.3)
-Requirement already satisfied: numpy&lt;2.0.0,&gt;=1.19.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.24.3)
-Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.9.2)
+Requirement already satisfied: numpy&lt;2.0.0,&gt;=1.19.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.25.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.9.2)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -523,12 +534,7 @@ Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting py3Dmol
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-<span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: py3Dmol in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (2.0.4)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -542,12 +548,41 @@ Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/l
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jax[cpu] in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (0.4.24)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ml-dtypes&gt;=0.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (0.3.2)
+Requirement already satisfied: numpy&gt;=1.22 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (1.25.2)
+Requirement already satisfied: opt-einsum in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (3.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.9 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (1.9.2)
+Requirement already satisfied: jaxlib==0.4.24 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (0.4.24)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">axolotl_1</span> <span class="kn">import</span> <span class="n">IR_xTB</span><span class="p">,</span> <span class="n">Animator_data</span><span class="p">,</span> <span class="n">IR_axo</span>
 <span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">axolotl_1</span> <span class="kn">import</span> <span class="n">IR_xTB</span><span class="p">,</span> <span class="n">Animator_data</span><span class="p">,</span> <span class="n">IR_axo</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;axolotl_1&#39;
 </pre></div>
 </div>
 </div>
@@ -584,6 +619,21 @@ Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/l
 
 <span class="n">IR_axo</span><span class="p">(</span> <span class="n">filename</span><span class="p">,</span><span class="n">Compound_wn</span><span class="p">,</span> <span class="n">Compound_int</span><span class="p">,</span><span class="n">smiles_code</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">sigma_raman</span><span class="p">,</span><span class="n">μ_all</span><span class="p">,</span> <span class="n">all_pol_mode</span> <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;IR_Raman_TheoreticalSpectra_</span><span class="si">{0}</span><span class="s2">_</span><span class="si">{1}</span><span class="s2">.png&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">smiles_code</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+There are 18 normal modes
+[&#39;C&#39;, &#39;C&#39;, &#39;H&#39;, &#39;H&#39;, &#39;H&#39;, &#39;H&#39;, &#39;H&#39;, &#39;H&#39;]
+Tha charges are [-0.06826238 -0.06826238  0.02275413  0.02275413  0.02275413  0.02275413
+  0.02275413  0.02275413] with a mass of [12.011 12.011  1.008  1.008  1.008  1.008  1.008  1.008]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "4fc0ea8259a04c6a99fbe5a128f4d006", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -690,24 +740,6 @@ Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="page1_5.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Vibrational spectroscopy - Interactive</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="page3.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Harmonic Oscillator - Quantum Mechanics Approach</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>

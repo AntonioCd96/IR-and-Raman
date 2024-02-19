@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Calculate your own IR and Raman Spectra &#8212; Interactive IR and Raman</title>
+    <title>A - Calculate your own IR and Raman Spectra &#8212; Interactive IR and Raman</title>
   
   
   
@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Notebooks/page2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Harmonic Oscillator - Quantum Mechanics Approach" href="page3.html" />
-    <link rel="prev" title="Vibrational spectroscopy - Interactive" href="page1_5.html" />
+    <link rel="next" title="L - Harmonic Oscillator - Quantum Mechanics Approach" href="page3.html" />
+    <link rel="prev" title="I - Vibrational spectroscopy" href="page1_5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,37 +158,38 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Basic_Notebook.html">Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Notebook.html">L/A - Jupyter Notebook</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="page1.html">Vibrational spectroscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page1.html">L - Vibrational spectroscopy</a></li>
 
 
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="page1_5.html">Vibrational spectroscopy - Interactive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page1_5.html">I - Vibrational spectroscopy</a></li>
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Calculate your own IR and Raman Spectra</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">A - Calculate your own IR and Raman Spectra</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="page3.html">Harmonic Oscillator - Quantum Mechanics Approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page3.html">L - Harmonic Oscillator - Quantum Mechanics Approach</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="page3_5.html">Harmonic Oscillator - Quantum Mechanics Approach - Interactive</a></li>
-<li class="toctree-l1"><a class="reference internal" href="page4_IR-Raman-Phonon-Dispersion.html">IR and raman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page3_5.html">A - Harmonic Oscillator - Quantum Mechanics Approach - Interactive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page4_IR-Raman-Phonon-Dispersion.html">L - IR and raman of solids</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="page4_phonon-band%20structure.html">Phonon structure of different solids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page4_phonon-band%20structure.html">I - Phonon structure of different solids</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="page4_Solids_IR-Raman_3D_anim.html">Auxilair documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page4_Solids_IR-Raman_3D_anim.html">A - Generation of IR and raman spectra for solids</a></li>
+
 </ul>
 
     </div>
@@ -457,7 +458,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Calculate your own IR and Raman Spectra</h1>
+    <h1>A - Calculate your own IR and Raman Spectra</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -467,7 +468,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Calculate your own IR and Raman Spectra</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A - Calculate your own IR and Raman Spectra</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-your-own-theoretical-expectra">Obtain your own theoretical expectra</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cellphone-environment">Cellphone environment</a></li>
 </ul>
@@ -482,8 +483,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="calculate-your-own-ir-and-raman-spectra">
-<h1>Calculate your own IR and Raman Spectra<a class="headerlink" href="#calculate-your-own-ir-and-raman-spectra" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="a-calculate-your-own-ir-and-raman-spectra">
+<h1>A - Calculate your own IR and Raman Spectra<a class="headerlink" href="#a-calculate-your-own-ir-and-raman-spectra" title="Permalink to this heading">#</a></h1>
 <p>The following code is aimed to help you to obtain theoretical spectra of IR and Raman using the web service: xTB [<a class="reference external" href="https://ir.cheminfo.org/api/v1/docs#/default/get_ir_spectrum_ir_get">https://ir.cheminfo.org/api/v1/docs#/default/get_ir_spectrum_ir_get</a>] [1]. As you will see, it uses three different theoretical methods GFN2xTB, GFN1xTB and GFNFF.The way you can use the following code is by executing th following cells. BEfore starting make sure you have the SMILES code of the molecule you are going to simulate.</p>
 <p>If you do not have the smiles code, you can draw your molecule in the following page to obtain it:[<a class="reference external" href="https://www.cheminfo.org/flavor/malaria/Utilities/SMILES_generator___checker/index.html">https://www.cheminfo.org/flavor/malaria/Utilities/SMILES_generator___checker/index.html</a>]</p>
 <hr class="docutils" />
@@ -738,7 +739,7 @@ Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Vibrational spectroscopy - Interactive</p>
+        <p class="prev-next-title">I - Vibrational spectroscopy</p>
       </div>
     </a>
     <a class="right-next"
@@ -746,7 +747,7 @@ Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Harmonic Oscillator - Quantum Mechanics Approach</p>
+        <p class="prev-next-title">L - Harmonic Oscillator - Quantum Mechanics Approach</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -768,7 +769,7 @@ Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Calculate your own IR and Raman Spectra</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A - Calculate your own IR and Raman Spectra</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-your-own-theoretical-expectra">Obtain your own theoretical expectra</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cellphone-environment">Cellphone environment</a></li>
 </ul>
