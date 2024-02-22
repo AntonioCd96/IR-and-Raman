@@ -28,7 +28,7 @@ from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 # Generating the animation file
 def Animator_data(ID):
     # Opening JSON file
-    f = open('crd.json.gz')
+    f = open('crd.json')
  
     # returns JSON object as
     # a dictionary
