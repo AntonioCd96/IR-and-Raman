@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Notebooks/page2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="L - Harmonic Oscillator - Quantum Mechanics Approach" href="page3.html" />
+    <link rel="next" title="Simulation IR vs experimental IR" href="page2_5.html" />
     <link rel="prev" title="I - Vibrational spectroscopy" href="page1_5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,6 +175,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">A - Calculate your own IR and Raman Spectra</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="page2_5.html">Simulation IR vs experimental IR</a></li>
 
 
 <li class="toctree-l1"><a class="reference internal" href="page3.html">L - Harmonic Oscillator - Quantum Mechanics Approach</a></li>
@@ -492,7 +495,10 @@ document.write(`
 More info abouth this project: <a class="reference external" href="mailto:cesar&#46;donezmiranda&#37;&#52;&#48;epfl&#46;ch">cesar<span>&#46;</span>donezmiranda<span>&#64;</span>epfl<span>&#46;</span>ch</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">rdkit</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>rdkit
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>kallisto
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>py3Dmol
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span><span class="s2">&quot;jax[cpu]&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -502,51 +508,17 @@ Requirement already satisfied: numpy in /home/cd96/psi4conda/envs/jbook/lib/pyth
 Requirement already satisfied: Pillow in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from rdkit) (9.5.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">kallisto</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: kallisto in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (1.0.9)
 Requirement already satisfied: click&lt;9.0.0,&gt;=8.0.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (8.1.3)
 Requirement already satisfied: numpy&lt;2.0.0,&gt;=1.19.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.25.2)
-Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.9.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy==1.9.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from kallisto) (1.9.2)
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">py3Dmol</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: py3Dmol in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (2.0.4)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="s2">&quot;jax[cpu]&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jax[cpu] in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (0.4.24)
 </pre></div>
 </div>
@@ -555,9 +527,6 @@ Requirement already satisfied: numpy&gt;=1.22 in /home/cd96/psi4conda/envs/jbook
 Requirement already satisfied: opt-einsum in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (3.3.0)
 Requirement already satisfied: scipy&gt;=1.9 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (1.9.2)
 Requirement already satisfied: jaxlib==0.4.24 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jax[cpu]) (0.4.24)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 </div>
@@ -609,7 +578,7 @@ Requirement already satisfied: jaxlib==0.4.24 in /home/cd96/psi4conda/envs/jbook
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">smiles_code</span>        <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce the smiles code: &quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">method</span>             <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please introduce the method (GFN2xTB, GFN1xTB, GFNFF): &quot;</span><span class="p">)</span>
@@ -681,25 +650,6 @@ Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.
 </div>
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "d14732651a8747d78d6e0ff3e702205d", "version_major": 2, "version_minor": 0}</script></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
-
-<span class="n">command</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;kallisto&quot;</span><span class="p">,</span> <span class="s2">&quot;alp&quot;</span><span class="p">,</span> <span class="s2">&quot;--molecular&quot;</span><span class="p">,</span> <span class="s2">&quot;mode_0_O=C=O_GFN2xTB_1.xyz&quot;</span><span class="p">]</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -743,11 +693,11 @@ Tha charges are [-0.18646441  0.37292883 -0.18646441] with a mass of [15.999 12.
       </div>
     </a>
     <a class="right-next"
-       href="page3.html"
+       href="page2_5.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">L - Harmonic Oscillator - Quantum Mechanics Approach</p>
+        <p class="prev-next-title">Simulation IR vs experimental IR</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

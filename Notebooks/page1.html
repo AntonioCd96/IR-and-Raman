@@ -179,6 +179,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="page2.html">A - Calculate your own IR and Raman Spectra</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="page2_5.html">Simulation IR vs experimental IR</a></li>
+
+
 <li class="toctree-l1"><a class="reference internal" href="page3.html">L - Harmonic Oscillator - Quantum Mechanics Approach</a></li>
 
 
@@ -497,13 +500,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="l-vibrational-spectroscopy">
 <h1>L - Vibrational spectroscopy<a class="headerlink" href="#l-vibrational-spectroscopy" title="Permalink to this heading">#</a></h1>
-<p>Vibrational spectroscopy is an energy sensitive method. It is based on periodic <span style="color: red;"> <strong>changes of dipole moments</strong>  </span>  (<span style="color: red;"><strong>IR</strong></span>: infrared spectroscopy ) or  <span style="color: blue;"> <strong>changes of polizabilities</strong>  </span>  (<span style="color: blue;"><strong>Raman</strong></span>: Raman spectroscopy ) caused by molecular vibrations of molecules or groups of atoms and the combined discrete energy transitions and changes of frequency during absorption ( <span style="color: red;"><strong>IR</strong></span>) or scattering (<span style="color: blue;"><strong>Raman</strong></span>) of electromagnetic radition of wavelengths from 1 to 300 <span class="math notranslate nohighlight">\(\mu m\)</span>.</p>
+<p>Vibrational spectroscopy is an energy sensitive method. It is based on periodic <span style="color: red;"> <strong>changes of dipole moments</strong>  </span>  (<span style="color: red;"><strong>IR</strong></span>: infrared spectroscopy ) or  <span style="color: blue;"> <strong>changes of polarizabilities</strong>  </span>  (<span style="color: blue;"><strong>Raman</strong></span>: Raman spectroscopy ) caused by molecular vibrations of molecules or groups of atoms and the combined discrete energy transitions and changes of frequency during absorption ( <span style="color: red;"><strong>IR</strong></span>) or scattering (<span style="color: blue;"><strong>Raman</strong></span>) of electromagnetic radiation of wavelengths from 1 to 300 <span class="math notranslate nohighlight">\(\mu m\)</span>.</p>
 <p>These techniques are widely used in chemistry for the three states of matter: solid, liquid and gaseous state. The main uses are the following ones:</p>
 <ul class="simple">
 <li><p><strong>Qualitative analysis:</strong></p></li>
 </ul>
 <ol class="arabic simple">
-<li><p>The presence/identification of known compunds (Chemist usually say that IR spectra is the finger print of a molecule)</p></li>
+<li><p>The presence/identification of known compounds (Chemists usually say that IR spectra is the finger print of a molecule)</p></li>
 <li><p>The functional groups of an unknown compound,</p></li>
 <li><p>and thus a likely structure of a new compound</p></li>
 <li><p>Properties of the bonds (bond strength, force constants)</p></li>
@@ -512,9 +515,9 @@ document.write(`
 <li><p><strong>Quantitative analysis:</strong></p></li>
 </ul>
 <ol class="arabic simple" start="5">
-<li><p>Changes in the concetration of a species during reaction</p></li>
+<li><p>Changes in the concentration of a species during reaction</p></li>
 </ol>
-<p>In this chapter, we are going to revisit and ilustrate some basic concepts to understand the physical phenomena behind the main techniques as well as  brief history facts.</p>
+<p>In this chapter, we are going to revisit and illustrate some basic concepts to understand the physical phenomena behind the main techniques as well as  brief history facts.</p>
 <section id="rayleigh-scattering">
 <h2>Rayleigh scattering<a class="headerlink" href="#rayleigh-scattering" title="Permalink to this heading">#</a></h2>
 <figure class="margin align-default" id="molecules">
@@ -1958,18 +1961,18 @@ if (IPython.notebook.kernel !== null) {
 <p>Note that in our simple model we are allowing motion of the masses only in one dimension (i.e., we are allowing longitudinal motion of the chain, not transverse motion)</p>
 <p>For any coupled system system, a normal mode is defined to be a collective oscillation where all particles move at the same frequency. We now attempt a solution
 to Newton’s equations by using an ansatz that describes the normal modes as waves</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b343c917-906a-4273-9a5a-0f670668eb06">
-<span class="eqno">(1)<a class="headerlink" href="#equation-b343c917-906a-4273-9a5a-0f670668eb06" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3c775df6-97c9-4bf1-9116-ba28fc5a1a5b">
+<span class="eqno">(1)<a class="headerlink" href="#equation-3c775df6-97c9-4bf1-9116-ba28fc5a1a5b" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_n^{\rm eq}=na\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9fb49f4-3a60-44e2-a597-42b594537abc">
-<span class="eqno">(2)<a class="headerlink" href="#equation-d9fb49f4-3a60-44e2-a597-42b594537abc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f33f4af3-fcf4-4f36-b371-aa0bb024c3dc">
+<span class="eqno">(2)<a class="headerlink" href="#equation-f33f4af3-fcf4-4f36-b371-aa0bb024c3dc" title="Permalink to this equation">#</a></span>\[\begin{align}
 \delta x_n = A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>Solving the equation we obtain:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f98b4590-8744-48c2-890f-a3d307e0c81e">
-<span class="eqno">(3)<a class="headerlink" href="#equation-f98b4590-8744-48c2-890f-a3d307e0c81e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-88285b9e-dbcd-48f4-9bf1-1556fa659842">
+<span class="eqno">(3)<a class="headerlink" href="#equation-88285b9e-dbcd-48f4-9bf1-1556fa659842" title="Permalink to this equation">#</a></span>\[\begin{align}
 \omega(k) = \sqrt{\frac{4\kappa}{m}} \bigg| \sin\bigg( \frac{ka}{2} \bigg) \bigg|
 \end{align}\]</div>
 <p>As we have seen, this exact solutions can help us to simulate the movement of atoms, in this case we will see how atoms in a periodic lattice move in a defined normal mode.</p>
@@ -2000,7 +2003,7 @@ x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 </div>
 </div>
 </div>
-<p>The eigenvalues obtained or solutions are called the so called phonons. In the context of solid materials, phonons can be understood as the normal modes of lattice vibrations. When the atoms in a crystal lattice are displaced from their equilibrium positions, they oscillate around those positions, giving rise to vibrational modes. Each vibrational mode corresponds to a phonon, which can be thought of as a quantum of the lattice vibration. Since phonons are normal modes, they also have discrete frequencies. The phonon dispersion relation describes the relationship between the frequency and the wave vector (momentum) of each phonon mode in the crystal. This dispersion relation determines the allowed frequencies of phonons for different wave vectors and is characteristic of the crystal’s lattice structure. For a monoatomic chain the phonon dispersion is:</p>
+<p>The eigenvalues obtained or solutions are called the so called <strong>phonons</strong>. In the context of solid materials, phonons can be understood as the <strong>normal modes of lattice vibrations</strong>. When the atoms in a crystal lattice are displaced from their equilibrium positions, they oscillate around those positions, giving rise to vibrational modes. Each vibrational mode corresponds to a phonon, which can be thought of as a quantum of the lattice vibration. Since phonons are normal modes, they also have discrete frequencies. The phonon dispersion relation describes the relationship between the frequency and the wave vector (momentum) of each phonon mode in the crystal. This dispersion relation determines the allowed frequencies of phonons for different wave vectors and is characteristic of the crystal’s lattice structure. For a monoatomic chain the phonon dispersion is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span><span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
@@ -2018,6 +2021,38 @@ x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 </div>
 <img alt="../_images/fa577e52dffe988e7091df492adf5106dd22c4669ac82a2ab8dff6c293de0f5f.png" src="../_images/fa577e52dffe988e7091df492adf5106dd22c4669ac82a2ab8dff6c293de0f5f.png" />
 </div>
+</div>
+<p>On the other side, we can also model the case of a diatomic unidimensional chain. In this case the solution is found by solving the dynamic matrix using the following motion equations:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a37baaf5-6c01-4ee5-b29e-3b33decd3bbc">
+<span class="eqno">(4)<a class="headerlink" href="#equation-a37baaf5-6c01-4ee5-b29e-3b33decd3bbc" title="Permalink to this equation">#</a></span>\[\begin{align}
+\delta r_{n1} = \frac{u_1}{\sqrt{m_1}} e^{i\omega t-ikna}
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d5afa616-c6da-4d28-8364-8cfb896c5c9c">
+<span class="eqno">(5)<a class="headerlink" href="#equation-d5afa616-c6da-4d28-8364-8cfb896c5c9c" title="Permalink to this equation">#</a></span>\[\begin{align}
+\delta r_{n2} = \frac{u_2}{\sqrt{m_2}} e^{i\omega t-ikna}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u_{x_n}\)</span> and <span class="math notranslate nohighlight">\(u_{y_n}\)</span> are the displacement from the equilibria of the masses <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span>, respectively.</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>The dynamic matrix <span class="math notranslate nohighlight">\(D\)</span> is typically represented as a <span class="math notranslate nohighlight">\(3Nx3N\)</span> matrix, where <span class="math notranslate nohighlight">\(N\)</span> is the number of atoms in the crystal lattice. Each element <span class="math notranslate nohighlight">\(D_{ij}\)</span> of the dynamic matrix corresponds to the force constant between atoms <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, accounting for their interactions and the resulting vibrational behavior.</p>
+<p>The equation for the dynamic matrix can be expressed as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0be42c1e-8fc7-4f98-894f-47fba4e53e7b">
+<span class="eqno">(6)<a class="headerlink" href="#equation-0be42c1e-8fc7-4f98-894f-47fba4e53e7b" title="Permalink to this equation">#</a></span>\[\begin{align}
+
+D_{ij} = \frac{{\partial^2 E}}{{\partial u_i \partial u_j}}
+\end{align}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( E \)</span> is the total energy of the crystal lattice.</p></li>
+<li><p><span class="math notranslate nohighlight">\(u_i\)</span> and <span class="math notranslate nohighlight">\(u_j\)</span> are the atomic displacement vectors of atoms <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> respectively.</p></li>
+</ul>
+<p>This equation calculates the second derivative of the total energy with respect to the atomic displacements, providing information about the force constants and vibrational modes of the material.</p>
+<p>Understanding the dynamic matrix and its equation is fundamental for studying the vibrational properties of materials, which have implications for various phenomena such as thermal conductivity, thermal expansion, and lattice stability.</p>
+<p>Therefore, the solutions are found by the following eigenvalue equation:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4e301081-897e-4b44-820c-2f5c835dc680">
+<span class="eqno">(7)<a class="headerlink" href="#equation-4e301081-897e-4b44-820c-2f5c835dc680" title="Permalink to this equation">#</a></span>\[\begin{align}
+-\omega^2 \hat{u} + D_{ij}\hat{u}=0
+\end{align}\]</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3591,9 +3626,14 @@ Q= \frac{\omega _0}{\gamma}
 <p><img alt="SegmentLocal" src="../_images/Catalysis_H2.jpg" /></p>
 <div class="admonition">
 <p class="admonition-title">Real life problem</p>
-<p>Based on this problem, we can see that we have new bonds, which means a change in the chemical nature of the system
-Can you guess what would happen with the vibrations is <span class="math notranslate nohighlight">\(H_2\)</span> molecule?</p>
+<p>Based on this problem, we can see that we have new bonds, which means a change in the chemical nature of the system.
+Can you guess what would happen with the vibrations of <span class="math notranslate nohighlight">\(H_2\)</span> molecule?</p>
 </div>
+<p>Although, IR is a very useful technique to elucidate a molecule, Raman spectroscopy show some advantages depending on the situation:</p>
+<ul class="simple">
+<li><p><strong>Surface Analysis:</strong> Raman spectroscopy is well-suited for surface analysis and can provide information about the chemical composition of thin films, coatings, and surfaces. This makes it useful for materials science applications, such as characterizing surface modifications and detecting contaminants.</p></li>
+<li><p><strong>High-Resolution Imaging:</strong>  Raman spectroscopy can be combined with microscopy techniques to provide high-resolution chemical imaging of samples. This allows for the spatial mapping of chemical composition with micron-scale resolution, making it valuable for applications such as biomedical imaging and materials analysis.</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
