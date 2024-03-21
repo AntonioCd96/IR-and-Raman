@@ -1,4 +1,4 @@
-# PyLab - Infra-red and Raman spectra learning
+# PyLab - Infrared and Raman spectra learning
 
 This repository contains the different applications with the aim of learning the basics of IR and Raman spectra by means of using interactive visualizations.
 
