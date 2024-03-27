@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>\(H_2O\) &#8212; Interactive IR and Raman</title>
+    <title>Simulation IR vs experimental IR &#8212; Interactive IR and Raman</title>
   
   
   
@@ -175,6 +175,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="page2.html">A - Calculate your own IR and Raman Spectra</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="page2_5.html">Simulation IR vs experimental IR</a></li>
 
 
 <li class="toctree-l1"><a class="reference internal" href="page3.html">L - Harmonic Oscillator - Quantum Mechanics Approach</a></li>
@@ -458,7 +461,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>H_2O</h1>
+    <h1>Simulation IR vs experimental IR</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -468,7 +471,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span class="math notranslate nohighlight">\(H_2O\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Simulation IR vs experimental IR</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#h-2o"><span class="math notranslate nohighlight">\(H_2O\)</span></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#co-2"><span class="math notranslate nohighlight">\(CO_2\)</span></a></li>
 </ul>
 
@@ -482,9 +486,30 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="simulation-ir-vs-experimental-ir">
+<h1>Simulation IR vs experimental IR<a class="headerlink" href="#simulation-ir-vs-experimental-ir" title="Permalink to this heading">#</a></h1>
+<p>Nowadays, there are a lot of research to try to simulate in the most accurate way. One of the approaches is by  using Density Functional Theory (DFT). However, due to the computational constrains and low accuracy of the models it is not possible yet to simulate an IR spectra which profile is exactly the same as a experimental spectra.</p>
+<p>The profile of the spectra refers to the shape and characteristics of the peaks observed in the spectrum. Here’s a more detailed explanation of how the profile of the spectra differs between simulated DFT IR spectra and experimental IR spectra:</p>
+<p><strong>Simulated DFT IR Spectra:</strong></p>
+<ul class="simple">
+<li><p>In simulated DFT IR spectra, the vibrational bands are typically sharper and narrower compared to experimental spectra.
+DFT calculations consider a single isolated molecule in vacuum, without accounting for molecular interactions such as intermolecular forces or solvent effects. As a result, the vibrational modes are idealized and do not exhibit broadening effects due to interactions with neighboring molecules or the surrounding environment.</p></li>
+<li><p>The absence of broadening in DFT spectra means that individual vibrational modes are well-defined and separated, making it easier to assign specific peaks to corresponding molecular vibrations.</p></li>
+<li><p>However, it’s important to note that while DFT calculations can accurately predict the frequencies and intensities of vibrational modes for isolated molecules, they may not fully capture the effects of molecular interactions present in a real experimental environment.</p></li>
+</ul>
+<p><strong>Experimental IR Spectra:</strong></p>
+<ul class="simple">
+<li><p>Experimental IR spectra often exhibit broader and less defined peaks compared to simulated spectra.</p></li>
+<li><p>In experimental spectra, molecular interactions, such as intermolecular forces, hydrogen bonding, and solvent effects, can lead to broadening of vibrational bands.</p></li>
+<li><p>Broadening effects in experimental spectra result from interactions between molecules in the sample, leading to variations in vibrational frequencies and intensities compared to the idealized isolated molecule scenario assumed in DFT calculations.</p></li>
+<li><p>The broadening of peaks in experimental spectra can provide valuable information about molecular structure, conformational dynamics, and interactions within the sample.</p></li>
+<li><p>Additionally, experimental spectra may also exhibit baseline shifts, noise, and other artifacts that can affect the overall profile and interpretation of the spectrum.</p></li>
+</ul>
+<p>In summary, the profile of the spectra in simulated DFT IR spectra is characterized by sharper and narrower peaks due to the idealized isolated molecule model, whereas experimental IR spectra often show broader and less defined peaks influenced by molecular interactions and experimental conditions. Understanding these differences is crucial for accurate interpretation and comparison of simulated and experimental IR spectra in chemical and materials research.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">axolotl_1</span> <span class="kn">import</span> <span class="n">IR_xTB</span><span class="p">,</span> <span class="n">Animator_data</span><span class="p">,</span> <span class="n">IR_axo</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -530,61 +555,36 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="h-2o">
 <h1><span class="math notranslate nohighlight">\(H_2O\)</span><a class="headerlink" href="#h-2o" title="Permalink to this heading">#</a></h1>
+<p>In the case of the water (<span class="math notranslate nohighlight">\(H_2O\)</span>), the main difference is the broadening of the OH stretching frequency, which due to the hydrogen bonds get broaded due to</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./*.json&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./auxiliar/*.json&#39;</span><span class="p">)</span>
+<span class="n">folder</span> <span class="o">=</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;./id-formula.json&#39;, &#39;./formulas-mpid.json&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">folder</span> <span class="o">=</span>
+             <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">File</span>          <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679606406055_H2O_GFNFF.json&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">File</span>          <span class="o">=</span><span class="s1">&#39;./auxiliar/response_1679606406055_H2O_GFNFF.json&#39;</span>
 <span class="n">H2_O_GFNFF</span>    <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
-<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679607003317_H2O_GFN1xTB.json&#39;</span>
+<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;./auxiliar/response_1679607003317_H2O_GFN1xTB.json&#39;</span>
 <span class="n">H2_O_GFN1xTB</span> <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
-<span class="n">File</span>         <span class="o">=</span> <span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679607376257_H2O_GFN2xTB.json&#39;</span>
+<span class="n">File</span>         <span class="o">=</span> <span class="s1">&#39;./auxiliar/response_1679607376257_H2O_GFN2xTB.json&#39;</span>
 <span class="n">H2_O_GFN2xTB</span> <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
-<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">H2_O_exp.csv&#39;</span>
+<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;./auxiliar/H2_O_exp.csv&#39;</span>
 <span class="n">H2_O_exp</span>     <span class="o">=</span> <span class="n">IR_exp</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">File</span>          <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679606406055_H2O_GFNFF.json&#39;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">H2_O_GFNFF</span>    <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679607003317_H2O_GFN1xTB.json&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">H2_O_GFN1xTB</span> <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
-
-<span class="nn">Cell In[2], line 2,</span> in <span class="ni">LoadData</span><span class="nt">(File)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">File_open</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">File_loaded</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">File_open</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">Dic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;File&quot;</span><span class="p">:</span> <span class="n">File</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>            <span class="s2">&quot;wavenumbers&quot;</span>   <span class="p">:</span> <span class="n">File_loaded</span><span class="p">[</span><span class="s1">&#39;wavenumbers&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>            <span class="s2">&quot;intensities&quot;</span>  <span class="p">:</span> <span class="n">File_loaded</span><span class="p">[</span><span class="s1">&#39;intensities&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>            <span class="p">}</span>
-
-<span class="nn">File ~/psi4conda/envs/jbook/lib/python3.11/site-packages/IPython/core/interactiveshell.py:284,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">284</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;.\\response_1679606406055_H2O_GFNFF.json&#39;
 </pre></div>
 </div>
 </div>
@@ -616,43 +616,13 @@ document.write(`
 <h1><span class="math notranslate nohighlight">\(CO_2\)</span><a class="headerlink" href="#co-2" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./*.json&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;.\\EtOH_exp.json&#39;,
- &#39;.\\response_1679440595996_CS2_GFNFF.json&#39;,
- &#39;.\\response_1679485578314_CS2_GFN1xTB.json&#39;,
- &#39;.\\response_1679485961310_CS2_GFN2xTB.json&#39;,
- &#39;.\\response_1679606406055_H2O_GFNFF.json&#39;,
- &#39;.\\response_1679607003317_H2O_GFN1xTB.json&#39;,
- &#39;.\\response_1679607376257_H2O_GFN2xTB.json&#39;,
- &#39;.\\response_1679610558006_CO2_GF2xTB.json&#39;,
- &#39;.\\response_1679611104569_CO2_GFN1xTB.json&#39;,
- &#39;.\\response_1679611604838_CO2_GFNFF.json&#39;,
- &#39;.\\response_1679612847840_Ben_GFNFF.json&#39;,
- &#39;.\\response_1679613935215_Ben_GFN2xTB.json&#39;,
- &#39;.\\response_1679614160476_Ben_GFN1xTB.json&#39;,
- &#39;.\\response_1679659777727_POCl_3_GFN1xTB.json&#39;,
- &#39;.\\response_1679660569925_POCl_3GFN2xTB.json&#39;,
- &#39;.\\response_1679660682243_POCl3_GFNFF.json&#39;,
- &#39;.\\response_1679662150668_EtOH_GFNFF.json&#39;,
- &#39;.\\response_1679662928012_EtOH_GFN1xTB.json&#39;,
- &#39;.\\response_1679663134619_EtOH_GFN2xTB.json&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">File</span>          <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679611604838_CO2_GFNFF.json&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">File</span>          <span class="o">=</span><span class="s1">&#39;./auxiliar/response_1679611604838_CO2_GFNFF.json&#39;</span>
 <span class="n">CO_2_GFNFF</span>    <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
-<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679611104569_CO2_GFN1xTB.json&#39;</span>
+<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;./auxiliar/response_1679611104569_CO2_GFN1xTB.json&#39;</span>
 <span class="n">CO_2_GFN1xTB</span> <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
-<span class="n">File</span>         <span class="o">=</span> <span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">response_1679610558006_CO2_GF2xTB.json&#39;</span>
+<span class="n">File</span>         <span class="o">=</span> <span class="s1">&#39;./auxiliar/response_1679610558006_CO2_GF2xTB.json&#39;</span>
 <span class="n">CO_2_GFN2xTB</span> <span class="o">=</span><span class="n">LoadData</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
-<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">CO_2.csv&#39;</span>
+<span class="n">File</span>         <span class="o">=</span><span class="s1">&#39;./auxiliar/CO_2.csv&#39;</span>
 <span class="n">CO_2_exp</span>     <span class="o">=</span> <span class="n">IR_exp</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -677,7 +647,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0f81ed0e7d5c092d0fa62e0e7acfe033430e156c205ee522f04348055665297f.png" src="../_images/0f81ed0e7d5c092d0fa62e0e7acfe033430e156c205ee522f04348055665297f.png" />
+<img alt="../_images/866af0dbef8e9daa01ea163b0b04ab8490d844930f1bee90980480165b3022bc.png" src="../_images/866af0dbef8e9daa01ea163b0b04ab8490d844930f1bee90980480165b3022bc.png" />
 </div>
 </div>
 </section>
@@ -731,7 +701,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span class="math notranslate nohighlight">\(H_2O\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Simulation IR vs experimental IR</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#h-2o"><span class="math notranslate nohighlight">\(H_2O\)</span></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#co-2"><span class="math notranslate nohighlight">\(CO_2\)</span></a></li>
 </ul>
 
