@@ -1,17 +1,4 @@
 Traceback (most recent call last):
-  File "/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 778, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 182, in ensure_async
-    result = await obj
-             ^^^^^^^^^
-  File "/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages/jupyter_client/channels.py", line 315, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
   File "/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
@@ -25,19 +12,37 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^
   File "/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 1001, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 802, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 852, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-!pip install -U "jax[cpu]"
-!pip install py3Dmol
--------------------
+  File "/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Imoporting packages
+from quetzalcoatl_1 import Animator_data, spectra_data, solids_spectra
+from pylab import *
+from ipywidgets import interact, Dropdown
+import numpy as np
+from pymatgen.io.cif import CifWriter
+import nglview as nv
+from pymatgen.ext.matproj import MPRester
+from mp_api.client import MPRester
+import pandas as pd
+from emmet.core.summary import HasProps
+from nglview import show_structure_file
+import json
+from dash import Dash, dcc, html, Input, Output,callback
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[2], line 7[0m
+[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpymatgen[39;00m[38;5;21;01m.[39;00m[38;5;21;01mio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcif[39;00m [38;5;28;01mimport[39;00m CifWriter
+[0;32m----> 7[0m [38;5;28;01mimport[39;00m [38;5;21;01mnglview[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnv[39;00m
+[1;32m      8[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpymatgen[39;00m[38;5;21;01m.[39;00m[38;5;21;01mext[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmatproj[39;00m [38;5;28;01mimport[39;00m MPRester
+[1;32m      9[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmp_api[39;00m[38;5;21;01m.[39;00m[38;5;21;01mclient[39;00m [38;5;28;01mimport[39;00m MPRester
+
+[0;31mModuleNotFoundError[0m: No module named 'nglview'
 

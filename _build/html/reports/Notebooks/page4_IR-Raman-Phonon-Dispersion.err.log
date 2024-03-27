@@ -40,6 +40,8 @@ Here is a preview of the cell contents:
 !pip install mp-api==0.40.0
 !pip install mpcontribs-client
 !pip install crystal-toolkit --upgrade
-!pip install dash;
+!pip install dash
+!pip install ipywidgets
+!pip install nglview
 -------------------
 

@@ -172,6 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="page1_5.html">I - Vibrational spectroscopy</a></li>
 
 
@@ -194,7 +195,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="page4_Solids_IR-Raman_3D_anim.html">A - Generation of IR and raman spectra for solids</a></li>
-
 </ul>
 
     </div>
@@ -580,6 +580,26 @@ E = h \omega_i (n_i +\frac{1}{2})
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">25</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">Mdd</span>      <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">Δx</span><span class="o">*</span><span class="n">Δx</span><span class="p">)</span><span class="o">*</span><span class="p">(</span> <span class="n">diag</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">diag</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">diag</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">H</span>        <span class="o">=</span> <span class="o">-</span><span class="n">Eλ</span><span class="o">*</span><span class="n">Mdd</span> <span class="o">+</span> <span class="n">diag</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">25</span> <span class="n">E</span><span class="p">,</span><span class="n">ψT</span>     <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">ψ</span>        <span class="o">=</span> <span class="n">transpose</span><span class="p">(</span><span class="n">ψT</span><span class="p">)</span>
+
+<span class="nn">File ~/psi4conda/envs/jbook/lib/python3.11/site-packages/numpy/linalg/linalg.py:1487,</span> in <span class="ni">eigh</span><span class="nt">(a, UPLO)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1484</span>     <span class="n">gufunc</span> <span class="o">=</span> <span class="n">_umath_linalg</span><span class="o">.</span><span class="n">eigh_up</span>
+<span class="g g-Whitespace">   </span><span class="mi">1486</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;dD&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;dd&#39;</span>
+<span class="ne">-&gt; </span><span class="mi">1487</span> <span class="n">w</span><span class="p">,</span> <span class="n">vt</span> <span class="o">=</span> <span class="n">gufunc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span> <span class="n">extobj</span><span class="o">=</span><span class="n">extobj</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1488</span> <span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">_realType</span><span class="p">(</span><span class="n">result_t</span><span class="p">),</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1489</span> <span class="n">vt</span> <span class="o">=</span> <span class="n">vt</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -630,7 +650,7 @@ E = h \omega_i (n_i +\frac{1}{2})
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/87ffc71e0dcce94d378dc5ba54c787a22111f4a6356b0fde0ffb0194ef5ee6e6.png" src="../_images/87ffc71e0dcce94d378dc5ba54c787a22111f4a6356b0fde0ffb0194ef5ee6e6.png" />
+<img alt="../_images/c6a45f66c0a5b3fd70ace6997c3c242336e3ed4cf0905bc64039a995a5b6b50c.png" src="../_images/c6a45f66c0a5b3fd70ace6997c3c242336e3ed4cf0905bc64039a995a5b6b50c.png" />
 </div>
 </div>
 <p>In the reality, the potential is anharmonic, the solutions differ from the harmonic  potential approximation described earlier</p>
@@ -697,10 +717,10 @@ E = h \omega (n+\frac{1}{2})  -\frac{h^2 \omega^2}{4E_D} (n+\frac{1}{2})^2
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f61dda15050&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1fb1f89e130&gt;
 </pre></div>
 </div>
-<img alt="../_images/ae1880b514244740e2b85600fa68f107003166ba401228ba436f4461605067c8.png" src="../_images/ae1880b514244740e2b85600fa68f107003166ba401228ba436f4461605067c8.png" />
+<img alt="../_images/b77a7daa0b2bb0bd4a67f3360d026f8b9d7580138842f9d0be49642f7809eb8b.png" src="../_images/b77a7daa0b2bb0bd4a67f3360d026f8b9d7580138842f9d0be49642f7809eb8b.png" />
 </div>
 </div>
 <figure class="margin align-default" id="molecules">
@@ -729,10 +749,12 @@ E = h \omega (n+\frac{1}{2})  -\frac{h^2 \omega^2}{4E_D} (n+\frac{1}{2})^2
 <li><p>For non-linear molecules: <span class="math notranslate nohighlight">\(3N-6\)</span></p></li>
 <li><p>For linear molecules: <span class="math notranslate nohighlight">\(3N-5\)</span></p></li>
 </ul>
-<p>For water, we can une the non-linear formula, since water has an angle between the H. In this way, if the number of atoms is N=3, the number of normal modes is: 3. We can see this in the following image:</p>
+<p>For water, we can une the non-linear formula, since water has an angle between the H. In this way, if the number of atoms is N=3, the number of normal modes is: 3. We can see this in the following image [1]:</p>
 <p><img alt="SegmentLocal" src="../_images/Normal_modes_water.png" /></p>
 <p>For <span class="math notranslate nohighlight">\(CO_2\)</span>, we can une the linear formula. In this way, if the number of atoms is N=3, the number of normal modes is: 4. We can see this in the following image:</p>
 <p><img alt="SegmentLocal" src="../_images/Normal_modes_CO2.png" /></p>
+<hr class="docutils" />
+<p>[1] <a class="reference external" href="https://sites.psu.edu/dftap/2018/03/22/vibrational-modes-of-water-calculated-in-the-harmonic-approximation/">https://sites.psu.edu/dftap/2018/03/22/vibrational-modes-of-water-calculated-in-the-harmonic-approximation/</a></p>
 <figure class="margin align-default" id="id3">
 <a class="reference internal image-reference" href="../_images/Antisymmetric.gif"><img alt="../_images/Antisymmetric.gif" src="../_images/Antisymmetric.gif" style="width: 200%;" /></a>
 <figcaption>
@@ -789,8 +811,12 @@ E = h \omega (n+\frac{1}{2})  -\frac{h^2 \omega^2}{4E_D} (n+\frac{1}{2})^2
 </li>
 </ul>
 <p><img alt="SegmentLocal" src="../_images/Michaelson_interfermeter_Trim.gif" /></p>
+<hr class="docutils" />
+<p>[2] <a class="reference external" href="https://www.youtube.com/watch?v=UA1qG7Fjc2A">https://www.youtube.com/watch?v=UA1qG7Fjc2A</a></p>
 <p>As we can deduce from the gif, the signal recovered by the detector is actually data to plot an interferogram.  This interferogram will be transformed into a IR spectra by means of using the Fourier transform.</p>
 <p><img alt="SegmentLocal" src="../_images/Inter-IR.png" /></p>
+<hr class="docutils" />
+<p>[3] <a class="reference external" href="https://en.m.wikipedia.org/wiki/File:FTIR-interferogram.svg">https://en.m.wikipedia.org/wiki/File:FTIR-interferogram.svg</a></p>
 </section>
 
     <script type="text/x-thebe-config">
