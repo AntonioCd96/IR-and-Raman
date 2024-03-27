@@ -37,11 +37,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-!pip install mp-api==0.40.0
-!pip install mpcontribs-client
-!pip install crystal-toolkit --upgrade
-!pip install dash
-!pip install ipywidgets
-!pip install nglview
+['e          = 1.602e-19              # 1 eV = 1.602e-19 J', 'ħ          = 0.658                  # [eV fs]', 'c          = 3e8                    # [m/s]', 'massfactor = e/c/c                  # 1 eV/c^2 = 1.79e-36 kg', 'me         = 9.109e-31/massfactor   # [eV/c^2] = 0.5x10^6 eV/c^2   ']
+...
+['', 'Mdd      = 1./(Δx*Δx)*( diag(ones(N-1),-1) -2*diag(ones(N),0) + diag(ones(N-1),1))', 'H        = -Eλ*Mdd + diag(V)', 'E,ψT     = eigh(H)', 'ψ        = transpose(ψT)']
 -------------------
 

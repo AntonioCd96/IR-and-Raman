@@ -1,4 +1,4 @@
-# PyLab - Infra-red and Raman spectra learning
+# PyLab - Infrared and Raman spectra learning
 
 This repository contains the different applications with the aim of learning the basics of IR and Raman spectra by means of using interactive visualizations.
 
@@ -15,11 +15,12 @@ Once installed, to activate the environment, please use `conda activate pyIR-Ram
 `python -m ipykernel install --user --name=pyIR-Raman`
 
 *Note-1: You are of course welcome to install any additional package to the aforementioned conda environment.*   
-*Note-2: The aforementioned setup has already been tested by the IR-Ramans technical staff on Mac OS Sonoma 14.0, Ubuntu 22.04, and Windows 10.*
+*Note-2: The aforementioned setup has already been tested by the IR-Raman technical staff on Mac OS Sonoma 14.0, Ubuntu 22.04, and Windows 10.*
 
 ## Dry-run Instructions
 
-Complete the following steps for a smooth exam experience on the day of the exam:
-1. Carefully read and familiarize yourself with all the aforementioned rules and instructions.
-2. Set up the `adaexam` [conda environment](#Conda-Environment).
-3. Execute all the cells of `exam_dryrun.ipynb` in Jupyter with `adaexam` as the active conda environment. On successful execution, it should print **'Package import test successful!'** without throwing any errors.
+Complete the following steps for a smooth exam experience:
+1. Set up the `pyIR-Raman` [conda environment](#Conda-Environment).
+2. Execute all the cells of `test_dryrun.ipynb` in Jupyter with `pyIR-Raman` as the active conda environment. On successful execution, it should print **'Package import test successful!'** without throwing any errors.
+
+![Content](./Notebooks/images/logo-LSMO.png)

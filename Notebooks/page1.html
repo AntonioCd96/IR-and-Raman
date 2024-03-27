@@ -172,6 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="page1_5.html">I - Vibrational spectroscopy</a></li>
 
 
@@ -194,7 +195,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="page4_Solids_IR-Raman_3D_anim.html">A - Generation of IR and raman spectra for solids</a></li>
-
 </ul>
 
     </div>
@@ -484,6 +484,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-program-for-isotopic-and-multiple-bond-molecules">Interactive program for isotopic and multiple bond molecules</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-using-a-numerical-solution">Simulation using a numerical solution</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrations-in-a-solid-monoatomic-chain">Vibrations in a solid - Monoatomic chain</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diatomic-unidimensional-chain-solid">Diatomic unidimensional chain solid</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-factor">Quality Factor</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrogen-catalysis">Hydrogen catalysis</a></li>
 </ul>
@@ -1961,18 +1962,18 @@ if (IPython.notebook.kernel !== null) {
 <p>Note that in our simple model we are allowing motion of the masses only in one dimension (i.e., we are allowing longitudinal motion of the chain, not transverse motion)</p>
 <p>For any coupled system system, a normal mode is defined to be a collective oscillation where all particles move at the same frequency. We now attempt a solution
 to Newton’s equations by using an ansatz that describes the normal modes as waves</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1cbdf012-b1a8-4ca3-87d3-485219402c81">
-<span class="eqno">(1)<a class="headerlink" href="#equation-1cbdf012-b1a8-4ca3-87d3-485219402c81" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7f3a94be-f407-4775-ad5d-4ca235922ba5">
+<span class="eqno">(1)<a class="headerlink" href="#equation-7f3a94be-f407-4775-ad5d-4ca235922ba5" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_n^{\rm eq}=na\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fe702c18-123e-4ab8-a5b9-360990e7d3fa">
-<span class="eqno">(2)<a class="headerlink" href="#equation-fe702c18-123e-4ab8-a5b9-360990e7d3fa" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6ae64a0b-5f5a-4a40-9389-82bf22f055a7">
+<span class="eqno">(2)<a class="headerlink" href="#equation-6ae64a0b-5f5a-4a40-9389-82bf22f055a7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \delta x_n = A e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>Solving the equation we obtain:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d818b5b7-3211-4860-8b85-a915467dae17">
-<span class="eqno">(3)<a class="headerlink" href="#equation-d818b5b7-3211-4860-8b85-a915467dae17" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8c144742-0420-40a3-9b60-dd136718a1d0">
+<span class="eqno">(3)<a class="headerlink" href="#equation-8c144742-0420-40a3-9b60-dd136718a1d0" title="Permalink to this equation">#</a></span>\[\begin{align}
 \omega(k) = \sqrt{\frac{4\kappa}{m}} \bigg| \sin\bigg( \frac{ka}{2} \bigg) \bigg|
 \end{align}\]</div>
 <p>As we have seen, this exact solutions can help us to simulate the movement of atoms, in this case we will see how atoms in a periodic lattice move in a defined normal mode.</p>
@@ -2022,13 +2023,16 @@ x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 <img alt="../_images/fa577e52dffe988e7091df492adf5106dd22c4669ac82a2ab8dff6c293de0f5f.png" src="../_images/fa577e52dffe988e7091df492adf5106dd22c4669ac82a2ab8dff6c293de0f5f.png" />
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="diatomic-unidimensional-chain-solid">
+<h1>Diatomic unidimensional chain solid<a class="headerlink" href="#diatomic-unidimensional-chain-solid" title="Permalink to this heading">#</a></h1>
 <p>On the other side, we can also model the case of a diatomic unidimensional chain. In this case the solution is found by solving the dynamic matrix using the following motion equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9be20cfa-113e-4c36-b264-69d608a885e7">
-<span class="eqno">(4)<a class="headerlink" href="#equation-9be20cfa-113e-4c36-b264-69d608a885e7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c9b074f3-4859-4e44-9f97-03357056a0cb">
+<span class="eqno">(4)<a class="headerlink" href="#equation-c9b074f3-4859-4e44-9f97-03357056a0cb" title="Permalink to this equation">#</a></span>\[\begin{align}
 \delta r_{n1} = \frac{u_1}{\sqrt{m_1}} e^{i\omega t-ikna}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-a9c51230-198a-4ab1-ac11-437730aa2e7c">
-<span class="eqno">(5)<a class="headerlink" href="#equation-a9c51230-198a-4ab1-ac11-437730aa2e7c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eb36bbe7-7c10-4e5f-934c-c6f4764a9f58">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eb36bbe7-7c10-4e5f-934c-c6f4764a9f58" title="Permalink to this equation">#</a></span>\[\begin{align}
 \delta r_{n2} = \frac{u_2}{\sqrt{m_2}} e^{i\omega t-ikna}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(u_{x_n}\)</span> and <span class="math notranslate nohighlight">\(u_{y_n}\)</span> are the displacement from the equilibria of the masses <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span>, respectively.</p>
@@ -2036,8 +2040,8 @@ x_n = x_n^{\rm eq} + A e^{i\omega t-ikna}
 <p class="admonition-title">Tip</p>
 <p>The dynamic matrix <span class="math notranslate nohighlight">\(D\)</span> is typically represented as a <span class="math notranslate nohighlight">\(3Nx3N\)</span> matrix, where <span class="math notranslate nohighlight">\(N\)</span> is the number of atoms in the crystal lattice. Each element <span class="math notranslate nohighlight">\(D_{ij}\)</span> of the dynamic matrix corresponds to the force constant between atoms <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, accounting for their interactions and the resulting vibrational behavior.</p>
 <p>The equation for the dynamic matrix can be expressed as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-afe2ae29-3507-485c-a4cb-cb0980e8ae9c">
-<span class="eqno">(6)<a class="headerlink" href="#equation-afe2ae29-3507-485c-a4cb-cb0980e8ae9c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a0a38a64-4039-43c0-9284-b46b88507e93">
+<span class="eqno">(6)<a class="headerlink" href="#equation-a0a38a64-4039-43c0-9284-b46b88507e93" title="Permalink to this equation">#</a></span>\[\begin{align}
 
 D_{ij} = \frac{{\partial^2 E}}{{\partial u_i \partial u_j}}
 \end{align}\]</div>
@@ -2049,8 +2053,8 @@ D_{ij} = \frac{{\partial^2 E}}{{\partial u_i \partial u_j}}
 <p>This equation calculates the second derivative of the total energy with respect to the atomic displacements, providing information about the force constants and vibrational modes of the material.</p>
 <p>Understanding the dynamic matrix and its equation is fundamental for studying the vibrational properties of materials, which have implications for various phenomena such as thermal conductivity, thermal expansion, and lattice stability.</p>
 <p>Therefore, the solutions are found by the following eigenvalue equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-76dc5be0-29f9-48bc-8bbf-a80ea58562e2">
-<span class="eqno">(7)<a class="headerlink" href="#equation-76dc5be0-29f9-48bc-8bbf-a80ea58562e2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c8a3c238-1911-4f50-ad59-160f6a0f8651">
+<span class="eqno">(7)<a class="headerlink" href="#equation-c8a3c238-1911-4f50-ad59-160f6a0f8651" title="Permalink to this equation">#</a></span>\[\begin{align}
 -\omega^2 \hat{u} + D_{ij}\hat{u}=0
 \end{align}\]</div>
 </div>
@@ -2077,13 +2081,6 @@ D_{ij} = \frac{{\partial^2 E}}{{\partial u_i \partial u_j}}
 </pre></div>
 </div>
 <img alt="../_images/886acb2491f876e33ef93c9781c0ec3001c0f79bf3734712f189270adb82554f.png" src="../_images/886acb2491f876e33ef93c9781c0ec3001c0f79bf3734712f189270adb82554f.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -3714,6 +3711,7 @@ Can you guess what would happen with the vibrations of <span class="math notrans
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-program-for-isotopic-and-multiple-bond-molecules">Interactive program for isotopic and multiple bond molecules</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-using-a-numerical-solution">Simulation using a numerical solution</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrations-in-a-solid-monoatomic-chain">Vibrations in a solid - Monoatomic chain</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diatomic-unidimensional-chain-solid">Diatomic unidimensional chain solid</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-factor">Quality Factor</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrogen-catalysis">Hydrogen catalysis</a></li>
 </ul>

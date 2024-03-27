@@ -170,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="page1_5.html">I - Vibrational spectroscopy</a></li>
 
 
@@ -192,7 +193,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="page4_Solids_IR-Raman_3D_anim.html">A - Generation of IR and raman spectra for solids</a></li>
-
 </ul>
 
     </div>
@@ -473,7 +473,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">I - Phonon structure of different solids</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#play-with-1507-compounds">Play with 1507 compounds</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ir-and-raman">IR and raman</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ir-and-raman-of-the-selected-material-by-introducing-material-id-mp-xxxx">IR and raman of the selected material by introducing  material ID (mp-XXXX)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordening-the-peaks">Ordening the peaks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadening-the-peaks">Broadening the peaks</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -503,10 +507,7 @@ document.write(`
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Ignoring invalid distribution ~ax (/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages)</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mp-api in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (0.40.0)
+Requirement already satisfied: mp-api in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (0.40.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (67.7.2)
@@ -517,17 +518,13 @@ Requirement already satisfied: typing-extensions&gt;=3.7.4.1 in /home/cd96/psi4c
 Requirement already satisfied: requests&gt;=2.23.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (2.29.0)
 Requirement already satisfied: monty&gt;=2023.9.25 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (2024.2.2)
 Requirement already satisfied: emmet-core&gt;=0.78.0rc3 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mp-api) (0.78.0rc3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pydantic&gt;=2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from emmet-core&gt;=0.78.0rc3-&gt;mp-api) (2.6.1)
+Requirement already satisfied: pydantic&gt;=2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from emmet-core&gt;=0.78.0rc3-&gt;mp-api) (2.6.1)
 Requirement already satisfied: pydantic-settings&gt;=2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from emmet-core&gt;=0.78.0rc3-&gt;mp-api) (2.1.0)
 Requirement already satisfied: pybtex~=0.24 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from emmet-core&gt;=0.78.0rc3-&gt;mp-api) (0.24.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ruamel.yaml&lt;0.18 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (0.17.40)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pymongo&gt;=4.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (4.6.1)
+Requirement already satisfied: pymongo&gt;=4.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (4.6.1)
 Requirement already satisfied: mongomock&gt;=3.10.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (4.1.2)
 Requirement already satisfied: pydash&gt;=4.1.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (7.0.7)
 Requirement already satisfied: jsonschema&gt;=3.1.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (4.17.3)
@@ -537,9 +534,7 @@ Requirement already satisfied: aioitertools&gt;=0.5.1 in /home/cd96/psi4conda/en
 Requirement already satisfied: numpy&gt;=1.17.3 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (1.25.2)
 Requirement already satisfied: fastapi&gt;=0.42.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (0.109.2)
 Requirement already satisfied: pyzmq&gt;=24.0.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (25.0.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: dnspython&gt;=1.16.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (2.5.0)
+Requirement already satisfied: dnspython&gt;=1.16.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (2.5.0)
 Requirement already satisfied: sshtunnel&gt;=0.1.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (0.4.0)
 Requirement already satisfied: orjson&gt;=3.9.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (3.9.14)
 Requirement already satisfied: boto3&gt;=1.20.41 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from maggma&gt;=0.57.1-&gt;mp-api) (1.34.43)
@@ -552,9 +547,7 @@ Requirement already satisfied: networkx&gt;=2.2 in /home/cd96/psi4conda/envs/jbo
 Requirement already satisfied: palettable&gt;=3.1.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (3.3.3)
 Requirement already satisfied: pandas in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (2.0.1)
 Requirement already satisfied: plotly&gt;=4.5.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (5.14.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.5.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (1.9.2)
+Requirement already satisfied: scipy&gt;=1.5.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (1.9.2)
 Requirement already satisfied: spglib&gt;=2.0.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (2.3.1)
 Requirement already satisfied: sympy in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (1.12)
 Requirement already satisfied: tabulate in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen&gt;=2022.3.7-&gt;mp-api) (0.9.0)
@@ -572,9 +565,7 @@ Requirement already satisfied: s3transfer&lt;0.11.0,&gt;=0.10.0 in /home/cd96/ps
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: starlette&lt;0.37.0,&gt;=0.36.3 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from fastapi&gt;=0.42.0-&gt;maggma&gt;=0.57.1-&gt;mp-api) (0.36.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: attrs&gt;=17.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema&gt;=3.1.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (23.1.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema&gt;=3.1.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (23.1.0)
 Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema&gt;=3.1.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (0.19.3)
 Requirement already satisfied: contourpy&gt;=1.0.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (1.0.7)
 Requirement already satisfied: cycler&gt;=0.10 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (0.11.0)
@@ -582,9 +573,7 @@ Requirement already satisfied: fonttools&gt;=4.22.0 in /home/cd96/psi4conda/envs
 Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (1.4.4)
 Requirement already satisfied: packaging&gt;=20.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (23.1)
 Requirement already satisfied: pillow&gt;=6.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (9.5.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (3.0.9)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (3.0.9)
 Requirement already satisfied: Click in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mongogrant&gt;=0.3.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (8.1.3)
 Requirement already satisfied: Flask&gt;=1.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mongogrant&gt;=0.3.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (3.0.2)
 Requirement already satisfied: sentinels in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mongomock&gt;=3.10.0-&gt;maggma&gt;=0.57.1-&gt;mp-api) (1.0.0)
@@ -596,18 +585,14 @@ Requirement already satisfied: latexcodec&gt;=1.0.4 in /home/cd96/psi4conda/envs
 Requirement already satisfied: six in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pybtex~=0.24-&gt;emmet-core&gt;=0.78.0rc3-&gt;mp-api) (1.16.0)
 Requirement already satisfied: annotated-types&gt;=0.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pydantic&gt;=2.0-&gt;emmet-core&gt;=0.78.0rc3-&gt;mp-api) (0.6.0)
 Requirement already satisfied: pydantic-core==2.16.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pydantic&gt;=2.0-&gt;emmet-core&gt;=0.78.0rc3-&gt;mp-api) (2.16.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dotenv&gt;=0.21.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pydantic-settings&gt;=2.0-&gt;emmet-core&gt;=0.78.0rc3-&gt;mp-api) (1.0.1)
+Requirement already satisfied: python-dotenv&gt;=0.21.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pydantic-settings&gt;=2.0-&gt;emmet-core&gt;=0.78.0rc3-&gt;mp-api) (1.0.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.7 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ruamel.yaml&lt;0.18-&gt;maggma&gt;=0.57.1-&gt;mp-api) (0.2.8)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: paramiko&gt;=2.7.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from sshtunnel&gt;=0.1.5-&gt;maggma&gt;=0.57.1-&gt;mp-api) (3.4.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: future in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from uncertainties&gt;=3.1.4-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (0.18.3)
+Requirement already satisfied: future in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from uncertainties&gt;=3.1.4-&gt;pymatgen&gt;=2022.3.7-&gt;mp-api) (0.18.3)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: h11&gt;=0.8 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from uvicorn&gt;=0.18.3-&gt;maggma&gt;=0.57.1-&gt;mp-api) (0.14.0)
@@ -630,15 +615,11 @@ Requirement already satisfied: pynacl&gt;=1.5 in /home/cd96/psi4conda/envs/jbook
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: anyio&lt;5,&gt;=3.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from starlette&lt;0.37.0,&gt;=0.36.3-&gt;fastapi&gt;=0.42.0-&gt;maggma&gt;=0.57.1-&gt;mp-api) (3.6.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sniffio&gt;=1.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from anyio&lt;5,&gt;=3.4.0-&gt;starlette&lt;0.37.0,&gt;=0.36.3-&gt;fastapi&gt;=0.42.0-&gt;maggma&gt;=0.57.1-&gt;mp-api) (1.3.0)
+Requirement already satisfied: sniffio&gt;=1.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from anyio&lt;5,&gt;=3.4.0-&gt;starlette&lt;0.37.0,&gt;=0.36.3-&gt;fastapi&gt;=0.42.0-&gt;maggma&gt;=0.57.1-&gt;mp-api) (1.3.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cffi&gt;=1.12 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from cryptography&gt;=3.3-&gt;paramiko&gt;=2.7.2-&gt;sshtunnel&gt;=0.1.5-&gt;maggma&gt;=0.57.1-&gt;mp-api) (1.15.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: MarkupSafe&gt;=2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from Jinja2&gt;=3.1.2-&gt;Flask&gt;=1.0-&gt;mongogrant&gt;=0.3.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (2.1.2)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from Jinja2&gt;=3.1.2-&gt;Flask&gt;=1.0-&gt;mongogrant&gt;=0.3.1-&gt;maggma&gt;=0.57.1-&gt;mp-api) (2.1.2)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pycparser in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from cffi&gt;=1.12-&gt;cryptography&gt;=3.3-&gt;paramiko&gt;=2.7.2-&gt;sshtunnel&gt;=0.1.5-&gt;maggma&gt;=0.57.1-&gt;mp-api) (2.21)
@@ -670,9 +651,7 @@ Requirement already satisfied: pynacl&gt;=1.5 in /home/cd96/psi4conda/envs/jbook
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpcontribs-client in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (5.7.0)
 Requirement already satisfied: boltons in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (23.1.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: bravado in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (11.0.3)
+Requirement already satisfied: bravado in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (11.0.3)
 Requirement already satisfied: filetype in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (1.2.0)
 Requirement already satisfied: flatten-dict in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (0.4.2)
 Requirement already satisfied: ipython in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (8.13.2)
@@ -682,16 +661,16 @@ Requirement already satisfied: pint&lt;0.20 in /home/cd96/psi4conda/envs/jbook/l
 Requirement already satisfied: plotly in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (5.14.1)
 Requirement already satisfied: pyIsEmail in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (2.0.1)
 Requirement already satisfied: pymatgen in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (2024.2.8)
-Requirement already satisfied: pymongo in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (4.6.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pymongo in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (4.6.1)
 Requirement already satisfied: requests-futures in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (1.0.1)
 Requirement already satisfied: swagger-spec-validator in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (3.0.3)
 Requirement already satisfied: tqdm in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (4.66.2)
 Requirement already satisfied: ujson in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (5.9.0)
 Requirement already satisfied: semantic-version in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (2.10.0)
 Requirement already satisfied: cachetools in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from mpcontribs-client) (5.3.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: bravado-core&gt;=5.16.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (6.1.1)
+Requirement already satisfied: bravado-core&gt;=5.16.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (6.1.1)
 Requirement already satisfied: msgpack in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (1.0.7)
 Requirement already satisfied: python-dateutil in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (2.8.2)
 Requirement already satisfied: pyyaml in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-&gt;mpcontribs-client) (6.0)
@@ -710,9 +689,7 @@ Requirement already satisfied: pickleshare in /home/cd96/psi4conda/envs/jbook/li
 Requirement already satisfied: prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (3.0.38)
 Requirement already satisfied: pygments&gt;=2.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (2.15.1)
 Requirement already satisfied: stack-data in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (0.6.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: traitlets&gt;=5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (5.9.0)
+Requirement already satisfied: traitlets&gt;=5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (5.9.0)
 Requirement already satisfied: pexpect&gt;4.3 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ipython-&gt;mpcontribs-client) (4.8.0)
 </pre></div>
 </div>
@@ -734,26 +711,18 @@ Requirement already satisfied: scipy&gt;=1.5.0 in /home/cd96/psi4conda/envs/jboo
 Requirement already satisfied: spglib&gt;=2.0.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (2.3.1)
 Requirement already satisfied: sympy in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (1.12)
 Requirement already satisfied: tabulate in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (0.9.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: uncertainties&gt;=3.1.4 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (3.1.7)
+Requirement already satisfied: uncertainties&gt;=3.1.4 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (3.1.7)
 Requirement already satisfied: joblib in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pymatgen-&gt;mpcontribs-client) (1.3.2)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jsonschema in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from swagger-spec-validator-&gt;mpcontribs-client) (4.17.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jsonref in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-core&gt;=5.16.1-&gt;bravado-&gt;mpcontribs-client) (1.1.0)
+Requirement already satisfied: jsonref in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from bravado-core&gt;=5.16.1-&gt;bravado-&gt;mpcontribs-client) (1.1.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;mpcontribs-client) (0.8.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: attrs&gt;=17.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (23.1.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (23.1.0)
 Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema-&gt;swagger-spec-validator-&gt;mpcontribs-client) (0.19.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: contourpy&gt;=1.0.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen-&gt;mpcontribs-client) (1.0.7)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen-&gt;mpcontribs-client) (1.0.7)
 Requirement already satisfied: cycler&gt;=0.10 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen-&gt;mpcontribs-client) (0.11.0)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen-&gt;mpcontribs-client) (4.39.4)
 Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from matplotlib&gt;=1.5-&gt;pymatgen-&gt;mpcontribs-client) (1.4.4)
@@ -762,14 +731,10 @@ Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/cd96/psi4conda/envs/
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ptyprocess&gt;=0.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;mpcontribs-client) (0.7.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wcwidth in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30-&gt;ipython-&gt;mpcontribs-client) (0.2.6)
+Requirement already satisfied: wcwidth in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30-&gt;ipython-&gt;mpcontribs-client) (0.2.6)
 Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.17-&gt;bravado-&gt;mpcontribs-client) (3.1.0)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.17-&gt;bravado-&gt;mpcontribs-client) (3.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.17-&gt;bravado-&gt;mpcontribs-client) (1.26.15)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.17-&gt;bravado-&gt;mpcontribs-client) (1.26.15)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests&gt;=2.17-&gt;bravado-&gt;mpcontribs-client) (2023.7.22)
 Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.7 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from ruamel.yaml&gt;=0.17.0-&gt;pymatgen-&gt;mpcontribs-client) (0.2.8)
 </pre></div>
@@ -778,22 +743,16 @@ Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.7 in /home/cd96/psi4cond
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: latexcodec&gt;=1.0.4 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from pybtex-&gt;pymatgen-&gt;mpcontribs-client) (2.0.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: executing&gt;=1.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;mpcontribs-client) (1.2.0)
+Requirement already satisfied: executing&gt;=1.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;mpcontribs-client) (1.2.0)
 Requirement already satisfied: asttokens&gt;=2.1.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;mpcontribs-client) (2.2.1)
 Requirement already satisfied: pure-eval in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;mpcontribs-client) (0.2.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&gt;=0.19 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from sympy-&gt;pymatgen-&gt;mpcontribs-client) (1.3.0)
+Requirement already satisfied: mpmath&gt;=0.19 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from sympy-&gt;pymatgen-&gt;mpcontribs-client) (1.3.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: fqdn in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema[format-nongpl]&gt;=2.5.1-&gt;bravado-core&gt;=5.16.1-&gt;bravado-&gt;mpcontribs-client) (1.5.1)
 Requirement already satisfied: isoduration in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema[format-nongpl]&gt;=2.5.1-&gt;bravado-core&gt;=5.16.1-&gt;bravado-&gt;mpcontribs-client) (20.11.0)
 Requirement already satisfied: jsonpointer&gt;1.13 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema[format-nongpl]&gt;=2.5.1-&gt;bravado-core&gt;=5.16.1-&gt;bravado-&gt;mpcontribs-client) (2.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rfc3339-validator in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema[format-nongpl]&gt;=2.5.1-&gt;bravado-core&gt;=5.16.1-&gt;bravado-&gt;mpcontribs-client) (0.1.4)
+Requirement already satisfied: rfc3339-validator in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema[format-nongpl]&gt;=2.5.1-&gt;bravado-core&gt;=5.16.1-&gt;bravado-&gt;mpcontribs-client) (0.1.4)
 Requirement already satisfied: rfc3986-validator&gt;0.1.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema[format-nongpl]&gt;=2.5.1-&gt;bravado-core&gt;=5.16.1-&gt;bravado-&gt;mpcontribs-client) (0.1.1)
 Requirement already satisfied: uri-template in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema[format-nongpl]&gt;=2.5.1-&gt;bravado-core&gt;=5.16.1-&gt;bravado-&gt;mpcontribs-client) (1.2.0)
 Requirement already satisfied: webcolors&gt;=1.11 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from jsonschema[format-nongpl]&gt;=2.5.1-&gt;bravado-core&gt;=5.16.1-&gt;bravado-&gt;mpcontribs-client) (1.13)
@@ -811,10 +770,7 @@ Requirement already satisfied: webcolors&gt;=1.11 in /home/cd96/psi4conda/envs/j
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Ignoring invalid distribution ~ax (/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages)</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Ignoring invalid distribution ~ax (/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages)</span>
+<span class=" -Color -Color-Yellow">WARNING: Ignoring invalid distribution ~ax (/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages)</span>
 
 </pre></div>
 </div>
@@ -909,9 +865,122 @@ Requirement already satisfied: webcolors&gt;=1.11 in /home/cd96/psi4conda/envs/j
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
 ?25h canceled
 <span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
+<span class=" -Color -Color-Yellow">WARNING: Ignoring invalid distribution ~ax (/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages)</span>
+<span class=" -Color -Color-Yellow">WARNING: Ignoring invalid distribution ~ax (/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages)</span>
 <span class=" -Color -Color-Yellow">WARNING: Ignoring invalid distribution ~ax (/home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages)</span>
 
 </pre></div>
@@ -931,9 +1000,7 @@ Requirement already satisfied: webcolors&gt;=1.11 in /home/cd96/psi4conda/envs/j
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Flask&lt;3.1,&gt;=1.0.4 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from dash) (3.0.2)
 Requirement already satisfied: Werkzeug&lt;3.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from dash) (3.0.1)
 Requirement already satisfied: plotly&gt;=5.0.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from dash) (5.14.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting dash-html-components==2.0.0 (from dash)
+Collecting dash-html-components==2.0.0 (from dash)
   Using cached dash_html_components-2.0.0-py3-none-any.whl.metadata (3.8 kB)
 </pre></div>
 </div>
@@ -942,9 +1009,7 @@ Requirement already satisfied: plotly&gt;=5.0.0 in /home/cd96/psi4conda/envs/jbo
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting dash-table==5.0.0 (from dash)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached dash_table-5.0.0-py3-none-any.whl.metadata (2.4 kB)
+  Using cached dash_table-5.0.0-py3-none-any.whl.metadata (2.4 kB)
 Requirement already satisfied: importlib-metadata in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from dash) (6.6.0)
 Requirement already satisfied: typing-extensions&gt;=4.1.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from dash) (4.9.0)
 Requirement already satisfied: requests in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from dash) (2.29.0)
@@ -957,190 +1022,78 @@ Requirement already satisfied: click&gt;=8.1.3 in /home/cd96/psi4conda/envs/jboo
 Requirement already satisfied: blinker&gt;=1.6.2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from Flask&lt;3.1,&gt;=1.0.4-&gt;dash) (1.7.0)
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>jupyterlab<span class="w"> </span>nglview
-<span class="o">!</span>jupyter<span class="w"> </span>nbextension<span class="w"> </span>install<span class="w"> </span>--py<span class="w"> </span>--overwrite<span class="w"> </span>--sys-prefix<span class="w"> </span>nglview
-<span class="o">!</span>jupyter<span class="w"> </span>nbextension<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--py<span class="w"> </span>--sys-prefix<span class="w"> </span>nglview
-<span class="o">!</span>jupyter<span class="w"> </span>labextension<span class="w"> </span>install<span class="w"> </span>nglview-js-widgets@latest
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tenacity&gt;=6.2.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from plotly&gt;=5.0.0-&gt;dash) (8.2.2)
+Requirement already satisfied: packaging in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from plotly&gt;=5.0.0-&gt;dash) (23.1)
+Requirement already satisfied: MarkupSafe&gt;=2.1.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from Werkzeug&lt;3.1-&gt;dash) (2.1.2)
+Requirement already satisfied: zipp&gt;=0.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from importlib-metadata-&gt;dash) (3.15.0)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests-&gt;dash) (3.1.0)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests-&gt;dash) (3.4)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests-&gt;dash) (1.26.15)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from requests-&gt;dash) (2023.7.22)
+Requirement already satisfied: six&gt;=1.7.0 in /home/cd96/psi4conda/envs/jbook/lib/python3.11/site-packages (from retrying-&gt;dash) (1.16.0)
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyterlab in c:\users\roste\anaconda3\envs\ada\lib\site-packages (4.0.6)
-Collecting jupyterlab
-  Using cached jupyterlab-4.1.2-py3-none-any.whl.metadata (15 kB)
-Requirement already satisfied: nglview in c:\users\roste\appdata\roaming\python\python39\site-packages (3.1.1)
-Requirement already satisfied: async-lru&gt;=1.0.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (2.0.4)
-Requirement already satisfied: httpx&gt;=0.25.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (0.26.0)
-Requirement already satisfied: importlib-metadata&gt;=4.8.3 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (7.0.0)
-Requirement already satisfied: ipykernel in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (6.27.1)
-Requirement already satisfied: jinja2&gt;=3.0.3 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (3.1.3)
-Requirement already satisfied: jupyter-core in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (5.5.0)
-Requirement already satisfied: jupyter-lsp&gt;=2.0.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (2.2.2)
-Requirement already satisfied: jupyter-server&lt;3,&gt;=2.4.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (2.12.5)
-Requirement already satisfied: jupyterlab-server&lt;3,&gt;=2.19.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (2.25.3)
-Requirement already satisfied: notebook-shim&gt;=0.2 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (0.2.4)
-Requirement already satisfied: packaging in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (23.2)
-Requirement already satisfied: tomli in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (2.0.1)
-Requirement already satisfied: tornado&gt;=6.2.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (6.4)
-Requirement already satisfied: traitlets in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab) (5.14.0)
-Requirement already satisfied: ipywidgets&gt;=8 in c:\users\roste\appdata\roaming\python\python39\site-packages (from nglview) (8.1.2)
-Requirement already satisfied: notebook&gt;=7 in c:\users\roste\appdata\roaming\python\python39\site-packages (from nglview) (7.1.0)
-Requirement already satisfied: jupyterlab-widgets in c:\users\roste\appdata\roaming\python\python39\site-packages (from nglview) (3.0.10)
-Requirement already satisfied: numpy in c:\users\roste\appdata\roaming\python\python39\site-packages (from nglview) (1.26.4)
-Requirement already satisfied: typing-extensions&gt;=4.0.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from async-lru&gt;=1.0.0-&gt;jupyterlab) (4.8.0)
-Requirement already satisfied: anyio in c:\users\roste\appdata\roaming\python\python39\site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab) (4.3.0)
-Requirement already satisfied: certifi in c:\users\roste\appdata\roaming\python\python39\site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab) (2024.2.2)
-Requirement already satisfied: httpcore==1.* in c:\users\roste\appdata\roaming\python\python39\site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab) (1.0.3)
-Requirement already satisfied: idna in c:\users\roste\appdata\roaming\python\python39\site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab) (3.6)
-Requirement already satisfied: sniffio in c:\users\roste\appdata\roaming\python\python39\site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab) (1.3.0)
-Requirement already satisfied: h11&lt;0.15,&gt;=0.13 in c:\users\roste\appdata\roaming\python\python39\site-packages (from httpcore==1.*-&gt;httpx&gt;=0.25.0-&gt;jupyterlab) (0.14.0)
-Requirement already satisfied: zipp&gt;=0.5 in c:\users\roste\appdata\roaming\python\python39\site-packages (from importlib-metadata&gt;=4.8.3-&gt;jupyterlab) (3.17.0)
-Requirement already satisfied: comm&gt;=0.1.3 in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipywidgets&gt;=8-&gt;nglview) (0.2.0)
-Requirement already satisfied: ipython&gt;=6.1.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipywidgets&gt;=8-&gt;nglview) (8.18.1)
-Requirement already satisfied: widgetsnbextension~=4.0.10 in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipywidgets&gt;=8-&gt;nglview) (4.0.10)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jinja2&gt;=3.0.3-&gt;jupyterlab) (2.1.5)
-Requirement already satisfied: argon2-cffi in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (23.1.0)
-Requirement already satisfied: jupyter-client&gt;=7.4.4 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (8.6.0)
-Requirement already satisfied: jupyter-events&gt;=0.9.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.9.0)
-Requirement already satisfied: jupyter-server-terminals in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.5.2)
-Requirement already satisfied: nbconvert&gt;=6.4.4 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (7.16.1)
-Requirement already satisfied: nbformat&gt;=5.3.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (5.9.2)
-Requirement already satisfied: overrides in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (7.7.0)
-Requirement already satisfied: prometheus-client in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.20.0)
-Requirement already satisfied: pywinpty in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.0.12)
-Requirement already satisfied: pyzmq&gt;=24 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (25.1.2)
-Requirement already satisfied: send2trash&gt;=1.8.2 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.8.2)
-Requirement already satisfied: terminado&gt;=0.8.3 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.18.0)
-Requirement already satisfied: websocket-client in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.7.0)
-Requirement already satisfied: platformdirs&gt;=2.5 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-core-&gt;jupyterlab) (4.1.0)
-Requirement already satisfied: pywin32&gt;=300 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-core-&gt;jupyterlab) (306)
-Requirement already satisfied: babel&gt;=2.10 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab-server&lt;3,&gt;=2.19.0-&gt;jupyterlab) (2.14.0)
-Requirement already satisfied: json5&gt;=0.9.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab-server&lt;3,&gt;=2.19.0-&gt;jupyterlab) (0.9.14)
-Requirement already satisfied: jsonschema&gt;=4.18.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab-server&lt;3,&gt;=2.19.0-&gt;jupyterlab) (4.21.1)
-Requirement already satisfied: requests&gt;=2.31 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyterlab-server&lt;3,&gt;=2.19.0-&gt;jupyterlab) (2.31.0)
-Requirement already satisfied: debugpy&gt;=1.6.5 in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipykernel-&gt;jupyterlab) (1.8.0)
-Requirement already satisfied: matplotlib-inline&gt;=0.1 in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipykernel-&gt;jupyterlab) (0.1.6)
-Requirement already satisfied: nest-asyncio in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipykernel-&gt;jupyterlab) (1.5.8)
-Requirement already satisfied: psutil in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipykernel-&gt;jupyterlab) (5.9.6)
-Requirement already satisfied: exceptiongroup&gt;=1.0.2 in c:\users\roste\appdata\roaming\python\python39\site-packages (from anyio-&gt;httpx&gt;=0.25.0-&gt;jupyterlab) (1.2.0)
-Requirement already satisfied: decorator in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8-&gt;nglview) (5.1.1)
-Requirement already satisfied: jedi&gt;=0.16 in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8-&gt;nglview) (0.19.1)
-Requirement already satisfied: prompt-toolkit&lt;3.1.0,&gt;=3.0.41 in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8-&gt;nglview) (3.0.41)
-Requirement already satisfied: pygments&gt;=2.4.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8-&gt;nglview) (2.17.2)
-Requirement already satisfied: stack-data in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8-&gt;nglview) (0.6.3)
-Requirement already satisfied: colorama in c:\users\roste\appdata\roaming\python\python39\site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8-&gt;nglview) (0.4.6)
-Requirement already satisfied: attrs&gt;=22.2.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.19.0-&gt;jupyterlab) (23.2.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.19.0-&gt;jupyterlab) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.19.0-&gt;jupyterlab) (0.33.0)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.19.0-&gt;jupyterlab) (0.18.0)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-client&gt;=7.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.8.2)
-Requirement already satisfied: python-json-logger&gt;=2.0.4 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.0.7)
-Requirement already satisfied: pyyaml&gt;=5.3 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (6.0.1)
-Requirement already satisfied: rfc3339-validator in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.1.4)
-Requirement already satisfied: rfc3986-validator&gt;=0.1.1 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.1.1)
-Requirement already satisfied: beautifulsoup4 in c:\users\roste\appdata\roaming\python\python39\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (4.12.3)
-Requirement already satisfied: bleach!=5.0.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (6.1.0)
-Requirement already satisfied: defusedxml in c:\users\roste\appdata\roaming\python\python39\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.7.1)
-Requirement already satisfied: jupyterlab-pygments in c:\users\roste\appdata\roaming\python\python39\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.3.0)
-Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in c:\users\roste\appdata\roaming\python\python39\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (3.0.2)
-Requirement already satisfied: nbclient&gt;=0.5.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.9.0)
-Requirement already satisfied: pandocfilters&gt;=1.4.1 in c:\users\roste\appdata\roaming\python\python39\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.5.1)
-Requirement already satisfied: tinycss2 in c:\users\roste\appdata\roaming\python\python39\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.2.1)
-Requirement already satisfied: fastjsonschema in c:\users\roste\appdata\roaming\python\python39\site-packages (from nbformat&gt;=5.3.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.19.1)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in c:\users\roste\appdata\roaming\python\python39\site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.19.0-&gt;jupyterlab) (3.3.2)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in c:\users\roste\appdata\roaming\python\python39\site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.19.0-&gt;jupyterlab) (1.26.18)
-Requirement already satisfied: argon2-cffi-bindings in c:\users\roste\appdata\roaming\python\python39\site-packages (from argon2-cffi-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (21.2.0)
-Requirement already satisfied: six&gt;=1.9.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from bleach!=5.0.0-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.16.0)
-Requirement already satisfied: webencodings in c:\users\roste\appdata\roaming\python\python39\site-packages (from bleach!=5.0.0-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.5.1)
-Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8-&gt;nglview) (0.8.3)
-Requirement already satisfied: fqdn in c:\users\roste\appdata\roaming\python\python39\site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.5.1)
-Requirement already satisfied: isoduration in c:\users\roste\appdata\roaming\python\python39\site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (20.11.0)
-Requirement already satisfied: jsonpointer&gt;1.13 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.4)
-Requirement already satisfied: uri-template in c:\users\roste\appdata\roaming\python\python39\site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.3.0)
-Requirement already satisfied: webcolors&gt;=1.11 in c:\users\roste\appdata\roaming\python\python39\site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.13)
-Requirement already satisfied: wcwidth in c:\users\roste\appdata\roaming\python\python39\site-packages (from prompt-toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8-&gt;nglview) (0.2.12)
-Requirement already satisfied: cffi&gt;=1.0.1 in c:\users\roste\appdata\roaming\python\python39\site-packages (from argon2-cffi-bindings-&gt;argon2-cffi-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.16.0)
-Requirement already satisfied: soupsieve&gt;1.2 in c:\users\roste\appdata\roaming\python\python39\site-packages (from beautifulsoup4-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.5)
-Requirement already satisfied: executing&gt;=1.2.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8-&gt;nglview) (2.0.1)
-Requirement already satisfied: asttokens&gt;=2.1.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8-&gt;nglview) (2.4.1)
-Requirement already satisfied: pure-eval in c:\users\roste\appdata\roaming\python\python39\site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8-&gt;nglview) (0.2.2)
-Requirement already satisfied: pycparser in c:\users\roste\appdata\roaming\python\python39\site-packages (from cffi&gt;=1.0.1-&gt;argon2-cffi-bindings-&gt;argon2-cffi-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.21)
-Requirement already satisfied: arrow&gt;=0.15.0 in c:\users\roste\appdata\roaming\python\python39\site-packages (from isoduration-&gt;jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.3.0)
-Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in c:\users\roste\appdata\roaming\python\python39\site-packages (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.8.19.20240106)
-Using cached jupyterlab-4.1.2-py3-none-any.whl (11.4 MB)
-Installing collected packages: jupyterlab
-  Attempting uninstall: jupyterlab
-    Found existing installation: jupyterlab 4.0.6
-    Uninstalling jupyterlab-4.0.6:
-      Successfully uninstalled jupyterlab-4.0.6
-Successfully installed jupyterlab-4.1.2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading dash-2.16.1-py3-none-any.whl (10.2 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/10.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: jupyter [-h] [--version] [--config-dir] [--data-dir] [--runtime-dir]
-               [--paths] [--json] [--debug]
-               [subcommand]
-
-Jupyter: Interactive Computing
-
-positional arguments:
-  subcommand     the subcommand to launch
-
-optional arguments:
-  -h, --help     show this help message and exit
-  --version      show the versions of core jupyter packages and exit
-  --config-dir   show Jupyter config dir
-  --data-dir     show Jupyter data dir
-  --runtime-dir  show Jupyter runtime dir
-  --paths        show all Jupyter paths. Add --json for machine-readable
-                 format.
-  --json         output paths as machine-readable json
-  --debug        output debug information about paths
-
-Available subcommands: contrib dejavu events execute kernel kernelspec lab
-labextension labhub migrate nbconvert nbextensions_configurator notebook run
-script server troubleshoot trust
-
-Jupyter command `jupyter-nbextension` not found.
-usage: jupyter [-h] [--version] [--config-dir] [--data-dir] [--runtime-dir]
-               [--paths] [--json] [--debug]
-               [subcommand]
-
-Jupyter: Interactive Computing
-
-positional arguments:
-  subcommand     the subcommand to launch
-
-optional arguments:
-  -h, --help     show this help message and exit
-  --version      show the versions of core jupyter packages and exit
-  --config-dir   show Jupyter config dir
-  --data-dir     show Jupyter data dir
-  --runtime-dir  show Jupyter runtime dir
-  --paths        show all Jupyter paths. Add --json for machine-readable
-                 format.
-  --json         output paths as machine-readable json
-  --debug        output debug information about paths
-
-Available subcommands: contrib dejavu events execute kernel kernelspec lab
-labextension labhub migrate nbconvert nbextensions_configurator notebook run
-script server troubleshoot trust
-
-Jupyter command `jupyter-nbextension` not found.
-Config option `kernel_spec_manager_class` not recognized by `InstallLabExtensionApp`.
-<span class=" -Color -Color-Yellow">(Deprecated) Installing extensions with the jupyter labextension install command is now deprecated and will be removed in a future major version of JupyterLab.</span>
-
-<span class=" -Color -Color-Yellow">Users should manage prebuilt extensions with package managers like pip and conda, and extension authors are encouraged to distribute their extensions as prebuilt packages </span>
-[W 2024-02-20 09:45:29.153 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
-C:\Users\roste\anaconda3\envs\ada\lib\site-packages\jupyterlab\debuglog.py:56: UserWarning: An error occurred.
-  warnings.warn(&quot;An error occurred.&quot;)
-C:\Users\roste\anaconda3\envs\ada\lib\site-packages\jupyterlab\debuglog.py:57: UserWarning: ValueError: Please install Node.js and npm before continuing installation. You may be able to install Node.js from your package manager, from conda, or directly from the Node.js website (https://nodejs.org).
-  warnings.warn(msg[-1].strip())
-C:\Users\roste\anaconda3\envs\ada\lib\site-packages\jupyterlab\debuglog.py:58: UserWarning: See the log file for details: C:\Users\roste\AppData\Local\Temp\jupyterlab-debug-l2436x09.log
-  warnings.warn(f&quot;See the log file for details: {log_path!s}&quot;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/10.2 MB</span> <span class=" -Color -Color-Red">988.9 kB/s</span> eta <span class=" -Color -Color-Cyan">0:00:11</span>
+   ╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.2/10.2 MB</span> <span class=" -Color -Color-Red">2.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:06</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.3/10.2 MB</span> <span class=" -Color -Color-Red">2.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:05</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.4/10.2 MB</span> <span class=" -Color -Color-Red">2.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:04</span>
+   ━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.7/10.2 MB</span> <span class=" -Color -Color-Red">3.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.8/10.2 MB</span> <span class=" -Color -Color-Red">3.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.9/10.2 MB</span> <span class=" -Color -Color-Red">3.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+   ━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.1/10.2 MB</span> <span class=" -Color -Color-Red">3.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.1/10.2 MB</span> <span class=" -Color -Color-Red">3.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.2/10.2 MB</span> <span class=" -Color -Color-Red">3.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.5/10.2 MB</span> <span class=" -Color -Color-Red">3.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+   ━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.6/10.2 MB</span> <span class=" -Color -Color-Red">3.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.9/10.2 MB</span> <span class=" -Color -Color-Red">3.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/10.2 MB</span> <span class=" -Color -Color-Red">3.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+   ━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/10.2 MB</span> <span class=" -Color -Color-Red">3.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.2/10.2 MB</span> <span class=" -Color -Color-Red">3.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.4/10.2 MB</span> <span class=" -Color -Color-Red">3.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.6/10.2 MB</span> <span class=" -Color -Color-Red">3.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.8/10.2 MB</span> <span class=" -Color -Color-Red">4.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.0/10.2 MB</span> <span class=" -Color -Color-Red">4.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+   ━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.3/10.2 MB</span> <span class=" -Color -Color-Red">4.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/10.2 MB</span> <span class=" -Color -Color-Red">4.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.5/10.2 MB</span> <span class=" -Color -Color-Red">4.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.6/10.2 MB</span> <span class=" -Color -Color-Red">4.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+   ━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.8/10.2 MB</span> <span class=" -Color -Color-Red">4.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
 </div>
@@ -1167,7 +1120,7 @@ C:\Users\roste\anaconda3\envs\ada\lib\site-packages\jupyterlab\debuglog.py:58: U
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6d12b9ecdb4a4cd48c5bd60865876ef5", "version_major": 2, "version_minor": 0}</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\roste\AppData\Local\Temp\ipykernel_3852\3769355885.py:5: DeprecationWarning: 
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "47013b43550c4ba5876630c3200a4b69", "version_major": 2, "version_minor": 0}</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\roste\AppData\Local\Temp\ipykernel_20936\3769355885.py:5: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -1175,8 +1128,8 @@ If this would cause problems for you,
 please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
         
   import pandas as pd
-C:\Users\roste\AppData\Roaming\Python\Python39\site-packages\networkx\utils\backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
-  backends.update(_get_backends(&quot;networkx.backends&quot;))
+C:\Users\roste\AppData\Roaming\Python\Python39\site-packages\matplotlib\projections\__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn(&quot;Unable to import Axes3D. This may be due to multiple versions of &quot;
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No module named &#39;phonopy&#39;
@@ -1266,26 +1219,19 @@ No module named &#39;phonopy&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "469bea29291a4978b51a605e803b4cee", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "2f54774376b947938c26877a6b4f1d6d", "version_major": 2, "version_minor": 0}</script></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\roste\AppData\Local\Temp\ipykernel_20936\522935023.py:5: DeprecationWarning: Accessing summary data through MPRester.summary is deprecated. Please use MPRester.materials.summary instead.
+  docs = mpr.summary.search(
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b105c92e09f040e08876d429a2a5e0d9", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "d01d6cf5429f479496cb101866910aff", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="ir-and-raman">
-<h1>IR and raman<a class="headerlink" href="#ir-and-raman" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="ir-and-raman-of-the-selected-material-by-introducing-material-id-mp-xxxx">
+<h1>IR and raman of the selected material by introducing  material ID (mp-XXXX)<a class="headerlink" href="#ir-and-raman-of-the-selected-material-by-introducing-material-id-mp-xxxx" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_id</span> <span class="o">=</span> <span class="s2">&quot;mp-2657&quot;</span>
 <span class="n">API_key</span><span class="o">=</span> <span class="s2">&quot;A55hSVu7NuwvlISilTvVtw37IB5ES26w&quot;</span>
-
-<span class="c1"># with MPRester(API_key) as mpr:</span>
-<span class="c1">#     docs = mpr.summary.search(</span>
-<span class="c1">#         has_props = [HasProps.phonon], fields=[&quot;material_id&quot;, &quot;formula_pretty&quot;,&quot;elements&quot;, &quot;composition&quot;]</span>
-<span class="c1">#     )</span>
-<span class="c1">#     mpids = [doc.material_id for doc in docs]</span>
-<span class="c1">#     mpformulas = [doc.formula_pretty for doc in docs]</span>
-<span class="c1">#     mpcomposition = [doc.composition for doc in docs]</span>
-<span class="c1"># data = {&quot;mp ID&quot;: mpids, &quot;Formula&quot;: mpformulas }</span>
-<span class="c1"># df_data = pd.DataFrame(data)</span>
-<span class="c1"># df_data</span>
 
 
 <span class="k">with</span> <span class="n">MPRester</span><span class="p">(</span><span class="n">API_key</span><span class="p">)</span> <span class="k">as</span> <span class="n">mpr</span><span class="p">:</span>
@@ -1301,7 +1247,7 @@ No module named &#39;phonopy&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "befa7da5cb3048f281433df059af4c66", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "9cb11e99449d4c918ab1f1bbb35e8388", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "a4e8b9edda854fa09cbfdb11d3f306e0", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "85c167f27d874165af49de610dddd9e9", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b973b34211574ba2921e411e6a01dae7", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "aac3e8c0f70e41b394db1af445d82f6a", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "e6f6921564d64c2dbe4317a59612a8a3", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "56426535b25b47bdb1591fe8ab3ff311", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 Full Formula (Ti4 O8)
 Reduced Formula: TiO2
 abc   :   5.469502   5.469505   5.469505
@@ -1383,7 +1329,7 @@ Sites (12)
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (cm$^{-1}$)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Raman Spectrum&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
@@ -1407,9 +1353,11 @@ Sites (12)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eeb9a792d4ebc99a0fad71fad1f4aed68bd8724766fd70efaf4612954f2a1705.png" src="../_images/eeb9a792d4ebc99a0fad71fad1f4aed68bd8724766fd70efaf4612954f2a1705.png" />
+<img alt="../_images/06f155f07c395c01730ca99bf3ae17646443c8c097061526f45d37443c4c1c13.png" src="../_images/06f155f07c395c01730ca99bf3ae17646443c8c097061526f45d37443c4c1c13.png" />
 </div>
 </div>
+<section id="ordening-the-peaks">
+<h2>Ordening the peaks<a class="headerlink" href="#ordening-the-peaks" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frequencies</span> <span class="o">=</span> <span class="n">x</span> 
@@ -1431,16 +1379,23 @@ Sites (12)
 <span class="n">result_frequencies</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">frequency_intensity_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="n">result_intensities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">frequency_intensity_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">result_frequencies</span><span class="p">,</span><span class="n">result_intensities</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (cm$^{-1}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Raman Spectrum&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x18e17cf9b80&gt;]
-</pre></div>
-</div>
-<img alt="../_images/dea3ecac00c68b52ba98fdc566324f70f2ee3d64c59390cc5260c088d1394cec.png" src="../_images/dea3ecac00c68b52ba98fdc566324f70f2ee3d64c59390cc5260c088d1394cec.png" />
+<img alt="../_images/2a17b49580b7532e50b53c175916d2eab25a9b6a399fb5daf1022c6009fe3291.png" src="../_images/2a17b49580b7532e50b53c175916d2eab25a9b6a399fb5daf1022c6009fe3291.png" />
 </div>
 </div>
+</section>
+<section id="broadening-the-peaks">
+<h2>Broadening the peaks<a class="headerlink" href="#broadening-the-peaks" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">argrelextrema</span>
@@ -1475,16 +1430,24 @@ Sites (12)
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">broad_int</span><span class="p">:</span>
     <span class="n">int_norm</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">/</span><span class="n">max_y</span><span class="p">))</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">wavenumb</span><span class="p">,</span><span class="n">int_norm</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (cm$^{-1}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Raman Spectrum&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x18e189b7a60&gt;]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
 </pre></div>
 </div>
-<img alt="../_images/a7f6a4286177564458cfaf87c24089e0bafaa56d3b954714b2b0e3c8871e3409.png" src="../_images/a7f6a4286177564458cfaf87c24089e0bafaa56d3b954714b2b0e3c8871e3409.png" />
+<img alt="../_images/d198f5c04c542b9c70606e1f2c00810013e777729ce97dabbaabdaeca303cfe1.png" src="../_images/d198f5c04c542b9c70606e1f2c00810013e777729ce97dabbaabdaeca303cfe1.png" />
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1556,7 +1519,11 @@ Sites (12)
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">I - Phonon structure of different solids</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#play-with-1507-compounds">Play with 1507 compounds</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ir-and-raman">IR and raman</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ir-and-raman-of-the-selected-material-by-introducing-material-id-mp-xxxx">IR and raman of the selected material by introducing  material ID (mp-XXXX)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordening-the-peaks">Ordening the peaks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadening-the-peaks">Broadening the peaks</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
